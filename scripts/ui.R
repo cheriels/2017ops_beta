@@ -16,28 +16,29 @@ library(shiny)
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
   
-  # Application title
-  titlePanel("CO-OP Ops beta0"),
+  # The first tab, Situational Awareness. is meant to give ops staff a first look at where we are today 
+  # and what needs to be done.
+  # Right now I'm working on a graph of Little Falls flow, predicted Little Falls flow, and Point of Rocks flow.
+  # I want to add to the graph the Point of Rocks trigger for daily monitoring, 
+  # and the Little Falls trigger for enhanced drought operations.
+  
+  # Title of first tab
+  titlePanel("Situational Awareness"),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-      sliderInput("bins",
-                  "Number of bins:",
-                  min = 1,
-                  max = 50,
-                  value = 30),
+
       dateInput("today_override","Optional override of today's date:"),
-      dateRangeInput("daterange1","Date range for graphs:", 
+      dateRangeInput("daterange1", "Date range for graphs:", 
                      start = Sys.Date() - 30,
                      end = Sys.Date() + 15)
-      
-    ),
+          ),
     
     # Show a plot of the generated distribution
     mainPanel(
       textOutput("This is a test"),
-      plotOutput("distPlot")
+      plotOutput("testPlot")
     )
   )
 ))
