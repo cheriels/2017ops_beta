@@ -25,6 +25,7 @@ shinyServer(function(input, output) {
     flows$date <- as.Date(flows$date)
     
     # set parameters based on values in our daily drought ops tool
+    # recession coefficients:
     por.K <- 0.042 
     monocacy.K <- 0.050
     # Using lags of 1 day for now, but change to 2 for low flows
@@ -34,14 +35,12 @@ shinyServer(function(input, output) {
 # Add recessions and lags - want to do this using function in future!
     
     upstr <- select(flows, date, lfalls, por, monocacy)
-    str(upstr)
     # recess and lag POR flows
     upstr <- upstr %>% mutate(flow1=lag(por,n=1), flow2=lag(por,n=2)) %>%
       mutate(recess_init = pmin(por,flow1,flow2)) %>%  # pmin gives minimums of each row
       mutate(recess_time = ifelse(date - testtoday < 0, 0, date - testtoday)) %>%
       mutate(por_recess = ifelse(date < testtoday, por, recess_init[testtoday-startdate+1]*exp(-por.K*recess_time))) %>%
       mutate(por_recess_lag = lag(por_recess,por.lag))
-    str(upstr)
     # recess and lag Monocacy flows
       upstr <- upstr %>% mutate(flow1=lag(monocacy,n=1), flow2=lag(monocacy,n=2)) %>%
       mutate(recess_init = pmin(monocacy,flow1,flow2)) %>%  # pmin gives minimums of each row
@@ -68,6 +67,10 @@ shinyServer(function(input, output) {
       
       
     
+  })
+  
+  output$testDate <- renderText({
+    paste("Today's date is ", Sys.Date())
   })
   
 })
