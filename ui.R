@@ -44,7 +44,7 @@ shinyUI(fluidPage(
                fluidRow(
                  # Show a plot of the generated distribution
                  textOutput("This is a test"),
-                 plotOutput("plot")
+                 plotOutput("constant_lagk")
                ) # End fluidRow
       ), # End tabPanel "Situational Awareness"
       #----------------------------------------------------------------------------
