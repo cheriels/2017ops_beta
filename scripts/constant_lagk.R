@@ -51,31 +51,38 @@ output$constant_lagk <- renderPlot({
     tidyr::gather(gage, flow, lfalls:lfalls_from_upstr) %>% 
     na.omit()
   #--------------------------------------------------------------------------
+  breaks.vec <- c("lfalls", "lfalls_from_upstr", "por")
+  labels.vec <- c("Little Falls", "Little Falls (Predicted)", "Point of Rocks")
+  #--------------------------------------------------------------------------
+  
   # plot flows
-  final.plot <- ggplot(upstr.df, aes(x = date, y = flow,
-                                     color = gage, size = gage,
-                                     linetype = gage)) + 
+  ggplot(upstr.df, aes(x = date, y = flow,
+                       color = gage, size = gage,
+                       linetype = gage)) + 
     geom_line() +
     # Has to be in alphabetical order
     scale_size_manual(name = "Station",
-                      breaks = c("lfalls", "lfalls_from_upstr", "por"), 
+                      labels = labels.vec,
+                      breaks = breaks.vec, 
                       values = c(2, 1, 1)) + 
     # Has to be in alphabetical order
     scale_linetype_manual(name = "Station",
-                          breaks = c("lfalls", "lfalls_from_upstr", "por"),
+                          labels = labels.vec,
+                          breaks = breaks.vec, 
                           values = c("solid", "dashed", "solid")) +
     # Has to be in alphabetical order
     scale_colour_manual(name = "Station",
-                        breaks = c("lfalls", "lfalls_from_upstr", "por"),
+                        labels = labels.vec,
+                        breaks = breaks.vec, 
                         values = c("#0072B2", "#56B4E9", "#E69F00")) +
-    
     theme_minimal() +
     xlab("Date") +
     ylab("Flow (CFS)") +
     geom_hline(yintercept = 2000, color = "red",
-               linetype = "longdash", size = 0.7)
-  
-  final.plot
+               linetype = "longdash", size = 0.7) +
+    theme(legend.title = element_blank(),
+          legend.text = element_text(size = 20))
+
   #--------------------------------------------------------------------------
   
   # plot flows
