@@ -21,28 +21,40 @@ shinyUI(fluidPage(
   # I want to add to the graph the Point of Rocks trigger for daily monitoring,
   # and the Little Falls trigger for enhanced drought operations.
   #----------------------------------------------------------------------------
-  fluidRow(
-    # Title of first tab
-    column(width = 6,
-           h4("Situational Awareness"))
-  ), # End fluidRow
-  #----------------------------------------------------------------------------
-  fluidRow(
-    # Sidebar with a slider input for number of bins 
-    column(width = 6,
-           dateInput("today.override","Optional override of today's date:"),
-           dateRangeInput("date.range1",
-                          "Date range for graphs:", 
-                          start = Sys.Date() - 30,
-                          end = Sys.Date() + 15)),
-    column(width = 6, tags$b(paste("Today's date is ", Sys.Date())))
-  ), # End fluidRow
-  #----------------------------------------------------------------------------
-  fluidRow(
-    # Show a plot of the generated distribution
-    textOutput("This is a test"),
-    plotOutput("plot")
-  ) # End fluidRow
+  mainPanel(
+    tabsetPanel(
+      tabPanel("Situational Awareness",
+               fluidRow(
+                 # Title of first tab
+                 column(width = 6,
+                        h4("Situational Awareness"))
+               ), # End fluidRow
+               #----------------------------------------------------------------------------
+               fluidRow(
+                 # Sidebar with a slider input for number of bins 
+                 column(width = 6,
+                        dateInput("today.override","Optional override of today's date:"),
+                        dateRangeInput("date.range1",
+                                       "Date range for graphs:", 
+                                       start = Sys.Date() - 30,
+                                       end = Sys.Date() + 15)),
+                 column(width = 6, tags$b(paste("Today's date is ", Sys.Date())))
+               ), # End fluidRow
+               #----------------------------------------------------------------------------
+               fluidRow(
+                 # Show a plot of the generated distribution
+                 textOutput("This is a test"),
+                 plotOutput("plot")
+               ) # End fluidRow
+      ), # End tabPanel "Situational Awareness"
+      #----------------------------------------------------------------------------
+      tabPanel("Variable Lag-K"),
+      #----------------------------------------------------------------------------
+      tabPanel("Other")
+      #----------------------------------------------------------------------------
+    ) # End tabsetPanel
+  ) # End mainPanel
+  
 ) # End fluidPage
 ) # End shinyUI
 
