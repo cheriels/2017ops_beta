@@ -21,7 +21,8 @@ lag_k <- function(flow.df, gage, todays.date, start.date, lag.days = 1) {
            #  TRUE ~ date - today.date
            #),
            recess = ifelse(date < todays.date, rlang::UQ(gage), 
-                           recess_init[todays.date - start.date + 1] * exp(-gage.k * recess_time)),
+#                           recess_init[todays.date - start.date + 1] * exp(-gage.k * recess_time)),
+                           recess_init[todays.date] * exp(-gage.k * recess_time)),
            recess_lag = lag(recess, lag.days)) %>% 
     select(-flow1, -flow2, - recess_init, -recess_time, - recess)
   
