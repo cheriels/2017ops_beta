@@ -23,47 +23,65 @@ shinyUI(fluidPage(
   #----------------------------------------------------------------------------
   mainPanel(
     div(
-    tabsetPanel(
-
-      tabPanel("Situational Awareness",
-               #----------------------------------------------------------------------------
-               fluidRow(
-                 # Sidebar with a slider input for number of bins 
-                 column(width = 4,
-                        #h4("X-Axis"),
-                        dateInput("today.override", 
-                                  paste0("Override today's date (", Sys.Date(), "):")),
-                        dateRangeInput("date.range1",
-                                       "Date range for graphs:", 
-                                       start = Sys.Date() - 30,
-                                       end = Sys.Date() + 15)),
-                 column(width = 6,
-                        #h4("Y-Axis"),
-                        numericInput("min.flow", "Minimum Flow:",
-                                     NA, min = 0, max = 10 * 9,
-                                     width = "110px"),
-                        numericInput("max.flow", "Maximum Flow:",
-                                     NA, min = 0, max = 10 * 9,
-                                     width = "110px")
-                        )#,
-#                 div(style = "height:200px;background-color: gray;")
-               ), # End fluidRow
-               #----------------------------------------------------------------------------
-               # Horizontal lin break
-               tags$hr(),
-               #----------------------------------------------------------------------------
-               fluidRow(
-                 # Show a plot of the generated distribution
-                 textOutput("This is a test"),
-                 plotOutput("constant_lagk", width = "100%")
-               )# End fluidRow
-      ), # End tabPanel "Situational Awareness"
-      #----------------------------------------------------------------------------
-      tabPanel("Variable Lag-K"),
-      #----------------------------------------------------------------------------
-      tabPanel("Other")
-      #----------------------------------------------------------------------------
-    ), style = 'width: 1000px; height: 1000px') # End tabsetPanel and End div
+      tabsetPanel(
+        
+        tabPanel("Situational Awareness",
+                 #----------------------------------------------------------------------------
+                 fluidRow(
+                   # Sidebar with a slider input for number of bins 
+                   column(width = 4,
+                          # Line break.
+                          tags$br(),
+                          #h4("X-Axis"),
+                          dateInput("today.override", 
+                                    paste0("Override today's date (", Sys.Date(), "):")),
+                          dateRangeInput("date.range1",
+                                         "Date range for graphs:", 
+                                         start = Sys.Date() - 30,
+                                         end = Sys.Date() + 15)),
+                   column(width = 6,
+                          # Line break.
+                          tags$br(),
+                          #h4("Y-Axis"),
+                          numericInput("min.flow", "Minimum Flow:",
+                                       NA, min = 0, max = 10 * 9,
+                                       width = "110px"),
+                          numericInput("max.flow", "Maximum Flow:",
+                                       NA, min = 0, max = 10 * 9,
+                                       width = "110px")
+                   )#,
+                   #                 div(style = "height:200px;background-color: gray;")
+                 ), # End fluidRow
+                 #----------------------------------------------------------------------------
+                 # Horizontal line break
+                 tags$hr(),
+                 tags$br(),
+                 #----------------------------------------------------------------------------
+                 fluidRow(
+                   # Show a plot of the generated distribution
+                   plotOutput("constant_lagk", width = "100%")
+                 ), # End fluidRow
+                 
+                 #----------------------------------------------------------------------------
+                 # Horizontal line break
+                 tags$hr(),
+                 tags$br(),
+                 #----------------------------------------------------------------------------
+                 fluidRow(
+                   tags$h2("MRAFC"),
+                   plotOutput("marfc", width = "100%")
+                 )
+                 
+        ), # End tabPanel "Situational Awareness"
+        #----------------------------------------------------------------------------
+        tabPanel("MARFC"
+                 
+                 
+        ), # End tabPanel "MARFC"
+        #----------------------------------------------------------------------------
+        tabPanel("Variable Lag-K")
+        #----------------------------------------------------------------------------
+      ), style = 'width: 1000px; height: 1000px') # End tabsetPanel and End div
   ) # End mainPanel
   
 ) # End fluidPage

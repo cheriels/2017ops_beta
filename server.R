@@ -19,7 +19,8 @@ shinyServer(function(input, output) {
   # Situational Awareness (Tab 1)
   source("scripts/constant_lagk.R", local = TRUE)
   #----------------------------------------------------------------------------
-  
+  # MARFC (Tab 2)
+  source("scripts/marfc.R", local = TRUE)
   #----------------------------------------------------------------------------
   
   #----------------------------------------------------------------------------
