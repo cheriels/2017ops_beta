@@ -56,7 +56,7 @@ output$constant_lagk <- renderPlot({
   #--------------------------------------------------------------------------
   
   # plot flows
-  ggplot(upstr.df, aes(x = date, y = flow,
+  final.plot <- ggplot(upstr.df, aes(x = date, y = flow,
                        color = gage, size = gage,
                        linetype = gage)) + 
     geom_line() +
@@ -81,8 +81,13 @@ output$constant_lagk <- renderPlot({
     geom_hline(yintercept = 2000, color = "red",
                linetype = "longdash", size = 0.7) +
     theme(legend.title = element_blank(),
-          legend.text = element_text(size = 20))
-
+          legend.text = element_text(size = 15),
+          axis.text = element_text(size = 15),
+          axis.title = element_text(size = 15))
+  if (!is.na(input$min.flow) || !is.na(input$max.flow)) {
+    final.plot <- final.plot + ylim(input$min.flow, input$max.flow)
+  }
+  final.plot
   #--------------------------------------------------------------------------
   
   # plot flows

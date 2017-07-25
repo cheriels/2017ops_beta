@@ -22,37 +22,48 @@ shinyUI(fluidPage(
   # and the Little Falls trigger for enhanced drought operations.
   #----------------------------------------------------------------------------
   mainPanel(
+    div(
     tabsetPanel(
+
       tabPanel("Situational Awareness",
-               fluidRow(
-                 # Title of first tab
-                 column(width = 6,
-                        h4("Situational Awareness"))
-               ), # End fluidRow
                #----------------------------------------------------------------------------
                fluidRow(
                  # Sidebar with a slider input for number of bins 
-                 column(width = 6,
-                        dateInput("today.override","Optional override of today's date:"),
+                 column(width = 4,
+                        #h4("X-Axis"),
+                        dateInput("today.override", 
+                                  paste0("Override today's date (", Sys.Date(), "):")),
                         dateRangeInput("date.range1",
                                        "Date range for graphs:", 
                                        start = Sys.Date() - 30,
                                        end = Sys.Date() + 15)),
-                 column(width = 6, tags$b(paste("Today's date is ", Sys.Date())))
+                 column(width = 6,
+                        #h4("Y-Axis"),
+                        numericInput("min.flow", "Minimum Flow:",
+                                     NA, min = 0, max = 10 * 9,
+                                     width = "110px"),
+                        numericInput("max.flow", "Maximum Flow:",
+                                     NA, min = 0, max = 10 * 9,
+                                     width = "110px")
+                        )#,
+#                 div(style = "height:200px;background-color: gray;")
                ), # End fluidRow
+               #----------------------------------------------------------------------------
+               # Horizontal lin break
+               tags$hr(),
                #----------------------------------------------------------------------------
                fluidRow(
                  # Show a plot of the generated distribution
                  textOutput("This is a test"),
-                 plotOutput("constant_lagk")
-               ) # End fluidRow
+                 plotOutput("constant_lagk", width = "100%")
+               )# End fluidRow
       ), # End tabPanel "Situational Awareness"
       #----------------------------------------------------------------------------
       tabPanel("Variable Lag-K"),
       #----------------------------------------------------------------------------
       tabPanel("Other")
       #----------------------------------------------------------------------------
-    ) # End tabsetPanel
+    ), style = 'width: 1000px; height: 1000px') # End tabsetPanel and End div
   ) # End mainPanel
   
 ) # End fluidPage
