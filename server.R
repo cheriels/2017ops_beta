@@ -17,12 +17,14 @@ library(data.table)
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
   #----------------------------------------------------------------------------
-  # Situational Awareness (Tab 1)
+  # TAB 1
+  # Situational Awareness (sa)
+  #----------------------------------------------------------------------------
   source("scripts/constant_lagk.R", local = TRUE)
   #----------------------------------------------------------------------------
-  # MARFC (Tab 2)
-  source("scripts/marfc.R", local = TRUE)
+  # TAB 2
+  # One-Day Operations (odo)
   #----------------------------------------------------------------------------
-  
+  source("scripts/odo.R", local = TRUE)
   #----------------------------------------------------------------------------
 })

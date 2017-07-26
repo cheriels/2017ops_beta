@@ -35,7 +35,7 @@ shinyUI(fluidPage(
                           #h4("X-Axis"),
                           dateInput("today.override", 
                                     paste0("Override today's date (", Sys.Date(), "):")),
-                          dateRangeInput("date.range1",
+                          dateRangeInput("date.range.sa",
                                          "Date range for graphs:", 
                                          start = Sys.Date() - 30,
                                          end = Sys.Date() + 15)),
@@ -43,10 +43,10 @@ shinyUI(fluidPage(
                           # Line break.
                           tags$br(),
                           #h4("Y-Axis"),
-                          numericInput("min.flow", "Minimum Flow:",
+                          numericInput("min.flow.sa", "Minimum Flow:",
                                        NA, min = 0, max = 10 * 9,
                                        width = "110px"),
-                          numericInput("max.flow", "Maximum Flow:",
+                          numericInput("max.flow.sa", "Maximum Flow:",
                                        NA, min = 0, max = 10 * 9,
                                        width = "110px")
                    )#,
@@ -58,23 +58,44 @@ shinyUI(fluidPage(
                  tags$br(),
                  #----------------------------------------------------------------------------
                  fluidRow(
+                   
                    # Show a plot of the generated distribution
                    plotOutput("constant_lagk", width = "100%")
-                 ), # End fluidRow
+                 ) # End fluidRow
                  
-                 #----------------------------------------------------------------------------
-                 # Horizontal line break
-                 tags$hr(),
-                 tags$br(),
-                 #----------------------------------------------------------------------------
-                 fluidRow(
-                   tags$h2("MRAFC"),
-                   plotOutput("marfc", width = "100%")
-                 )
+
                  
         ), # End tabPanel "Situational Awareness"
         #----------------------------------------------------------------------------
-        tabPanel("MARFC"
+        tabPanel("One-Day Operations",
+                 fluidRow(
+                 # Sidebar with a slider input for number of bins 
+                 column(width = 4,
+                        # Line break.
+                        tags$br(),
+                        #h4("X-Axis"),
+                        dateInput("today.override", 
+                                  paste0("Override today's date (", Sys.Date(), "):")),
+                        dateRangeInput("date.range.odo",
+                                       "Date range for graphs:", 
+                                       start = Sys.Date() - 7,
+                                       end = Sys.Date() + 7)),
+                 column(width = 6,
+                        # Line break.
+                        tags$br(),
+                        #h4("Y-Axis"),
+                        numericInput("min.flow.odo", "Minimum Flow:",
+                                     NA, min = 0, max = 10 * 9,
+                                     width = "110px"),
+                        numericInput("max.flow.odo", "Maximum Flow:",
+                                     NA, min = 0, max = 10 * 9,
+                                     width = "110px")
+                 )
+                 ),
+                 tags$hr(),
+                 fluidRow(
+                     plotOutput("marfc", width = "100%")
+                 )
                  
                  
         ), # End tabPanel "MARFC"

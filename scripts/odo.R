@@ -1,11 +1,23 @@
 
 #----------------------------------------------------------------------------
-output$marfc <- renderPlot({
+output$odo<- renderPlot({
+  #--------------------------------------------------------------------------
+  #todays.date <- as.Date(input$today.override)
+  start.date <- as.Date(input$date.range.odo[1]) %>% 
+    paste("00:00:00") %>% 
+    as.POSIXct()
+  end.date <- as.Date(input$date.range.odo[2]) %>% 
+    paste("00:00:00") %>% 
+    as.POSIXct()
+  #--------------------------------------------------------------------------
+  sub.df <- marfc.df %>% 
+    dplyr::filter(date_time >= start.date & date_time <= end.date)
+  #--------------------------------------------------------------------------
   labels.vec <- c("Forecast", "Observed")
   breaks.vec <- c("forecast", "observed")
   #----------------------------------------------------------------------------
   # plot flows
-  final.plot <- ggplot(marfc.df, aes(x = date_time, y = flow,
+  final.plot <- ggplot(sub.df, aes(x = date_time, y = flow,
                                      color = type,
                                      linetype = type)) + 
     geom_line(size = 2) +
@@ -25,9 +37,10 @@ output$marfc <- renderPlot({
     theme(legend.title = element_blank(),
           legend.text = element_text(size = 15),
           axis.text = element_text(size = 15),
-          axis.title = element_text(size = 15))
-  if (!is.na(input$min.flow) || !is.na(input$max.flow)) {
-    final.plot <- final.plot + ylim(input$min.flow, input$max.flow)
+          axis.title = element_text(size = 15)) +
+    scale_x_datetime(limits = c(start.date, end.date))
+  if (!is.na(input$min.flow.odo) || !is.na(input$max.flow.odo)) {
+    final.plot <- final.plot + ylim(input$min.flow.odo, input$max.flow.odo)
   }
   final.plot
 }) # End output$marfc
