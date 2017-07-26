@@ -6,14 +6,6 @@
 #
 #    http://shiny.rstudio.com/
 #
-
-library(shiny)
-library(ggplot2)
-library(dplyr)
-library(rlang)
-library(data.table)
-
-
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
   #----------------------------------------------------------------------------
