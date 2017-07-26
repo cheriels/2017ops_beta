@@ -32,8 +32,8 @@ lag_k <- function(flow.df, gage, todays.date, start.date, lag.days = 1) {
 output$constant_lagk <- renderPlot({
   #--------------------------------------------------------------------------
   todays.date <- as.Date(input$today.override)
-  start.date <- as.Date(input$date.range1[1])
-  end.date <- as.Date(input$date.range1[2])
+  start.date <- as.Date(input$date.range.sa[1])
+  end.date <- as.Date(input$date.range.sa[2])
   #--------------------------------------------------------------------------
   # Add recessions and lags - want to do this using function in future!
   upstr.df <- flows.df %>% 
@@ -83,9 +83,10 @@ output$constant_lagk <- renderPlot({
     theme(legend.title = element_blank(),
           legend.text = element_text(size = 15),
           axis.text = element_text(size = 15),
-          axis.title = element_text(size = 15))
-  if (!is.na(input$min.flow) || !is.na(input$max.flow)) {
-    final.plot <- final.plot + ylim(input$min.flow, input$max.flow)
+          axis.title = element_text(size = 15)) +
+    scale_x_date(limits = c(start.date, end.date))
+  if (!is.na(input$min.flow.sa) || !is.na(input$max.flow.sa)) {
+    final.plot <- final.plot + ylim(input$min.flow.sa, input$max.flow.sa)
   }
   final.plot
   #--------------------------------------------------------------------------
