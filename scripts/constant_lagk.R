@@ -37,7 +37,7 @@ output$constant_lagk <- renderPlot({
   end.date <- as.Date(input$date.range.sa[2])
   #--------------------------------------------------------------------------
   # Add recessions and lags - want to do this using function in future!
-  upstr.df <- flows.df %>% 
+  upstr.df <- daily.df %>% 
     select(date, lfalls, por, monocacy) %>% 
     lag_k(por, todays.date, start.date, lag.days = 1)
   #str(upstr)

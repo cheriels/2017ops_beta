@@ -94,7 +94,7 @@ shinyUI(fluidPage(
                  ),
                  tags$hr(),
                  fluidRow(
-                     plotOutput("marfc", width = "100%")
+                     plotOutput("odo", width = "100%")
                  )
                  
                  
