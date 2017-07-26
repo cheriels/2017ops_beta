@@ -12,11 +12,12 @@ output$odo<- renderPlot({
   #--------------------------------------------------------------------------
   sub.df <- hourly.df %>% 
     dplyr::filter(date_time >= start.date & date_time <= end.date) %>% 
+    variable_lagk(por, "por_1", klag.df) %>% 
     tidyr::gather(gage, flow, 2:ncol(.)) %>% 
     dplyr::filter(!is.na(flow))
   #--------------------------------------------------------------------------
-  labels.vec <- c("Little Falls", "MARFC Forecast", "Point of Rocks")
-  breaks.vec <- c("lfalls", "marfc", "por")
+  labels.vec <- c("Little Falls", "MARFC Forecast", "Point of Rocks", "Predicted")
+  breaks.vec <- c("lfalls", "marfc", "por", "predicted")
   #----------------------------------------------------------------------------
   # plot flows
   final.plot <- ggplot(sub.df, aes(x = date_time, y = flow,
@@ -27,12 +28,12 @@ output$odo<- renderPlot({
     scale_linetype_manual(name = "type",
                           labels = labels.vec,
                           breaks = breaks.vec, 
-                          values = c("solid", "dashed", "solid")) +
+                          values = c("solid", "dashed", "solid", "dashed")) +
     # Has to be in alphabetical order
     scale_colour_manual(name = "type",
                         labels = labels.vec,
                         breaks = breaks.vec, 
-                        values = c("#0072B2", "#009E73", "#E69F00")) +
+                        values = c("#0072B2", "#009E73", "#E69F00", "#56B4E9")) +
     theme_minimal() +
     xlab("Date Time") +
     ylab("Flow (CFS)") +
