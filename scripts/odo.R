@@ -1,6 +1,6 @@
 
 #----------------------------------------------------------------------------
-output$odo<- renderPlot({
+output$odo <- renderPlot({
   #--------------------------------------------------------------------------
   #todays.date <- as.Date(input$today.override)
   start.date <- as.Date(input$date.range.odo[1]) %>% 
@@ -11,29 +11,35 @@ output$odo<- renderPlot({
     as.POSIXct()
   #--------------------------------------------------------------------------
   sub.df <- hourly.df %>% 
+    dplyr::select(date_time, por, lfalls, marfc) %>% 
     dplyr::filter(date_time >= start.date & date_time <= end.date) %>% 
     variable_lagk(por, "por_1", klag.df) %>% 
     tidyr::gather(gage, flow, 2:ncol(.)) %>% 
     dplyr::filter(!is.na(flow))
   #--------------------------------------------------------------------------
   labels.vec <- c("Little Falls", "MARFC Forecast", "Point of Rocks", "Predicted")
-  breaks.vec <- c("lfalls", "marfc", "por", "predicted")
+#  breaks.vec <- c("lfalls", "marfc", "por", "predicted")
   #----------------------------------------------------------------------------
   # plot flows
   final.plot <- ggplot(sub.df, aes(x = date_time, y = flow,
-                                     color = gage,
-                                     linetype = gage)) + 
+                                   color = gage,
+                                   linetype = gage)) + 
     geom_line(size = 2) +
     # Has to be in alphabetical order
     scale_linetype_manual(name = "type",
                           labels = labels.vec,
-                          breaks = breaks.vec, 
-                          values = c("solid", "dashed", "solid", "dashed")) +
+                          values = c("lfalls" = "solid",
+                                     "marfc" = "dashed",
+                                     "por" = "solid",
+                                     "predicted" = "dashed")) +
     # Has to be in alphabetical order
     scale_colour_manual(name = "type",
                         labels = labels.vec,
-                        breaks = breaks.vec, 
-                        values = c("#0072B2", "#009E73", "#E69F00", "#56B4E9")) +
+                        values = c("lfalls" = "#0072B2",
+                                   "marfc" = "#009E73",
+                                   "por" = "#E69F00",
+                                   "predicted" = "#56B4E9")) +
+    
     theme_minimal() +
     xlab("Date Time") +
     ylab("Flow (CFS)") +
