@@ -30,9 +30,10 @@ marfc.forecast <- marfc.df %>%
 #------------------------------------------------------------------------------
 # Import hourly flow data.
 hourly.df <- data.table::fread("data/flow_hourly_cfs.csv", data.table = FALSE) %>% 
-  dplyr::select(date_time, x1638500, x1646500) %>% 
+  dplyr::select(date_time, x1638500, x1646500, x1598500) %>% 
   dplyr::rename(por = x1638500,
-                lfalls = x1646500) %>% 
+                lfalls = x1646500,
+                luke = x1598500) %>% 
   dplyr::mutate(date_time = lubridate::ymd_hm(date_time)) %>% 
   dplyr::full_join(marfc.forecast, by = "date_time")
 #------------------------------------------------------------------------------
@@ -44,7 +45,11 @@ klag.df <- data.table::fread("data/k_lag.csv", data.table = FALSE) %>%
   rename(lag = lag_to_lfall) # REMOVE in WHEN MORE GAGES ADDED************************************************
 #------------------------------------------------------------------------------
 source("functions/variable_lagk_func.R", local = TRUE)
+#test <- variable_lagk(hourly.df, por, "por_1", klag.df)
 #------------------------------------------------------------------------------
-
+withdrawals.df <- data.table::fread("data/current/withdrawal_daily_mgd.csv",
+                                 data.table = FALSE) %>% 
+  dplyr::rename(date_time = date) %>% 
+  dplyr::mutate(date_time = lubridate::ymd(date_time))
 #------------------------------------------------------------------------------
 
