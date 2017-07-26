@@ -10,27 +10,29 @@ output$odo<- renderPlot({
     paste("00:00:00") %>% 
     as.POSIXct()
   #--------------------------------------------------------------------------
-  sub.df <- marfc.df %>% 
-    dplyr::filter(date_time >= start.date & date_time <= end.date)
+  sub.df <- hourly.df %>% 
+    dplyr::filter(date_time >= start.date & date_time <= end.date) %>% 
+    tidyr::gather(gage, flow, 2:ncol(.)) %>% 
+    dplyr::filter(!is.na(flow))
   #--------------------------------------------------------------------------
-  labels.vec <- c("Forecast", "Observed")
-  breaks.vec <- c("forecast", "observed")
+  labels.vec <- c("Little Falls", "MARFC Forecast", "Point of Rocks")
+  breaks.vec <- c("lfalls", "marfc", "por")
   #----------------------------------------------------------------------------
   # plot flows
   final.plot <- ggplot(sub.df, aes(x = date_time, y = flow,
-                                     color = type,
-                                     linetype = type)) + 
+                                     color = gage,
+                                     linetype = gage)) + 
     geom_line(size = 2) +
     # Has to be in alphabetical order
     scale_linetype_manual(name = "type",
                           labels = labels.vec,
                           breaks = breaks.vec, 
-                          values = c("dashed", "solid")) +
+                          values = c("solid", "dashed", "solid")) +
     # Has to be in alphabetical order
     scale_colour_manual(name = "type",
                         labels = labels.vec,
                         breaks = breaks.vec, 
-                        values = c("#56B4E9", "#0072B2")) +
+                        values = c("#0072B2", "#009E73", "#E69F00")) +
     theme_minimal() +
     xlab("Date Time") +
     ylab("Flow (CFS)") +
