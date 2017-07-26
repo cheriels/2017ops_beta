@@ -79,7 +79,7 @@ shinyUI(fluidPage(
                         dateRangeInput("date.range.odo",
                                        "Date range for graphs:", 
                                        start = Sys.Date() - 7,
-                                       end = Sys.Date() + 7)),
+                                       end = Sys.Date() + 5)),
                  column(width = 6,
                         # Line break.
                         tags$br(),
