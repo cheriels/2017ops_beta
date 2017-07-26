@@ -31,7 +31,9 @@ variable_lagk <- function(long.df, gage.name, por.lag, klag.df) {
     dplyr::select(-lag) %>% 
     dplyr::full_join(lag.df, by = "date_time") %>% 
     dplyr::mutate(predicted = c(rep(NA, which.min(is.na(predicted)) - 1),
-                                zoo::na.approx(predicted))) %>% 
+                                zoo::na.approx(predicted))) %>% #,
+#                  residual = rlang::UQ(gage.name) - predicted,
+#                  rmse = sqrt(mean(residual ^ 2, na.rm = TRUE))) %>% 
     dplyr::select(-range, -lower_flow, - upper_flow, - lower_lag, -upper_lag)
   #------------------------------------------------------------------------------
   return(final.df)
