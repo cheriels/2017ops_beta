@@ -98,9 +98,69 @@ shinyUI(fluidPage(
                  )
                  
                  
-        ), # End tabPanel "MARFC"
+        ), # End tabPanel "One-Day Operations"
         #----------------------------------------------------------------------------
-        tabPanel("Variable Lag-K")
+        tabPanel("North Branch Release",
+                 fluidRow(
+                   # Sidebar with a slider input for number of bins 
+                   column(width = 4,
+                          # Line break.
+                          tags$br(),
+                          #h4("X-Axis"),
+                          dateInput("today.override", 
+                                    paste0("Override today's date (", Sys.Date(), "):")),
+                          dateRangeInput("date.range.nbr",
+                                         "Date range for graphs:", 
+                                         start = Sys.Date() - 7,
+                                         end = Sys.Date() + 5)),
+                   column(width = 6,
+                          # Line break.
+                          tags$br(),
+                          #h4("Y-Axis"),
+                          numericInput("min.flow.nbr", "Minimum Flow:",
+                                       0, min = 0, max = 10 * 9,
+                                       width = "110px"),
+                          numericInput("max.flow.nbr", "Maximum Flow:",
+                                       NA, min = 0, max = 10 * 9,
+                                       width = "110px")
+                   )
+                 ),
+                 tags$hr(),
+                 fluidRow(
+                   plotOutput("nbr", width = "100%")
+                 )
+                 ),
+        #----------------------------------------------------------------------------
+        tabPanel("Demand Time Series",
+                 fluidRow(
+                   # Sidebar with a slider input for number of bins 
+                   column(width = 4,
+                          # Line break.
+                          tags$br(),
+                          #h4("X-Axis"),
+                          dateInput("today.override", 
+                                    paste0("Override today's date (", Sys.Date(), "):")),
+                          dateRangeInput("date.range.dts",
+                                         "Date range for graphs:", 
+                                         start = Sys.Date() - 7,
+                                         end = Sys.Date() + 5)),
+                   column(width = 6,
+                          # Line break.
+                          tags$br(),
+                          #h4("Y-Axis"),
+                          numericInput("min.flow.dts", "Minimum Flow:",
+                                       0, min = 0, max = 10 * 9,
+                                       width = "110px"),
+                          numericInput("max.flow.dts", "Maximum Flow:",
+                                       NA, min = 0, max = 10 * 9,
+                                       width = "110px")
+                   )
+                 ),
+                 tags$hr(),
+                 fluidRow(
+                   plotOutput("dts", width = "100%")
+                 )
+                 )
         #----------------------------------------------------------------------------
       ), style = 'width: 1000px; height: 1000px') # End tabsetPanel and End div
   ) # End mainPanel
