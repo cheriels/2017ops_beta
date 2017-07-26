@@ -1,3 +1,9 @@
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(rlang)
+library(data.table)
+library(zoo)
 #------------------------------------------------------------------------------
 # Import daily flow data.
 daily.df <- read.csv("data/flow_daily_cfs.csv", stringsAsFactors = FALSE) %>% 
@@ -30,9 +36,14 @@ hourly.df <- data.table::fread("data/flow_hourly_cfs.csv", data.table = FALSE) %
   dplyr::mutate(date_time = lubridate::ymd_hm(date_time)) %>% 
   dplyr::full_join(marfc.forecast, by = "date_time")
 #------------------------------------------------------------------------------
-
+# Import variable lag-k reference table.
+klag.df <- data.table::fread("data/k_lag.csv", data.table = FALSE) %>% 
+  rename_all(tolower) %>% 
+  mutate(gage = tolower(gage)) %>% 
+  select(-lag) %>% # REMOVE in WHEN MORE GAGES ADDED**********************************************************
+  rename(lag = lag_to_lfall) # REMOVE in WHEN MORE GAGES ADDED************************************************
 #------------------------------------------------------------------------------
-
+source("functions/variable_lagk_func.R", local = TRUE)
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
