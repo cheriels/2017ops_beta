@@ -1,40 +1,41 @@
 tabPanel("North Branch Release",
          fluidRow(
-           # Sidebar with a slider input for number of bins 
-           column(width = 3,
-                  # Line break.
-                  tags$br(),
-                  #h4("X-Axis"),
-                  dateInput("today.override", 
-                            paste0("Override today's date (", Sys.Date(), "):")),
-                  dateRangeInput("date.range.nbr",
-                                 "Date range for graphs:", 
-                                 start = Sys.Date() - 7,
-                                 end = Sys.Date() + 5)),
-           column(width = 2,
-                  # Line break.
-                  tags$br(),
-                  #h4("Y-Axis"),
-                  numericInput("min.flow.nbr", "Minimum Flow:",
-                               0, min = 0, max = 10 * 9,
-                               width = "120px"),
-                  numericInput("max.flow.nbr", "Maximum Flow:",
-                               NA, min = 0, max = 10 * 9,
-                               width = "120px")
+           fluidRow(
+             align = "center",
+             plotOutput("nbr", height = "350px", width = "95%")
            ),
-           column(width = 3,
-                  tags$br(),
-                  tags$br(),
-                  checkboxGroupInput("gages.nbr", NULL,
-                                     c("Luke" = "luke",
-                                       "Little Falls" = "lfalls"),
-                                     selected = c("luke", "lfalls")),
-                  actionButton("reset.nbr", "Reset"),
-                  actionButton("clear.nbr", "Clear")
-           )
-         ),
-         tags$hr(),
-         fluidRow(
-           plotOutput("nbr", width = "100%")
-         )
-)
+           #-------------------------------------------------------------------
+           wellPanel(
+             fluidRow(
+               # Sidebar with a slider input for number of bins 
+               column(width = 4,
+                      #align = "center",
+                      dateInput("today.override.nbr", 
+                                paste0("Today's Date (", Sys.Date(), "):"),
+                                width = "200px"),
+                      dateRangeInput("date.range.nbr",
+                                     "Date Range:", 
+                                     start = Sys.Date() - 5,
+                                     end = Sys.Date() + 5,
+                                     width = "200px")),
+               column(width = 4,
+                      numericInput("min.flow.nbr", "Minimum Flow:",
+                                   0, min = 0, max = 10 * 9,
+                                   width = "120px"),
+                      numericInput("max.flow.nbr", "Maximum Flow:",
+                                   NA, min = 0, max = 10 * 9,
+                                   width = "120px")
+               ),
+               column(width = 4,
+                      tags$br(),
+                      checkboxGroupInput("gages.nbr", NULL,
+                                         c("Luke" = "luke",
+                                           "Little Falls" = "lfalls"),
+                                         selected = c("luke", "lfalls")),
+                      actionButton("reset.nbr", "Reset"),
+                      actionButton("clear.nbr", "Clear")
+               )
+             ) # End fluidRow
+           ) # End wellPanel
+         ) # fluidRow
+) # End tabPanel

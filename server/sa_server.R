@@ -1,3 +1,14 @@
+# Update the dateRangeInput if start date changes
+observeEvent(input$date.range.sa[2], {
+  start.date <- as.Date(input$date.range.sa[1])
+  end.date <- as.Date(input$date.range.sa[2])
+  # If end date is earlier than start date, update the end date to be the same as the new start date
+  if (end.date < start.date) {
+    end.date = start.date + 2
+  }
+  updateDateRangeInput(session, "date.range.sa", start = start.date,
+                       end = end.date)
+})
 #----------------------------------------------------------------------------
 #----------------------------------------------------------------------------
 # Constant Lag-K
@@ -45,7 +56,7 @@ observeEvent(input$clear.sa, {
 #----------------------------------------------------------------------------
 output$constant_lagk <- renderPlot({
   #--------------------------------------------------------------------------
-  todays.date <- as.Date(input$today.override)
+  todays.date <- as.Date(input$today.override.sa)
   start.date <- as.Date(input$date.range.sa[1])
   end.date <- as.Date(input$date.range.sa[2])
   #--------------------------------------------------------------------------
@@ -55,8 +66,6 @@ output$constant_lagk <- renderPlot({
     dplyr::filter(date >= start.date - lubridate::days(3) &
                     date <= end.date + lubridate::days(1)) %>% 
     lag_k(por, todays.date, start.date, lag.days = 1)
-  #--------------------------------------------------------------------------
-  
   #--------------------------------------------------------------------------
   # recess and lag Monocacy flows
   upstr.df <- upstr.df %>% 

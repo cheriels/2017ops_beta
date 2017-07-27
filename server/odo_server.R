@@ -1,3 +1,14 @@
+# Update the dateRangeInput if start date changes
+observeEvent(input$date.range.odo, {
+  start.date <- as.Date(input$date.range.odo[1])
+  end.date <- as.Date(input$date.range.odo[2])
+  # If end date is earlier than start date, update the end date to be the same as the new start date
+  if (end.date < start.date) {
+    end.date = start.date + 2
+  }
+  updateDateRangeInput(session, "date.range.odo", start = start.date,
+                       end = end.date)
+})
 #----------------------------------------------------------------------------
 observeEvent(input$reset.odo, {
   updateCheckboxGroupInput(session, "gages.odo", 
@@ -23,6 +34,11 @@ output$odo <- renderPlot({
   end.date <- as.Date(input$date.range.odo[2]) %>% 
     paste("00:00:00") %>% 
     as.POSIXct()
+  #--------------------------------------------------------------------------
+  if (start.date > end.date) return(NULL)
+  if (max(hourly.df$date_time) < start.date - lubridate::days(3)) {
+    start.date <- max(hourly.df$date_time) - lubridate::days(3)
+  }
   #--------------------------------------------------------------------------
   sub.df <- hourly.df %>% 
     dplyr::select(date_time, por, lfalls, marfc) %>% 
