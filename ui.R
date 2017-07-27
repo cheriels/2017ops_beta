@@ -21,10 +21,12 @@ shinyUI(fluidPage(
   # I want to add to the graph the Point of Rocks trigger for daily monitoring,
   # and the Little Falls trigger for enhanced drought operations.
   #----------------------------------------------------------------------------
+  headerPanel(
+    tags$strong("ICPRB")
+  ), 
   mainPanel(
     div(
       tabsetPanel(
-        
         tabPanel("Situational Awareness",
                  #----------------------------------------------------------------------------
                  fluidRow(
@@ -62,9 +64,6 @@ shinyUI(fluidPage(
                    # Show a plot of the generated distribution
                    plotOutput("constant_lagk", width = "100%")
                  ) # End fluidRow
-                 
-
-                 
         ), # End tabPanel "Situational Awareness"
         #----------------------------------------------------------------------------
         tabPanel("One-Day Operations",
