@@ -14,7 +14,7 @@
 library(shiny)
 
 # Define UI for application that draws a histogram
-shinyUI(fluidPage(
+shinyUI(fluidPage(theme = shinythemes::shinytheme("spacelab"),
   # The first tab, Situational Awareness. is meant to give ops staff a first look at where we are today
   # and what needs to be done.
   # Right now I'm working on a graph of Little Falls flow, predicted Little Falls flow, and Point of Rocks flow.
@@ -47,10 +47,10 @@ shinyUI(fluidPage(
                           #h4("Y-Axis"),
                           numericInput("min.flow.sa", "Minimum Flow:",
                                        0, min = 0, max = 10 * 9,
-                                       width = "110px"),
+                                       width = "120px"),
                           numericInput("max.flow.sa", "Maximum Flow:",
                                        NA, min = 0, max = 10 * 9,
-                                       width = "110px")
+                                       width = "120px")
                           ),
                    column(width = 3,
                           tags$br(),
@@ -96,10 +96,10 @@ shinyUI(fluidPage(
                         #h4("Y-Axis"),
                         numericInput("min.flow.odo", "Minimum Flow:",
                                      0, min = 0, max = 10 * 9,
-                                     width = "110px"),
+                                     width = "120px"),
                         numericInput("max.flow.odo", "Maximum Flow:",
                                      NA, min = 0, max = 10 * 9,
-                                     width = "110px")
+                                     width = "120px")
                  ),
                  column(width = 3,
                         tags$br(),
@@ -141,10 +141,10 @@ shinyUI(fluidPage(
                           #h4("Y-Axis"),
                           numericInput("min.flow.nbr", "Minimum Flow:",
                                        0, min = 0, max = 10 * 9,
-                                       width = "110px"),
+                                       width = "120px"),
                           numericInput("max.flow.nbr", "Maximum Flow:",
                                        NA, min = 0, max = 10 * 9,
-                                       width = "110px")
+                                       width = "120px")
                    ),
                    column(width = 3,
                           tags$br(),
@@ -181,10 +181,10 @@ shinyUI(fluidPage(
                           #h4("Y-Axis"),
                           numericInput("min.flow.dts", "Minimum Flow:",
                                        0, min = 0, max = 10 * 9,
-                                       width = "110px"),
+                                       width = "120px"),
                           numericInput("max.flow.dts", "Maximum Flow:",
                                        NA, min = 0, max = 10 * 9,
-                                       width = "110px")
+                                       width = "120px")
                    ),
                    column(width = 3,
                           tags$br(),
@@ -200,11 +200,11 @@ shinyUI(fluidPage(
                                                           "wssc_potomac_prod", "wssc_patuxent_prod")),
                           actionButton("reset.dts", "Reset"),
                           actionButton("clear.dts", "Clear")
+                 )
                  ),
                  tags$hr(),
                  fluidRow(
                    plotOutput("dts", width = "100%")
-                 )
                  )
         )
         #----------------------------------------------------------------------------
