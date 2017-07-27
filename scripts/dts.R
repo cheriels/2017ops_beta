@@ -36,7 +36,9 @@ output$dts <- renderPlot({
   #----------------------------------------------------------------------------
 #  labels.vec <- c("Little Falls", "Luke")
   #----------------------------------------------------------------------------
-  sub.df <- dplyr::filter(sub.df, gage %in% input$gages.dts)
+  sub.df <- dplyr::filter(sub.df, gage %in% input$gages.dts,
+                          date_time >= start.date  &
+                            date_time <= end.date)
   if (nrow(sub.df) == 0) return(NULL)
   #----------------------------------------------------------------------------
   # plot flows

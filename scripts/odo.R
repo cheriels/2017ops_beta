@@ -38,7 +38,9 @@ output$odo <- renderPlot({
                   "marfc" = "MARFC Forecast")
 #  breaks.vec <- c("lfalls", "marfc", "por", "predicted")
   #----------------------------------------------------------------------------
-  sub.df <- dplyr::filter(sub.df, gage %in% input$gages.odo)
+  sub.df <- dplyr::filter(sub.df, gage %in% input$gages.odo,
+                          date_time >= start.date  &
+                            date_time <= end.date)
   if (nrow(sub.df) == 0) return(NULL)
   #----------------------------------------------------------------------------
   # plot flows
