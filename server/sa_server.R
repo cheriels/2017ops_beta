@@ -107,10 +107,14 @@ output$constant_lagk <- renderPlot({
           legend.text = element_text(size = 15),
           axis.text = element_text(size = 15),
           axis.title = element_text(size = 15)) +
+          #panel.background = element_rect(fill = NA),
+          #panel.grid.major = element_line(colour = "#D3D3D3"),
+          #panel.grid.minor = element_line(colour = "#DCDCDC")) + 
     scale_x_date(limits = c(start.date, end.date))
   if (!is.na(input$min.flow.sa) || !is.na(input$max.flow.sa)) {
     final.plot <- final.plot + ylim(input$min.flow.sa, input$max.flow.sa)
   }
+  #plotly::ggplotly(final.plot, width = 1200)
   final.plot
   #--------------------------------------------------------------------------
   

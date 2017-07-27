@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-source("scripts/load_packages.R", local = TRUE)
+source("global/load_packages.R", local = TRUE)
 #------------------------------------------------------------------------------
 # Import daily flow data.
 daily.df <- read.csv("data/flow_daily_cfs.csv", stringsAsFactors = FALSE) %>% 

@@ -17,21 +17,21 @@ shinyServer(function(input, output, session) {
   # TAB 1
   # Situational Awareness (sa)
   #----------------------------------------------------------------------------
-  source("scripts/constant_lagk.R", local = TRUE)
+  source("server/sa_server.R", local = TRUE)
   #----------------------------------------------------------------------------
   # TAB 2
   # One-Day Operations (odo)
   #----------------------------------------------------------------------------
-  source("scripts/odo.R", local = TRUE)
+  source("server/odo_server.R", local = TRUE)
   #----------------------------------------------------------------------------
   # TAB 3
   # North Branch Release (nbr)
   #----------------------------------------------------------------------------
-  source("scripts/nbr.R", local = TRUE)
+  source("server/nbr_server.R", local = TRUE)
   #----------------------------------------------------------------------------
   # TAB 4
   # Demand Time Series (dts)
   #----------------------------------------------------------------------------
-  source("scripts/dts.R", local = TRUE)
+  source("server/dts_server.R", local = TRUE)
   #----------------------------------------------------------------------------
 })
