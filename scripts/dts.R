@@ -1,4 +1,21 @@
-
+#----------------------------------------------------------------------------
+observeEvent(input$reset.dts, {
+  updateCheckboxGroupInput(session, "gages.dts", 
+                           selected = c("wa_greatfalls", "wa_littlefalls", 
+                                        "fw_potomac_prod", "fw_griffith_prod",  
+                                        "wssc_potomac_prod", "wssc_patuxent_prod"))
+})
+#----------------------------------------------------------------------------
+observeEvent(input$clear.dts, {
+  updateCheckboxGroupInput(session, "gages.dts", "Variables to show:",
+                           c("wa_greatfalls" = "wa_greatfalls",
+                             "wa_littlefalls" = "wa_littlefalls",
+                             "fw_potomac_prod" = "fw_potomac_prod",
+                             "fw_griffith_prod" = "fw_griffith_prod",
+                             "wssc_potomac_prod" = "wssc_potomac_prod",
+                             "wssc_patuxent_prod" = "wssc_patuxent_prod"),
+                           selected = NULL)
+})
 #----------------------------------------------------------------------------
 output$dts <- renderPlot({
   #--------------------------------------------------------------------------
@@ -16,8 +33,11 @@ output$dts <- renderPlot({
                     date_time <= end.date + lubridate::days(1)) %>% 
     tidyr::gather(gage, flow, 2:ncol(.)) %>% 
     dplyr::filter(!is.na(flow))
-  #--------------------------------------------------------------------------
+  #----------------------------------------------------------------------------
 #  labels.vec <- c("Little Falls", "Luke")
+  #----------------------------------------------------------------------------
+  sub.df <- dplyr::filter(sub.df, gage %in% input$gages.dts)
+  if (nrow(sub.df) == 0) return(NULL)
   #----------------------------------------------------------------------------
   # plot flows
   final.plot <- ggplot(sub.df, aes(x = date_time, y = flow,

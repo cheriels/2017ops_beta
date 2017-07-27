@@ -41,7 +41,7 @@ shinyUI(fluidPage(
                                          "Date range for graphs:", 
                                          start = Sys.Date() - 30,
                                          end = Sys.Date() + 15)),
-                   column(width = 6,
+                   column(width = 2,
                           # Line break.
                           tags$br(),
                           #h4("Y-Axis"),
@@ -51,7 +51,18 @@ shinyUI(fluidPage(
                           numericInput("max.flow.sa", "Maximum Flow:",
                                        NA, min = 0, max = 10 * 9,
                                        width = "110px")
-                   )#,
+                          ),
+                   column(width = 3,
+                          tags$br(),
+                          checkboxGroupInput("gages.sa", "Variables to show:",
+                                             c("Point of Rocks" = "por",
+                                               "Little Falls" = "lfalls",
+                                               "Little Falls (Predicted)" = "lfalls_from_upstr"),
+                                             selected = c("por", "lfalls", "lfalls_from_upstr")),
+                          actionButton("reset.sa", "Reset"),
+                          actionButton("clear.sa", "Clear")
+                          )
+                   
                    #                 div(style = "height:200px;background-color: gray;")
                  ), # End fluidRow
                  #----------------------------------------------------------------------------
@@ -79,7 +90,7 @@ shinyUI(fluidPage(
                                        "Date range for graphs:", 
                                        start = Sys.Date() - 7,
                                        end = Sys.Date() + 5)),
-                 column(width = 6,
+                 column(width = 2,
                         # Line break.
                         tags$br(),
                         #h4("Y-Axis"),
@@ -89,6 +100,18 @@ shinyUI(fluidPage(
                         numericInput("max.flow.odo", "Maximum Flow:",
                                      NA, min = 0, max = 10 * 9,
                                      width = "110px")
+                 ),
+                 column(width = 3,
+                        tags$br(),
+                        checkboxGroupInput("gages.odo", "Variables to show:",
+                                           c("Point of Rocks" = "por",
+                                             "Little Falls" = "lfalls",
+                                             "Variable Lag-K" = "predicted",
+                                             "MARFC Forecast" = "marfc"),
+                                           selected = c("por", "lfalls",
+                                                        "predicted", "marfc")),
+                        actionButton("reset.odo", "Reset"),
+                        actionButton("clear.odo", "Clear")
                  )
                  ),
                  tags$hr(),
@@ -112,7 +135,7 @@ shinyUI(fluidPage(
                                          "Date range for graphs:", 
                                          start = Sys.Date() - 7,
                                          end = Sys.Date() + 5)),
-                   column(width = 6,
+                   column(width = 2,
                           # Line break.
                           tags$br(),
                           #h4("Y-Axis"),
@@ -122,6 +145,15 @@ shinyUI(fluidPage(
                           numericInput("max.flow.nbr", "Maximum Flow:",
                                        NA, min = 0, max = 10 * 9,
                                        width = "110px")
+                   ),
+                   column(width = 3,
+                          tags$br(),
+                          checkboxGroupInput("gages.nbr", "Variables to show:",
+                                             c("Luke" = "luke",
+                                               "Little Falls" = "lfalls"),
+                                             selected = c("luke", "lfalls")),
+                          actionButton("reset.nbr", "Reset"),
+                          actionButton("clear.nbr", "Clear")
                    )
                  ),
                  tags$hr(),
@@ -143,7 +175,7 @@ shinyUI(fluidPage(
                                          "Date range for graphs:", 
                                          start = Sys.Date() - 7,
                                          end = Sys.Date() + 5)),
-                   column(width = 6,
+                   column(width = 2,
                           # Line break.
                           tags$br(),
                           #h4("Y-Axis"),
@@ -153,13 +185,28 @@ shinyUI(fluidPage(
                           numericInput("max.flow.dts", "Maximum Flow:",
                                        NA, min = 0, max = 10 * 9,
                                        width = "110px")
-                   )
+                   ),
+                   column(width = 3,
+                          tags$br(),
+                          checkboxGroupInput("gages.dts", "Variables to show:",
+                                             c("wa_greatfalls" = "wa_greatfalls",
+                                               "wa_littlefalls" = "wa_littlefalls",
+                                               "fw_potomac_prod" = "fw_potomac_prod",
+                                               "fw_griffith_prod" = "fw_griffith_prod",
+                                               "wssc_potomac_prod" = "wssc_potomac_prod",
+                                               "wssc_patuxent_prod" = "wssc_patuxent_prod"),
+                                             selected = c("wa_greatfalls", "wa_littlefalls", 
+                                                          "fw_potomac_prod", "fw_griffith_prod",  
+                                                          "wssc_potomac_prod", "wssc_patuxent_prod")),
+                          actionButton("reset.dts", "Reset"),
+                          actionButton("clear.dts", "Clear")
                  ),
                  tags$hr(),
                  fluidRow(
                    plotOutput("dts", width = "100%")
                  )
                  )
+        )
         #----------------------------------------------------------------------------
       ), style = 'width: 1000px; height: 1000px') # End tabsetPanel and End div
   ) # End mainPanel

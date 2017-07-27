@@ -1,4 +1,15 @@
-
+#----------------------------------------------------------------------------
+observeEvent(input$reset.nbr, {
+  updateCheckboxGroupInput(session, "gages.nbr", 
+                           selected = c("luke", "lfalls"))
+})
+#----------------------------------------------------------------------------
+observeEvent(input$clear.nbr, {
+  updateCheckboxGroupInput(session, "gages.nbr", "Variables to show:",
+                           c("Luke" = "luke",
+                             "Little Falls" = "lfalls"),
+                           selected = NULL)
+})
 #----------------------------------------------------------------------------
 output$nbr <- renderPlot({
   #--------------------------------------------------------------------------
@@ -19,6 +30,9 @@ output$nbr <- renderPlot({
   #--------------------------------------------------------------------------
   labels.vec <- c("lfalls" = "Little Falls",
                   "luke" = "Luke")
+  #----------------------------------------------------------------------------
+  sub.df <- dplyr::filter(sub.df, gage %in% input$gages.nbr)
+  if (nrow(sub.df) == 0) return(NULL)
   #----------------------------------------------------------------------------
   # plot flows
   final.plot <- ggplot(sub.df, aes(x = date_time, y = flow,

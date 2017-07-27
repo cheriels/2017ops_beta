@@ -1,4 +1,18 @@
-
+#----------------------------------------------------------------------------
+observeEvent(input$reset.odo, {
+  updateCheckboxGroupInput(session, "gages.odo", 
+                           selected = c("por", "lfalls",
+                                        "predicted", "marfc"))
+})
+#----------------------------------------------------------------------------
+observeEvent(input$clear.odo, {
+  updateCheckboxGroupInput(session, "gages.odo", "Variables to show:",
+                           c("Point of Rocks" = "por",
+                             "Little Falls" = "lfalls",
+                             "Variable Lag-K" = "predicted",
+                             "MARFC Forecast" = "marfc"),
+                           selected = NULL)
+})
 #----------------------------------------------------------------------------
 output$odo <- renderPlot({
   #--------------------------------------------------------------------------
@@ -23,6 +37,9 @@ output$odo <- renderPlot({
                   "predicted" = "Predicted",
                   "marfc" = "MARFC Forecast")
 #  breaks.vec <- c("lfalls", "marfc", "por", "predicted")
+  #----------------------------------------------------------------------------
+  sub.df <- dplyr::filter(sub.df, gage %in% input$gages.odo)
+  if (nrow(sub.df) == 0) return(NULL)
   #----------------------------------------------------------------------------
   # plot flows
   final.plot <- ggplot(sub.df, aes(x = date_time, y = flow,

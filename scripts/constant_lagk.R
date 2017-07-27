@@ -30,6 +30,19 @@ lag_k <- function(flow.df, gage, todays.date, start.date, lag.days = 1) {
   return(final.df)
 }
 #----------------------------------------------------------------------------
+observeEvent(input$reset.sa, {
+ updateCheckboxGroupInput(session, "gages.sa", 
+                          selected = c("por", "lfalls", "lfalls_from_upstr"))
+})
+#----------------------------------------------------------------------------
+observeEvent(input$clear.sa, {
+  updateCheckboxGroupInput(session, "gages.sa", "Variables to show:",
+                           c("Point of Rocks" = "por",
+                             "Little Falls" = "lfalls",
+                             "Little Falls (Predicted)" = "lfalls_from_upstr"),
+                           selected = NULL)
+})
+#----------------------------------------------------------------------------
 output$constant_lagk <- renderPlot({
   #--------------------------------------------------------------------------
   todays.date <- as.Date(input$today.override)
@@ -42,7 +55,8 @@ output$constant_lagk <- renderPlot({
     dplyr::filter(date >= start.date - lubridate::days(3) &
                     date <= end.date + lubridate::days(1)) %>% 
     lag_k(por, todays.date, start.date, lag.days = 1)
-  #str(upstr)
+  #--------------------------------------------------------------------------
+  
   #--------------------------------------------------------------------------
   # recess and lag Monocacy flows
   upstr.df <- upstr.df %>% 
@@ -58,9 +72,11 @@ output$constant_lagk <- renderPlot({
                   "lfalls_from_upstr" = "Little Falls (Predicted)",
                   "por" = "Point of Rocks")
   #--------------------------------------------------------------------------
-  
+  sub.df <- dplyr::filter(upstr.df, gage %in% input$gages.sa)
+  if (nrow(sub.df) == 0) return(NULL)
+  #----------------------------------------------------------------------------
   # plot flows
-  final.plot <- ggplot(upstr.df, aes(x = date, y = flow,
+  final.plot <- ggplot(sub.df, aes(x = date, y = flow,
                        color = gage, size = gage,
                        linetype = gage)) + 
     geom_line() +
