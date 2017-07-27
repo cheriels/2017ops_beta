@@ -12,7 +12,8 @@ output$dts <- renderPlot({
   #--------------------------------------------------------------------------
   sub.df <- withdrawals.df %>% 
 #    dplyr::select(date_time, luke, lfalls) %>% 
-    dplyr::filter(date_time >= start.date & date_time <= end.date) %>% 
+    dplyr::filter(date_time >= start.date - lubridate::days(3) &
+                    date_time <= end.date + lubridate::days(1)) %>% 
     tidyr::gather(gage, flow, 2:ncol(.)) %>% 
     dplyr::filter(!is.na(flow))
   #--------------------------------------------------------------------------

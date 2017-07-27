@@ -12,12 +12,16 @@ output$odo <- renderPlot({
   #--------------------------------------------------------------------------
   sub.df <- hourly.df %>% 
     dplyr::select(date_time, por, lfalls, marfc) %>% 
-    dplyr::filter(date_time >= start.date & date_time <= end.date) %>% 
+    dplyr::filter(date_time >= start.date - lubridate::days(3) &
+                    date_time <= end.date + lubridate::days(1)) %>% 
     variable_lagk(por, "por_1", klag.df) %>% 
     tidyr::gather(gage, flow, 2:ncol(.)) %>% 
     dplyr::filter(!is.na(flow))
   #--------------------------------------------------------------------------
-  labels.vec <- c("Little Falls", "MARFC Forecast", "Point of Rocks", "Predicted")
+  labels.vec <- c("por" = "Point of Rocks",
+                  "lfalls" = "Little Falls",
+                  "predicted" = "Predicted",
+                  "marfc" = "MARFC Forecast")
 #  breaks.vec <- c("lfalls", "marfc", "por", "predicted")
   #----------------------------------------------------------------------------
   # plot flows

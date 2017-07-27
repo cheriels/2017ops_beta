@@ -39,6 +39,8 @@ output$constant_lagk <- renderPlot({
   # Add recessions and lags - want to do this using function in future!
   upstr.df <- daily.df %>% 
     select(date, lfalls, por, monocacy) %>% 
+    dplyr::filter(date >= start.date - lubridate::days(3) &
+                    date <= end.date + lubridate::days(1)) %>% 
     lag_k(por, todays.date, start.date, lag.days = 1)
   #str(upstr)
   #--------------------------------------------------------------------------
@@ -52,8 +54,9 @@ output$constant_lagk <- renderPlot({
     tidyr::gather(gage, flow, lfalls:lfalls_from_upstr) %>% 
     na.omit()
   #--------------------------------------------------------------------------
-  breaks.vec <- c("lfalls", "lfalls_from_upstr", "por")
-  labels.vec <- c("Little Falls", "Little Falls (Predicted)", "Point of Rocks")
+  labels.vec <- c("lfalls" = "Little Falls",
+                  "lfalls_from_upstr" = "Little Falls (Predicted)",
+                  "por" = "Point of Rocks")
   #--------------------------------------------------------------------------
   
   # plot flows
@@ -64,18 +67,21 @@ output$constant_lagk <- renderPlot({
     # Has to be in alphabetical order
     scale_size_manual(name = "Station",
                       labels = labels.vec,
-                      breaks = breaks.vec, 
-                      values = c(2, 1, 1)) + 
+                      values = c("lfalls" = 2,
+                                 "lfalls_from_upstr" = 1,
+                                 "por" = 1)) + 
     # Has to be in alphabetical order
     scale_linetype_manual(name = "Station",
                           labels = labels.vec,
-                          breaks = breaks.vec, 
-                          values = c("solid", "dashed", "solid")) +
+                          values = c("lfalls" = "solid",
+                                     "lfalls_from_upstr" = "dashed",
+                                     "por" = "solid")) +
     # Has to be in alphabetical order
     scale_colour_manual(name = "Station",
                         labels = labels.vec,
-                        breaks = breaks.vec, 
-                        values = c("#0072B2", "#56B4E9", "#E69F00")) +
+                        values = c("lfalls" = "#0072B2",
+                                   "lfalls_from_upstr" = "#56B4E9",
+                                   "por" = "#E69F00")) +
     theme_minimal() +
     xlab("Date") +
     ylab("Flow (CFS)") +

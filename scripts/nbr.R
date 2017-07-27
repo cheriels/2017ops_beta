@@ -12,11 +12,13 @@ output$nbr <- renderPlot({
   #--------------------------------------------------------------------------
   sub.df <- hourly.df %>% 
     dplyr::select(date_time, luke, lfalls) %>% 
-    dplyr::filter(date_time >= start.date & date_time <= end.date) %>% 
+    dplyr::filter(date_time >= start.date - lubridate::days(3) &
+                    date_time <= end.date + lubridate::days(1)) %>% 
     tidyr::gather(gage, flow, 2:ncol(.)) %>% 
     dplyr::filter(!is.na(flow))
   #--------------------------------------------------------------------------
-  labels.vec <- c("Little Falls", "Luke")
+  labels.vec <- c("lfalls" = "Little Falls",
+                  "luke" = "Luke")
   #----------------------------------------------------------------------------
   # plot flows
   final.plot <- ggplot(sub.df, aes(x = date_time, y = flow,
