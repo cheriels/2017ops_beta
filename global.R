@@ -1,9 +1,5 @@
-library(shiny)
-library(ggplot2)
-library(dplyr)
-library(rlang)
-library(data.table)
-library(zoo)
+#------------------------------------------------------------------------------
+source("scripts/load_packages.R", local = TRUE)
 #------------------------------------------------------------------------------
 # Import daily flow data.
 daily.df <- read.csv("data/flow_daily_cfs.csv", stringsAsFactors = FALSE) %>% 
