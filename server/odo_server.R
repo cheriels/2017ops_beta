@@ -1,11 +1,3 @@
-# Update the dateRangeInput if start date changes
-observeEvent(input$date.range.odo, {
-  date_standards(name = "date.range.odo",
-                 session,
-                 start.date = input$date.range.odo[1],
-                 end.date = input$date.range.odo[2],
-                 min.range = 1)
-})
 #----------------------------------------------------------------------------
 observeEvent(input$reset.odo, {
   updateCheckboxGroupInput(session, "gages.odo", 
@@ -23,13 +15,10 @@ observeEvent(input$clear.odo, {
 })
 #----------------------------------------------------------------------------
 odo.df <- reactive({
-  start.date <- as.Date(input$date.range.odo[1]) %>% 
-    paste("00:00:00") %>% 
-    as.POSIXct()
-  end.date <- as.Date(input$date.range.odo[2]) %>% 
-    paste("00:00:00") %>% 
-    as.POSIXct()
-  
+  todays.date <- todays.date()
+  start.date <- start.date()
+  end.date <- end.date()
+  #----------------------------------------------------------------------------
   sub.df <- hourly.df %>% 
     dplyr::select(date_time, por, lfalls, marfc) %>% 
     dplyr::filter(date_time >= start.date - lubridate::days(3) &
@@ -44,12 +33,14 @@ odo.df <- reactive({
 })
 #----------------------------------------------------------------------------
 output$odo <- renderPlot({
-  
+  start.date <- start.date()
+  end.date <- end.date()
+  #----------------------------------------------------------------------------
   gen_plots(odo.df(),
-            start.date = input$date.range.odo[1],
-            end.date = input$date.range.odo[2], 
-            min.flow = input$min.flow.odo,
-            max.flow = input$max.flow.odo,
+            start.date,
+            end.date, 
+            min.flow = input$min.flow,
+            max.flow = input$max.flow,
             gages.checked = input$gages.odo,
             labels.vec = c("por" = "Point of Rocks",
                            "lfalls" = "Little Falls",
@@ -62,7 +53,8 @@ output$odo <- renderPlot({
             color.vec = c("lfalls" = "#0072B2",
                           "marfc" = "#009E73",
                           "por" = "#E69F00",
-                          "predicted" = "#56B4E9"))
+                          "predicted" = "#56B4E9"),
+            x.class = "datetime")
 }) # End output$odo
 
 

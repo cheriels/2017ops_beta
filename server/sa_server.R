@@ -1,42 +1,4 @@
-# Update the dateRangeInput if start date changes
-observeEvent(input$date.range.sa, {
-  date_standards(name = "date.range.sa",
-                 session,
-                 start.date = input$date.range.sa[1],
-                 end.date = input$date.range.sa[2],
-                 min.range = 3)
-})
-#----------------------------------------------------------------------------
-#----------------------------------------------------------------------------
-# Constant Lag-K
-#----------------------------------------------------------------------------
-#----------------------------------------------------------------------------
-# Constant Lag-K function.
-lag_k <- function(flow.df, gage, todays.date, start.date, lag.days = 1) {
-  gage <- rlang::enquo(gage)
-  gage.string <- rlang::quo_name(gage)
-  if (gage.string == "por") gage.k <- 0.042
-  if (gage.string == "monocacy") gage.k <- 0.050
-  #----------------------------------------------------------------------------
-  final.df <- flow.df %>% 
-    # recess and lag POR flows
-    mutate(flow1 = lag(rlang::UQ(gage), n = 1),
-           flow2 = lag(rlang::UQ(gage), n = 2),
-           recess_init = pmin(rlang::UQ(gage), flow1, flow2), # pmin gives minimums of each row
-           recess_time = ifelse(date - todays.date < 0, 0, date - todays.date),
-           #recess_time = case_when(
-           #  date - todays.date < 0 ~ 0,
-           #  TRUE ~ date - today.date
-           #),
-           recess = ifelse(date < todays.date, rlang::UQ(gage), 
-#                           recess_init[todays.date - start.date + 1] * exp(-gage.k * recess_time)),
-                           recess_init[todays.date] * exp(-gage.k * recess_time)),
-           recess_lag = lag(recess, lag.days)) %>% 
-    select(-flow1, -flow2, - recess_init, -recess_time, - recess)
-  
-  names(final.df)[names(final.df) %in% "recess_lag"] <- paste(gage.string, "recess_lag", sep = "_")
-  return(final.df)
-}
+
 #----------------------------------------------------------------------------
 observeEvent(input$reset.sa, {
  updateCheckboxGroupInput(session, "gages.sa", 
@@ -50,7 +12,55 @@ observeEvent(input$clear.sa, {
                              "Little Falls (Predicted)" = "lfalls_from_upstr"),
                            selected = NULL)
 })
+#------------------------------------------------------------------------------
+sa.df <- reactive({
+  todays.date <- todays.date()
+  start.date <- start.date()
+  end.date <- end.date()
+  #----------------------------------------------------------------------------
+  sub.df <- daily.df %>% 
+    select(date_time, lfalls, por, monocacy) %>% 
+    dplyr::filter(date_time >= start.date - lubridate::days(3) &
+                    date_time <= end.date + lubridate::days(1))
+  if (nrow(sub.df) == 0 ) return(NULL)
+  por.df <- sub.df %>% 
+    constant_lagk(por, lubridate::ymd(todays.date), lubridate::ymd(start.date), lag.days = 1)
+  #----------------------------------------------------------------------------
+  # recess and lag Monocacy flows
+  final.df <- por.df %>% 
+    constant_lagk(monocacy, lubridate::ymd(todays.date), lubridate::ymd(start.date), lag.days = 1) %>% 
+    # Predict Little Falls from POR and Monocacy
+    mutate(lfalls_from_upstr = por_recess_lag + monocacy_recess_lag) %>% 
+    select(date_time, lfalls, por, lfalls_from_upstr) %>% 
+    filter(date_time > start.date & date_time < end.date) %>% 
+    tidyr::gather(gage, flow, lfalls:lfalls_from_upstr) %>% 
+    na.omit()
+  
+  return(final.df)
+})
 #----------------------------------------------------------------------------
+output$sa <- renderPlot({
+  
+  gen_plots(sa.df(),
+            start.date = input$date.range[1],
+            end.date = input$date.range[2], 
+            min.flow = input$min.flow,
+            max.flow = input$max.flow,
+            gages.checked = input$gages.sa,
+            labels.vec = c("lfalls" = "Little Falls",
+                           "lfalls_from_upstr" = "Little Falls (Predicted)",
+                           "por" = "Point of Rocks"),
+            linetype.vec = c("lfalls" = "solid",
+                             "lfalls_from_upstr" = "dashed",
+                             "por" = "solid"),
+            color.vec = c("lfalls" = "#0072B2",
+                          "lfalls_from_upstr" = "#56B4E9",
+                          "por" = "#E69F00"),
+            x.class = "date")
+}) # End output$sa
+
+
+
 output$constant_lagk <- renderPlot({
   #--------------------------------------------------------------------------
   todays.date <- as.Date(input$today.override.sa)
@@ -62,11 +72,11 @@ output$constant_lagk <- renderPlot({
     select(date, lfalls, por, monocacy) %>% 
     dplyr::filter(date >= start.date - lubridate::days(3) &
                     date <= end.date + lubridate::days(1)) %>% 
-    lag_k(por, todays.date, start.date, lag.days = 1)
+    constant_lagk(por, todays.date, start.date, lag.days = 1)
   #--------------------------------------------------------------------------
   # recess and lag Monocacy flows
   upstr.df <- upstr.df %>% 
-    lag_k(monocacy, todays.date, start.date, lag.days = 1) %>% 
+    constant_lagk(monocacy, todays.date, start.date, lag.days = 1) %>% 
     # Predict Little Falls from POR and Monocacy
     mutate(lfalls_from_upstr = por_recess_lag + monocacy_recess_lag) %>% 
     select(date, lfalls, por, lfalls_from_upstr) %>% 

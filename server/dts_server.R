@@ -1,11 +1,3 @@
-# Update the dateRangeInput if start date changes
-observeEvent(input$date.range.dts, {
-  date_standards(name = "date.range.dts",
-                 session,
-                 start.date = input$date.range.dts[1],
-                 end.date = input$date.range.dts[2],
-                 min.range = 1)
-})
 #----------------------------------------------------------------------------
 observeEvent(input$reset.dts, {
   updateCheckboxGroupInput(session, "gages.dts", 
@@ -25,7 +17,41 @@ observeEvent(input$clear.dts, {
                            selected = NULL)
 })
 #----------------------------------------------------------------------------
+dts.df <- reactive({
+  todays.date <- todays.date()
+  start.date <- start.date()
+  end.date <- end.date()
+  #----------------------------------------------------------------------------
+  sub.df <- withdrawals.df %>% 
+    #    dplyr::select(date_time, luke, lfalls) %>% 
+    dplyr::filter(date_time >= start.date - lubridate::days(3) &
+                    date_time <= end.date + lubridate::days(1))
+  if (nrow(sub.df) == 0 ) return(NULL)
+  final.df <- sub.df %>% 
+    tidyr::gather(gage, flow, 2:ncol(.)) %>% 
+    dplyr::filter(!is.na(flow))
+  
+  return(final.df)
+})
+#----------------------------------------------------------------------------
 output$dts <- renderPlot({
+  start.date <- start.date()
+  end.date <- end.date()
+  #----------------------------------------------------------------------------
+  gen_plots(dts.df(),
+            start.date,
+            end.date, 
+            min.flow = input$min.flow,
+            max.flow = input$max.flow,
+            gages.checked = input$gages.dts,
+            labels.vec = NULL,
+            linetype.vec = NULL,
+            color.vec = NULL,
+            y.lab = "Flow (MGD)",
+            x.class = "date")
+}) # End output$dts
+
+output$dts2 <- renderPlot({
   #--------------------------------------------------------------------------
   #todays.date <- as.Date(input$today.override)
   start.date <- as.Date(input$date.range.dts[1])# %>% 

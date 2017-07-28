@@ -15,10 +15,12 @@ library(shiny)
 
 # Define UI for application that draws a histogram
 shinyUI(navbarPage("COOP",
-                   inverse = TRUE,
+                   id = "tab",
+                   inverse = TRUE, 
                    theme = shinythemes::shinytheme("spacelab"),
                    source("ui/sa_ui.R", local = TRUE)$value,
                    source("ui/odo_ui.R", local = TRUE)$value,
                    source("ui/nbr_ui.R", local = TRUE)$value,
-                   source("ui/dts_ui.R", local = TRUE)$value
+                   source("ui/dts_ui.R", local = TRUE)$value,
+                   source("ui/wellpanel_ui.R", local = TRUE)$value
 ))

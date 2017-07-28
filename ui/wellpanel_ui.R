@@ -1,0 +1,69 @@
+wellPanel(
+  fluidRow(
+    column(width = 4,
+           #align = "center",
+           tags$style(type='text/css', "#large .selectize-input { line-height: 60px; }"),
+           dateInput("today.override", 
+                     paste0("Today's Date (", Sys.Date(), "):"),
+                     width = "200px"),
+           div(id = "large",
+               dateRangeInput("date.range",
+                              "Date Range:", 
+                              start = Sys.Date() - 30,
+                              end = Sys.Date() + 15,
+                              width = "200px"))),
+    column(width = 4,
+           numericInput("min.flow", "Minimum Flow:",
+                        0, min = 0, max = 10 * 9,
+                        width = "120px"),
+           numericInput("max.flow", "Maximum Flow:",
+                        NA, min = 0, max = 10 * 9,
+                        width = "120px")
+    ),
+    column(width = 4,
+           conditionalPanel("input.tab == 'Situational Awareness'",
+                            checkboxGroupInput("gages.sa",  NULL,
+                                               c("Point of Rocks" = "por",
+                                                 "Little Falls" = "lfalls",
+                                                 "Little Falls (Predicted)" = "lfalls_from_upstr"),
+                                               selected = c("por", "lfalls", "lfalls_from_upstr")),
+                            actionButton("reset.sa", "Reset"),
+                            actionButton("clear.sa", "Clear")
+           ), # End Conditional Panel Situational Awareness
+           conditionalPanel("input.tab == 'One-Day Operations'",
+                            checkboxGroupInput("gages.odo", NULL,
+                                               c("Point of Rocks" = "por",
+                                                 "Little Falls" = "lfalls",
+                                                 "Variable Lag-K" = "predicted",
+                                                 "MARFC Forecast" = "marfc"),
+                                               selected = c("por", "lfalls",
+                                                            "predicted", "marfc")),
+                            actionButton("reset.odo", "Reset"),
+                            actionButton("clear.odo", "Clear")
+           ), # End Conditional Panel North Branch Release
+           conditionalPanel("input.tab == 'North Branch Release'",
+                            checkboxGroupInput("gages.nbr", NULL,
+                                               c("Luke" = "luke",
+                                                 "Little Falls" = "lfalls"),
+                                               selected = c("luke", "lfalls")),
+                            actionButton("reset.nbr", "Reset"),
+                            actionButton("clear.nbr", "Clear")
+           ), # End Conditional Panel One-Day Operations
+           conditionalPanel("input.tab == 'Demand Time Series'",
+                            checkboxGroupInput("gages.dts", NULL,
+                                               c("wa_greatfalls" = "wa_greatfalls",
+                                                 "wa_littlefalls" = "wa_littlefalls",
+                                                 "fw_potomac_prod" = "fw_potomac_prod",
+                                                 "fw_griffith_prod" = "fw_griffith_prod",
+                                                 "wssc_potomac_prod" = "wssc_potomac_prod",
+                                                 "wssc_patuxent_prod" = "wssc_patuxent_prod"),
+                                               selected = c("wa_greatfalls", "wa_littlefalls", 
+                                                            "fw_potomac_prod", "fw_griffith_prod",  
+                                                            "wssc_potomac_prod", "wssc_patuxent_prod"),
+                                               inline = FALSE),
+                            actionButton("reset.dts", "Reset"),
+                            actionButton("clear.dts", "Clear")
+           ) # End Conditional Panel One-Day Operations
+    )
+  ) # End fluidRow
+) # End wellPanel

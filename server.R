@@ -14,6 +14,8 @@ shinyServer(function(input, output, session) {
   # to console.
   session$onSessionEnded(stopApp)
   #----------------------------------------------------------------------------
+  source("server/dates_server.R", local = TRUE)
+  #----------------------------------------------------------------------------
   # TAB 1
   # Situational Awareness (sa)
   #----------------------------------------------------------------------------
