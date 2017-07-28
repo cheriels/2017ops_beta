@@ -1,6 +1,8 @@
 
 # Constant Lag-K function.
 constant_lagk <- function(flow.df, gage, todays.date, start.date, lag.days = 1) {
+  todays.date <- lubridate::ymd(todays.date)
+  start.date <- lubridate::ymd(start.date)
   gage <- rlang::enquo(gage)
   gage.string <- rlang::quo_name(gage)
   if (gage.string == "por") gage.k <- 0.042
