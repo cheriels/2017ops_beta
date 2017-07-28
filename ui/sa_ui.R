@@ -2,7 +2,7 @@
 tabPanel("Situational Awareness",
          fluidRow(
            fluidRow(
-               align = "center",
+               align = "middle",
                # Show a plot of the generated distribution
                #plotlyOutput("constant_lagk")
                plotOutput("constant_lagk", height = "350px", width = "95%")
@@ -13,14 +13,16 @@ tabPanel("Situational Awareness",
              # Sidebar with a slider input for number of bins 
              column(width = 4,
                     #align = "center",
+                    tags$style(type='text/css', "#large .selectize-input { line-height: 60px; }"),
                     dateInput("today.override.sa", 
                               paste0("Today's Date (", Sys.Date(), "):"),
                               width = "200px"),
+                    div(id = "large",
                     dateRangeInput("date.range.sa",
                                    "Date Range:", 
                                    start = Sys.Date() - 30,
                                    end = Sys.Date() + 15,
-                                   width = "200px")),
+                                   width = "200px"))),
              column(width = 4,
                     numericInput("min.flow.sa", "Minimum Flow:",
                                  0, min = 0, max = 10 * 9,

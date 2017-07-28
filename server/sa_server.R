@@ -1,13 +1,10 @@
 # Update the dateRangeInput if start date changes
-observeEvent(input$date.range.sa[2], {
-  start.date <- as.Date(input$date.range.sa[1])
-  end.date <- as.Date(input$date.range.sa[2])
-  # If end date is earlier than start date, update the end date to be the same as the new start date
-  if (end.date < start.date) {
-    end.date = start.date + 2
-  }
-  updateDateRangeInput(session, "date.range.sa", start = start.date,
-                       end = end.date)
+observeEvent(input$date.range.sa, {
+  date_standards(name = "date.range.sa",
+                 session,
+                 start.date = input$date.range.sa[1],
+                 end.date = input$date.range.sa[2],
+                 min.range = 3)
 })
 #----------------------------------------------------------------------------
 #----------------------------------------------------------------------------
@@ -82,7 +79,11 @@ output$constant_lagk <- renderPlot({
                   "por" = "Point of Rocks")
   #--------------------------------------------------------------------------
   sub.df <- dplyr::filter(upstr.df, gage %in% input$gages.sa)
-  if (nrow(sub.df) == 0) return(NULL)
+  #--------------------------------------------------------------------------
+    validate(
+      need(nrow(sub.df) != 0,
+           "No data available for the selected date range. Please select a new date range.")
+    )
   #----------------------------------------------------------------------------
   # plot flows
   final.plot <- ggplot(sub.df, aes(x = date, y = flow,
@@ -124,6 +125,7 @@ output$constant_lagk <- renderPlot({
     final.plot <- final.plot + ylim(input$min.flow.sa, input$max.flow.sa)
   }
   #plotly::ggplotly(final.plot, width = 1200)
+
   final.plot
   #--------------------------------------------------------------------------
   
@@ -135,5 +137,5 @@ output$constant_lagk <- renderPlot({
   #          scale_colour_manual(name="Station", breaks = c("Little Falls","Point of Rocks", "Monocacy"), values=c("skyblue1","green","blue"))
   
   
-  
+
 }) # End output$plot

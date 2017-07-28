@@ -1,3 +1,11 @@
+# Update the dateRangeInput if start date changes
+observeEvent(input$date.range.nbr, {
+  date_standards(name = "date.range.nbr",
+                 session,
+                 start.date = input$date.range.nbr[1],
+                 end.date = input$date.range.nbr[2],
+                 min.range = 1)
+})
 #----------------------------------------------------------------------------
 observeEvent(input$reset.nbr, {
   updateCheckboxGroupInput(session, "gages.nbr", 
@@ -34,7 +42,11 @@ output$nbr <- renderPlot({
   sub.df <- dplyr::filter(sub.df, gage %in% input$gages.nbr,
                           date_time >= start.date  &
                             date_time <= end.date)
-  if (nrow(sub.df) == 0) return(NULL)
+  #--------------------------------------------------------------------------
+  validate(
+    need(nrow(sub.df) != 0,
+         "No data available for the selected date range. Please select a new date range.")
+  )
   #----------------------------------------------------------------------------
   # plot flows
   final.plot <- ggplot(sub.df, aes(x = date_time, y = flow,

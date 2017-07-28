@@ -8,6 +8,7 @@ need <- c("shiny",
           "rlang",
           "data.table",
           #"plotly",
+          "Cairo",
           "zoo") 
 # find out which packages are installed
 ins <- installed.packages()[, 1] 

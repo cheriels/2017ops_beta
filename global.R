@@ -1,5 +1,7 @@
 #------------------------------------------------------------------------------
 source("global/load_packages.R", local = TRUE)
+source("functions/gen_plots_func.R", local = TRUE)
+source("functions/date_standards_func.R", local = TRUE)
 #------------------------------------------------------------------------------
 # Import daily flow data.
 daily.df <- read.csv("data/flow_daily_cfs.csv", stringsAsFactors = FALSE) %>% 
