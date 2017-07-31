@@ -28,7 +28,7 @@ sa.df <- reactive({
   #----------------------------------------------------------------------------
   # recess and lag Monocacy flows
   final.df <- por.df %>% 
-    constant_lagk(monocacy, todays.date, start.date, lag.days = 1) %>% 
+    constant_lagk(monocacy, todays.date, lag.days = 1) %>% 
     # Predict Little Falls from POR and Monocacy
     mutate(lfalls_from_upstr = por_recess_lag + monocacy_recess_lag) %>% 
     select(date_time, lfalls, por, lfalls_from_upstr) %>% 
