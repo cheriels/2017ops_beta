@@ -19,16 +19,36 @@ odo.df <- reactive({
   start.date <- start.date()
   end.date <- end.date()
   #----------------------------------------------------------------------------
-  sub.df <- hourly.reac() %>% 
-    dplyr::select(date_time, por, lfalls, marfc) %>% 
+  hourly.sub <- hourly.reac() %>% 
+    dplyr::select(date_time, por,  lfalls, marfc) %>% 
     dplyr::filter(date_time >= start.date - lubridate::days(3) &
                     date_time <= end.date + lubridate::days(1))
-  if (nrow(sub.df) == 0 ) return(NULL)
-  final.df <- sub.df %>% 
+  #----------------------------------------------------------------------------
+  if (nrow(hourly.sub) == 0 ) return(NULL)
+  #----------------------------------------------------------------------------
+  lagk.df <- hourly.sub %>% 
     variable_lagk(por, "por_1", klag.df) %>% 
     tidyr::gather(gage, flow, 2:ncol(.)) %>% 
     dplyr::filter(!is.na(flow))
-  
+  #----------------------------------------------------------------------------
+  withdrawals.sub <- #withdrawals.reac() %>% 
+    withdrawals.df %>% 
+    dplyr::select(-fw_griffith_prod, - wssc_patuxent_prod) %>% 
+    # Used "+" instead of rowSums to be more specific.
+    dplyr::mutate(withdrawals = wa_greatfalls + wa_littlefalls + 
+                    fw_potomac_prod + wssc_potomac_prod) %>% 
+    dplyr::select(date_time, withdrawals) %>% 
+    dplyr::rename(date = date_time)
+  #----------------------------------------------------------------------------
+  final.df <- lagk.df %>% 
+    tidyr::separate(date_time, into = c("date", "time"), convert = TRUE,
+                    sep = " ", remove = FALSE) %>% 
+    dplyr::mutate(date = as.Date(date)) %>% 
+    dplyr::left_join(withdrawals.sub, by = "date") %>% 
+    dplyr::select(-date, -time) %>% 
+    dplyr::mutate(flow = if_else(gage == "predicted", flow - withdrawals, flow)) %>% 
+    dplyr::select(-withdrawals)
+  #----------------------------------------------------------------------------
   return(final.df)
 })
 #----------------------------------------------------------------------------

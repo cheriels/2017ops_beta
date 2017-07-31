@@ -24,7 +24,7 @@ sa.df <- reactive({
                     date_time <= end.date + lubridate::days(1))
   if (nrow(sub.df) == 0 ) return(NULL)
   por.df <- sub.df %>% 
-    constant_lagk(por, todays.date, start.date, lag.days = 1)
+    constant_lagk(por, todays.date, lag.days = 1)
   #----------------------------------------------------------------------------
   # recess and lag Monocacy flows
   final.df <- por.df %>% 
