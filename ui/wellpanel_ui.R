@@ -21,7 +21,11 @@ wellPanel(
                         width = "120px"),
            numericInput("max.flow", "Maximum Flow:",
                         NA, min = 0, max = 10 * 9,
-                        width = "120px")
+                        width = "120px"),
+           radioButtons("flow.units", "Flow Units:",
+                        c("CFS" = "cfs",
+                          "MGD" = "mgd"),
+                        inline = TRUE)
     ),
     column(width = 4,
            conditionalPanel("input.tab == 'Situational Awareness'",

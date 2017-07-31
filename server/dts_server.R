@@ -22,7 +22,7 @@ dts.df <- reactive({
   start.date <- start.date()
   end.date <- end.date()
   #----------------------------------------------------------------------------
-  sub.df <- withdrawals.df %>% 
+  sub.df <- withdrawals.reac() %>% 
     #    dplyr::select(date_time, luke, lfalls) %>% 
     dplyr::filter(date_time >= start.date - lubridate::days(3) &
                     date_time <= end.date + lubridate::days(1))
@@ -47,8 +47,8 @@ output$dts <- renderPlot({
             labels.vec = NULL,
             linetype.vec = NULL,
             color.vec = NULL,
-            y.lab = "Flow (MGD)",
-            x.class = "date")
+            x.class = "date",
+            y.lab = y.units())
 }) # End output$dts
 
 output$dts2 <- renderPlot({

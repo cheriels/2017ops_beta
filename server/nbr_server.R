@@ -16,7 +16,7 @@ nbr.df <- reactive({
   start.date <- start.date()
   end.date <- end.date()
   #----------------------------------------------------------------------------
-  sub.df <- hourly.df %>% 
+  sub.df <- hourly.reac() %>% 
     dplyr::select(date_time, luke, lfalls) %>% 
     dplyr::filter(date_time >= start.date - lubridate::days(3) &
                     date_time <= end.date + lubridate::days(1))
@@ -44,7 +44,8 @@ output$nbr <- renderPlot({
                              "luke" = "solid"),
             color.vec = c("lfalls" = "#0072B2",
                           "luke" = "#009E73"),
-            x.class = "datetime")
+            x.class = "datetime",
+            y.lab = y.units())
 }) # End output$nbr
 #------------------------------------------------------------------------------
 

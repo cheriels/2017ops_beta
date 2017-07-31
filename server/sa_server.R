@@ -18,7 +18,7 @@ sa.df <- reactive({
   start.date <- start.date()
   end.date <- end.date()
   #----------------------------------------------------------------------------
-  sub.df <- daily.df %>% 
+  sub.df <- daily.reac() %>% 
     select(date_time, lfalls, por, monocacy) %>% 
     dplyr::filter(date_time >= start.date - lubridate::days(3) &
                     date_time <= end.date + lubridate::days(1))
@@ -56,7 +56,8 @@ output$sa <- renderPlot({
             color.vec = c("lfalls" = "#0072B2",
                           "lfalls_from_upstr" = "#56B4E9",
                           "por" = "#E69F00"),
-            x.class = "date")
+            x.class = "date",
+            y.lab = y.units())
 }) # End output$sa
 
 

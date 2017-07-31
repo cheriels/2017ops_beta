@@ -19,7 +19,7 @@ odo.df <- reactive({
   start.date <- start.date()
   end.date <- end.date()
   #----------------------------------------------------------------------------
-  sub.df <- hourly.df %>% 
+  sub.df <- hourly.reac() %>% 
     dplyr::select(date_time, por, lfalls, marfc) %>% 
     dplyr::filter(date_time >= start.date - lubridate::days(3) &
                     date_time <= end.date + lubridate::days(1))
@@ -54,7 +54,8 @@ output$odo <- renderPlot({
                           "marfc" = "#009E73",
                           "por" = "#E69F00",
                           "predicted" = "#56B4E9"),
-            x.class = "datetime")
+            x.class = "datetime",
+            y.lab = y.units())
 }) # End output$odo
 
 
