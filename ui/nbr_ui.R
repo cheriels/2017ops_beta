@@ -1,6 +1,6 @@
 tabPanel("North Branch Release",
          fluidRow(
            align = "center",
-           plotOutput("nbr", height = "350px", width = "95%")
+           plotOutput("nbr", height = plot.height, width = plot.width)
          ) # fluidRow
 ) # End tabPanel

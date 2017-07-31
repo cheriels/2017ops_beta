@@ -1,6 +1,6 @@
 tabPanel("Demand Time Series",
          fluidRow(
            align = "center",
-           plotOutput("dts", height = "350px", width = "95%")
+           plotOutput("dts", height = plot.height, width = plot.width)
          ) # fluidRow
 ) # End tabPanel

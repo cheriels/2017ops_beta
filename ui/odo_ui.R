@@ -1,6 +1,6 @@
 tabPanel("One-Day Operations",
            fluidRow(
              align = "center",
-             plotOutput("odo", height = "350px", width = "95%")
+             plotOutput("odo", height = plot.height, width = plot.width)
            ) # End fluidRow
 ) # End tabPanel
