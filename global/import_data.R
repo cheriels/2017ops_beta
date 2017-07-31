@@ -33,14 +33,16 @@ hourly.df <- data.table::fread("data/flow_hourly_cfs.csv", data.table = FALSE) %
                 monocacy = x1643000,
                 lfalls = x1646500) %>% 
   dplyr::mutate(date_time = lubridate::ymd_hm(date_time)) %>% 
-  dplyr::full_join(marfc.forecast, by = "date_time")
+  dplyr::full_join(marfc.forecast, by = "date_time") %>% 
+  tidyr::gather(gage, flow, luke:marfc) %>% 
+  dplyr::filter(!is.na(flow))
 #------------------------------------------------------------------------------
 # Import variable lag-k reference table.
 klag.df <- data.table::fread("data/k_lag.csv", data.table = FALSE) %>% 
   rename_all(tolower) %>% 
-  mutate(gage = tolower(gage)) %>% 
-  select(-lag) %>% # REMOVE in WHEN MORE GAGES ADDED**********************************************************
-  rename(lag = lag_to_lfall) # REMOVE in WHEN MORE GAGES ADDED************************************************
+  mutate(gage = tolower(gage))# %>% 
+#  select(-lag) %>% # REMOVE in WHEN MORE GAGES ADDED**********************************************************
+#  rename(lag = lag_to_lfall) # REMOVE in WHEN MORE GAGES ADDED************************************************
 #------------------------------------------------------------------------------
 withdrawals.df <- data.table::fread("data/current/withdrawal_daily_mgd.csv",
                                     data.table = FALSE) %>% 
