@@ -49,3 +49,13 @@ withdrawals.df <- data.table::fread("data/current/withdrawal_daily_mgd.csv",
   dplyr::rename(date_time = date) %>% 
   dplyr::mutate(date_time = lubridate::ymd(date_time))
 #------------------------------------------------------------------------------
+lowflow.hourly.df <- data.table::fread("data/current/lfalls_sim_hourly.csv",
+                                data.table = FALSE) %>% 
+  dplyr::select(datetime, lfalls_sim) %>% 
+  dplyr::rename(date_time = datetime) %>% 
+  dplyr::mutate(date_time = lubridate::ymd_hms(date_time)) %>% 
+  tidyr::gather(gage, flow, lfalls_sim)
+#------------------------------------------------------------------------------
+lowflow.daily.df <- data.table::fread("data/current/lfalls_sim_daily.csv",
+                                       data.table = FALSE)
+#------------------------------------------------------------------------------
