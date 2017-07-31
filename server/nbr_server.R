@@ -17,14 +17,13 @@ nbr.df <- reactive({
   end.date <- end.date()
   #----------------------------------------------------------------------------
   sub.df <- hourly.reac() %>% 
-    dplyr::select(date_time, luke, lfalls) %>% 
     dplyr::filter(date_time >= start.date - lubridate::days(3) &
                     date_time <= end.date + lubridate::days(1))
+  #----------------------------------------------------------------------------
   if (nrow(sub.df) == 0 ) return(NULL)
-  final.df <- sub.df %>% 
-    tidyr::gather(gage, flow, 2:ncol(.)) %>% 
-    dplyr::filter(!is.na(flow))
-  
+  #----------------------------------------------------------------------------
+  final.df <- sub.df
+  #----------------------------------------------------------------------------
   return(final.df)
 })
 #------------------------------------------------------------------------------
