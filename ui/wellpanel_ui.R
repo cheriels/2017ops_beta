@@ -32,8 +32,9 @@ wellPanel(
                             checkboxGroupInput("gages.sa",  NULL,
                                                c("Point of Rocks" = "por",
                                                  "Little Falls" = "lfalls",
-                                                 "Little Falls (Predicted)" = "lfalls_from_upstr"),
-                                               selected = c("por", "lfalls", "lfalls_from_upstr")),
+                                                 "Little Falls (Predicted)" = "lfalls_from_upstr",
+                                                 "Little Falls trigger for drought ops" = "lfalls_trigger"),
+                                               selected = c("por", "lfalls", "lfalls_from_upstr", "lfalls_trigger")),
                             actionButton("reset.sa", "Reset"),
                             actionButton("clear.sa", "Clear")
            ), # End Conditional Panel Situational Awareness

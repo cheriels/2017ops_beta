@@ -2,14 +2,15 @@
 #----------------------------------------------------------------------------
 observeEvent(input$reset.sa, {
  updateCheckboxGroupInput(session, "gages.sa", 
-                          selected = c("por", "lfalls", "lfalls_from_upstr"))
+                          selected = c("por", "lfalls", "lfalls_from_upstr", "lfalls_trigger"))
 })
 #----------------------------------------------------------------------------
 observeEvent(input$clear.sa, {
   updateCheckboxGroupInput(session, "gages.sa", "Variables to show:",
                            c("Point of Rocks" = "por",
                              "Little Falls" = "lfalls",
-                             "Little Falls (Predicted)" = "lfalls_from_upstr"),
+                             "Little Falls (Predicted)" = "lfalls_from_upstr",
+                             "Little Falls trigger for drought ops" = "lfalls_trigger"),
                            selected = NULL)
 })
 #------------------------------------------------------------------------------
@@ -26,14 +27,34 @@ sa.df <- reactive({
   por.df <- sub.df %>% 
     constant_lagk(por, todays.date, lag.days = 1)
   #----------------------------------------------------------------------------
+  pot_withdrawals.sub <- #withdrawals.reac() %>% 
+    withdrawals.df %>% 
+    dplyr::select(-fw_griffith_prod, - wssc_patuxent_prod) %>% 
+    # Used "+" instead of rowSums to be more specific.
+    dplyr::mutate(pot_withdrawals = wa_greatfalls + wa_littlefalls + 
+                    fw_potomac_prod + wssc_potomac_prod) %>% 
+    dplyr::mutate(lfalls_trigger = pot_withdrawals + 100) %>%
+    dplyr::select(date_time, lfalls_trigger)
+#    dplyr::rename(date = date_time)
+  #----------------------------------------------------------------------------
+  por.df <- por.df %>% 
+#    tidyr::separate(date_time, into = c("date", "time"), convert = TRUE,
+#                    sep = " ", remove = FALSE) %>% 
+#    dplyr::mutate(date = as.Date(date)) %>% 
+    dplyr::left_join(pot_withdrawals.sub, by = "date_time")
+#    dplyr::select(-date, -time) %>% 
+#    dplyr::mutate(flow = if_else(gage == "predicted", flow - withdrawals, flow)) %>% 
+#    dplyr::select(-withdrawals)
+  #----------------------------------------------------------------------------
+  #----------------------------------------------------------------------------
   # recess and lag Monocacy flows
   final.df <- por.df %>% 
     constant_lagk(monocacy, todays.date, lag.days = 1) %>% 
     # Predict Little Falls from POR and Monocacy
     mutate(lfalls_from_upstr = por_recess_lag + monocacy_recess_lag) %>% 
-    select(date_time, lfalls, por, lfalls_from_upstr) %>% 
+    select(date_time, lfalls, por, lfalls_from_upstr, lfalls_trigger) %>% 
     filter(date_time > start.date & date_time < end.date) %>% 
-    tidyr::gather(gage, flow, lfalls:lfalls_from_upstr) %>% 
+    tidyr::gather(gage, flow, lfalls:lfalls_trigger) %>% 
     na.omit()
   
   return(final.df)
@@ -49,13 +70,16 @@ output$sa <- renderPlot({
             gages.checked = input$gages.sa,
             labels.vec = c("lfalls" = "Little Falls",
                            "lfalls_from_upstr" = "Little Falls (Predicted)",
-                           "por" = "Point of Rocks"),
+                           "por" = "Point of Rocks",
+                           "lfalls_trigger" = "Little Falls trigger for drought ops"),
             linetype.vec = c("lfalls" = "solid",
                              "lfalls_from_upstr" = "dashed",
-                             "por" = "solid"),
+                             "por" = "solid",
+                             "lfalls_trigger" = "dashed"),
             color.vec = c("lfalls" = "#0072B2",
                           "lfalls_from_upstr" = "#56B4E9",
-                          "por" = "#E69F00"),
+                          "por" = "#E69F00",
+                          "lfalls_trigger" = "#FF0000"),
             x.class = "date",
             y.lab = y.units())
 }) # End output$sa
