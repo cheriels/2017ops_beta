@@ -14,7 +14,7 @@ constant_lagk <- function(flow.df, gage, todays.date, lag.days = 1) {
            recess_init = pmin(rlang::UQ(gage), flow1, flow2), # pmin gives minimums of each row
            recess_time = ifelse(date_time - todays.date < 0, 0, date_time - todays.date),
            recess = ifelse(date_time < todays.date, rlang::UQ(gage), 
-                           recess_init[todays.date] * exp(-gage.k * recess_time)),
+                           recess_init[date_time == todays.date] * exp(-gage.k * recess_time)),
            recess_lag = lag(recess, lag.days)) %>% 
     select(-flow1, -flow2, - recess_init, -recess_time, - recess)
   
