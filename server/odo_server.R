@@ -77,7 +77,7 @@ output$odo <- renderPlot({
             gages.checked = input$gages.odo,
             labels.vec = c("por" = "Point of Rocks",
                            "lfalls" = "Little Falls",
-                           "predicted" = "Predicted",
+                           "predicted" = "Little Falls (Predicted)",
                            "marfc" = "MARFC Forecast"),
             linetype.vec = c("lfalls" = "solid",
                              "marfc" = "dashed",
