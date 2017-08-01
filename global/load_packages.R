@@ -24,3 +24,4 @@ if (length(Get) > 0) {
 eval(parse(text = paste("library(", need, ")")))
 rm(Get, ins, need)
 #------------------------------------------------------------------------------
+options(shiny.usecairo = TRUE)
