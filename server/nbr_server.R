@@ -34,7 +34,8 @@ nbr.df <- reactive({
   
   lfalls.df <- dplyr::bind_rows(lfalls.obs, lfalls.pred) %>% 
     tidyr::spread(gage, flow) %>% 
-    dplyr::filter(!is.na(obs)) %>% 
+    dplyr::filter(!is.na(sim)) %>% 
+    tidyr::fill(obs) %>% 
     dplyr::mutate(lfalls_pred = lfalls_sim - (sim - obs)) %>% 
     dplyr::select(date_time, lfalls_pred) %>% 
     tidyr::gather(gage, flow, lfalls_pred)
