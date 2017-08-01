@@ -13,7 +13,7 @@ wellPanel(
                dateRangeInput("date.range",
                               "Date Range:", 
                               start = Sys.Date() - 30,
-                              end = Sys.Date() + 15,
+                              end = Sys.Date() + 3,
                               width = "200px"))),
     column(width = 4,
            numericInput("min.flow", "Minimum Flow:",
@@ -52,8 +52,9 @@ wellPanel(
            conditionalPanel("input.tab == 'North Branch Release'",
                             checkboxGroupInput("gages.nbr", NULL,
                                                c("Luke" = "luke",
-                                                 "Little Falls" = "lfalls"),
-                                               selected = c("luke", "lfalls")),
+                                                 "Little Falls" = "lfalls",
+                                                 "Little Falls (Low Flow Prediction)" = "lfalls_pred"),
+                                               selected = c("luke", "lfalls", "lfalls_pred")),
                             actionButton("reset.nbr", "Reset"),
                             actionButton("clear.nbr", "Clear")
            ), # End Conditional Panel One-Day Operations

@@ -9,6 +9,7 @@ need <- c("shiny",
           "data.table",
           #"plotly",
           "Cairo",
+          "RcppRoll",
           "zoo") 
 # find out which packages are installed
 ins <- installed.packages()[, 1] 
@@ -23,3 +24,4 @@ if (length(Get) > 0) {
 eval(parse(text = paste("library(", need, ")")))
 rm(Get, ins, need)
 #------------------------------------------------------------------------------
+options(shiny.usecairo = TRUE)
