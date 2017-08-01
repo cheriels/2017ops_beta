@@ -10,6 +10,7 @@ tabPanel("Situational Awareness",
                   textOutput("sa_notification_1"),
                   tags$head(tags$style(HTML("#sa_notification_1{
                                        color: #FF0000;
+                                       height:40px;
                                        font-size: 20px;
                                        font-style: italic;
                                                               }"
