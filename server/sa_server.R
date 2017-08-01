@@ -83,3 +83,13 @@ output$sa <- renderPlot({
             x.class = "date",
             y.lab = y.units())
 }) # End output$sa
+#----------------------------------------------------------------------------
+output$sa_notification_1 <- renderText({
+  x <- daily.df %>%
+    filter(date_time == todays.date())
+  xx <- round(x$lfalls[1]/1.547) # convert cfs to mgd
+  y <- withdrawals.df %>%
+    filter(date_time == todays.date())
+  yy <- y$wa_greatfalls[1] + y$wa_littlefalls[1] + y$fw_potomac_prod[1] + y$wssc_potomac_prod[1] + 100
+  paste("Today's flow at Little Falls flow is ", xx, "MGD. The trigger for drought operations is ", yy, " MGD.")
+})
