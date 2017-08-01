@@ -88,6 +88,7 @@ output$sa <- renderPlot({
             y.lab = y.units())
 }) # End output$sa
 #----------------------------------------------------------------------------
+# This is very crude, but my first try at adding a notification
 output$sa_notification_1 <- renderText({
   x <- daily.df %>%
     filter(date_time == todays.date())
