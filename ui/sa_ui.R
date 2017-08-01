@@ -6,15 +6,16 @@ tabPanel("Situational Awareness",
          fluidRow(
            column(width = 12,
                   align = "center",
+                  #tags$br(),
                   textOutput("sa_notification_1"),
                   tags$head(tags$style(HTML("#sa_notification_1{
-                                       color: red;
+                                       color: #FF0000;
                                        font-size: 20px;
                                        font-style: italic;
                                                               }"
-                                           )
-                                       )
-                            )
-                  ) # End column
+                  )
+                  )
+                  )
+           ) # End column
          ) # End fluidRow
 ) # End tabPanel
