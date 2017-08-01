@@ -45,6 +45,7 @@ output$dts <- renderPlot({
             max.flow = input$max.flow,
             gages.checked = input$gages.dts,
             labels.vec = NULL,
+            linesize.vec = NULL,
             linetype.vec = NULL,
             color.vec = NULL,
             x.class = "date",
