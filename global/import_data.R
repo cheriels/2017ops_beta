@@ -1,16 +1,17 @@
 # Import daily flow data.
-daily.df <- data.table::fread("data/flow_daily_cfs.csv", data.table = FALSE) %>% 
+daily.df <- data.table::fread("data/current/flow_daily_cfs.csv", data.table = FALSE,
+                              header = TRUE) %>% 
   dplyr::select(1:6) %>% 
   dplyr::rename(date_time = date,
-                lfalls = X1646500,
-                seneca = X1645000,
-                goose = X1644000,
-                monocacy = X1643000,
-                por = X1638500) %>% 
+                lfalls = "1646500",
+                seneca = "1645000",
+                goose = "1644000",
+                monocacy = "1643000",
+                por = '1638500') %>% 
   dplyr::mutate(date_time = as.Date(date_time))
 #------------------------------------------------------------------------------
 # Import marfc data.
-marfc.df <- data.table::fread("data/marfc_brkm2.csv", data.table = FALSE) %>% 
+marfc.df <- data.table::fread("data/current/marfc_brkm2.csv", data.table = FALSE) %>% 
   dplyr::mutate(date_time = lubridate::mdy_hm(date_time),
                 stage = as.numeric(gsub("ft", "", stage)),
                 state_units = "ft",
@@ -23,7 +24,10 @@ marfc.forecast <- marfc.df %>%
   dplyr::rename(marfc = flow)
 #------------------------------------------------------------------------------
 # Import hourly flow data.
-hourly.df <- data.table::fread("data/flow_hourly_cfs.csv", data.table = FALSE) %>% 
+#hourly.path <- file.path("H:/Projects/COOP Data/usgs_flow",
+#                         "flows2017_08_21_10_33_06.csv")
+hourly.df <- data.table::fread("data/current/flow_hourly_cfs.csv", data.table = FALSE) %>% 
+#hourly.df <- data.table::fread(hourly.path, data.table = FALSE) %>% 
   dplyr::select(date_time, x1598500, x1638500, x1645000,
                 x1644000, x1643000, x1646500) %>% 
   dplyr::rename(luke = x1598500,
@@ -38,7 +42,7 @@ hourly.df <- data.table::fread("data/flow_hourly_cfs.csv", data.table = FALSE) %
   dplyr::filter(!is.na(flow))
 #------------------------------------------------------------------------------
 # Import variable lag-k reference table.
-klag.df <- data.table::fread("data/k_lag.csv", data.table = FALSE) %>% 
+klag.df <- data.table::fread("data/parameters/k_lag.csv", data.table = FALSE) %>% 
   rename_all(tolower) %>% 
   mutate(gage = tolower(gage))# %>% 
 #  select(-lag) %>% # REMOVE in WHEN MORE GAGES ADDED**********************************************************
