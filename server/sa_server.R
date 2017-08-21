@@ -60,10 +60,12 @@ sa.df <- reactive({
 })
 #----------------------------------------------------------------------------
 output$sa <- renderPlot({
-  
+  start.date <- start.date()
+  end.date <- end.date()
+  #----------------------------------------------------------------------------
   gen_plots(sa.df(),
-            start.date = input$date.range[1],
-            end.date = input$date.range[2], 
+            start.date,
+            end.date, 
             min.flow = input$min.flow,
             max.flow = input$max.flow,
             gages.checked = input$gages.sa,
