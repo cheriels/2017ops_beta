@@ -1,5 +1,5 @@
 # Import daily flow data.
-daily.df <- read.csv("data/flow_daily_cfs.csv", stringsAsFactors = FALSE) %>% 
+daily.df <- data.table::fread("data/flow_daily_cfs.csv", data.table = FALSE) %>% 
   dplyr::select(1:6) %>% 
   dplyr::rename(date_time = date,
                 lfalls = X1646500,
