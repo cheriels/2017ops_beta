@@ -31,8 +31,10 @@ gen_plots <- function(data.df, start.date, end.date,
   } else {
     sub.df <- data.df %>% 
       dplyr::filter(gage %in% gages.checked,
-                    date_time >= start.date  &
-                      date_time <= end.date)
+                    date_time >= start.date - lubridate::days(3) &
+                      date_time <= end.date + lubridate::days(1))
+                    #date_time >= start.date  &
+                    #  date_time <= end.date)
   }
   #----------------------------------------------------------------------------
   validate(
@@ -91,15 +93,20 @@ gen_plots <- function(data.df, start.date, end.date,
                                                               "#8600b3", "#b30059"))
   }
   #----------------------------------------------------------------------------
-  if (x.class == "date") {
-    final.plot <- final.plot + scale_x_date(limits = c(start.date, end.date))
-  } else if (x.class == "datetime") {
-    final.plot <- final.plot + scale_x_datetime(limits = c(start.date, end.date))
-  }
+#  if (x.class == "date") {
+#    final.plot <- final.plot + scale_x_date(limits = c(start.date, end.date))
+#  } else if (x.class == "datetime") {
+#    final.plot <- final.plot + scale_x_datetime(limits = c(start.date, end.date))
+#  }
+  #----------------------------------------------------------------------------
+  #----------------------------------------------------------------------------
+  if (is.na(min.flow)) min.flow <- min(sub.df$flow, na.rm = TRUE)
+  if (is.na(max.flow)) max.flow <- max(sub.df$flow, na.rm = TRUE)
   
-  if (!is.null(min.flow) || !is.null(max.flow)) {
-    final.plot <- final.plot + ylim(min.flow, max.flow)
-  }
+  final.plot <- final.plot + #ylim(min.flow, max.flow)
+    coord_cartesian(xlim = c(start.date, end.date),
+                    ylim = c(min.flow, max.flow))
+  
   #----------------------------------------------------------------------------
   return(final.plot)
 }
