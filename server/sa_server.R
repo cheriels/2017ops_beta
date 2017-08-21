@@ -53,7 +53,6 @@ sa.df <- reactive({
     # Predict Little Falls from POR and Monocacy
     mutate(lfalls_from_upstr = por_recess_lag + monocacy_recess_lag) %>% 
     select(date_time, lfalls, por, lfalls_from_upstr, lfalls_trigger) %>% 
-    filter(date_time > start.date & date_time < end.date) %>% 
     tidyr::gather(gage, flow, lfalls:lfalls_trigger) %>% 
     na.omit()
   
