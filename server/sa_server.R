@@ -128,7 +128,9 @@ output$sa_notification_4 <- renderText({
     filter(date_time == todays.date()) %>%
     select(potomac_total)  
   y <- y*0.25
-  paste("The trigger for the LFAA Restriction Stage is ", y, " MGD.")
+  paste("The trigger for the LFAA Restriction Stage: observed flow at Little Falls = ", y, " MGD.")
 })
-# Notification for the LFAA Alert Stage
-# Notification for the LFAA Restriction Stage
+#----------------------------------------------------------------------------
+# Need to predict flow at Little Falls 9 days hence
+# First need to create "natural" flow time series - by subtracting out withdrawals and contributions of NBr reservoirs
+x <- daily.df
