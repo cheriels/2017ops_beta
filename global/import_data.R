@@ -1,13 +1,19 @@
 # Import daily flow data.
 daily.df <- data.table::fread("data/current/flow_daily_cfs.csv", data.table = FALSE,
                               header = TRUE) %>% 
-  dplyr::select(1:6) %>% 
+  dplyr::select(date, "1646500", "1645000", '1644000', "1643000", "1638500",
+                "1598500", "1595800", "1597500", "1595500", "1596500") %>% 
   dplyr::rename(date_time = date,
                 lfalls = "1646500",
                 seneca = "1645000",
                 goose = "1644000",
                 monocacy = "1643000",
-                por = '1638500') %>% 
+                por = "1638500",
+                luke = "1598500",
+                barnum = "1595800",
+                bloomington = "1597500",
+                kitzmiller = "1595500",
+                barton = "1596500") %>% 
   dplyr::mutate(date_time = as.Date(date_time))
 #------------------------------------------------------------------------------
 # Import marfc data.
