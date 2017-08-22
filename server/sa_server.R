@@ -91,44 +91,44 @@ output$sa <- renderPlot({
 #----------------------------------------------------------------------------
 # This is very crude, but my first try at adding notifications
 # first, for flow at Little Falls and total Potomac withdrawals:
-x <- daily.df %>%
-  mutate(lfalls_mgd = round(lfalls/1.547)) # convert cfs to mgd
-withdrawals.df <- withdrawals.df %>%
-  mutate(potomac_total = wa_greatfalls + wa_littlefalls + fw_potomac_prod + wssc_potomac_prod)
+tot.withdrawal <- reactive({
+  withdrawals.df %>%
+    mutate(potomac_total = wa_greatfalls + wa_littlefalls + fw_potomac_prod + wssc_potomac_prod) %>% 
+    filter(date_time == todays.date()) %>%
+    pull(potomac_total)
+})
+
 output$sa_notification_1 <- renderText({
-#  x <- daily.df %>%
-  x <- x %>%
+  x <- daily.df %>%
+    mutate(lfalls_mgd = round(lfalls / 1.547)) %>% 
     select(date_time, lfalls_mgd) %>%
     filter(date_time == todays.date()) %>%
     select(lfalls_mgd)
-  y <- withdrawals.df %>%
-    filter(date_time == todays.date()) %>%
-    select(potomac_total)
-  paste("Today's flow at Little Falls flow is ", x, " MGD, and yesterday's total Potomac withdrawal was ", y, " MGD.")
+    
+  paste("Today's flow at Little Falls flow is ",
+        x, 
+        " MGD, and yesterday's total Potomac withdrawal was ",
+        tot.withdrawal(),
+        " MGD.")
 })
 # Next, the trigger for drought ops - as stated in the original Drought Manual
 # (but actually needs to be any time over the next 5 days)
 output$sa_notification_2 <- renderText({
-  y <- withdrawals.df %>%
-    filter(date_time == todays.date()) %>%
-    select(potomac_total)
-  y <- y + 100
-  paste("The trigger for drought operations: observed flow at Little Falls = ", y, " MGD.")
+  paste("The trigger for drought operations: observed flow at Little Falls = ",
+        tot.withdrawal() + 100,
+        " MGD.")
 })
 # Next the LFAA's trigger for the Alert Stage
 output$sa_notification_3 <- renderText({
-  y <- withdrawals.df %>%
-    filter(date_time == todays.date()) %>%
-    select(potomac_total)
-  paste("The trigger for the LFAA Alert Stage: observed flow at Little Falls = ", y, " MGD.")
+  paste("The trigger for the LFAA Alert Stage: observed flow at Little Falls = ",
+        tot.withdrawal(),
+        " MGD.")
 })
 # Next the LFAA's trigger for the Restriction Stage
 output$sa_notification_4 <- renderText({
-  y <- withdrawals.df %>%
-    filter(date_time == todays.date()) %>%
-    select(potomac_total)  
-  y <- y*0.25
-  paste("The trigger for the LFAA Restriction Stage is ", y, " MGD.")
+  paste("The trigger for the LFAA Restriction Stage is ",
+        tot.withdrawal() * 0.25,
+        " MGD.")
 })
 # Notification for the LFAA Alert Stage
 # Notification for the LFAA Restriction Stage
