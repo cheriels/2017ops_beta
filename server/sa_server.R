@@ -94,20 +94,21 @@ output$sa <- renderPlot({
 # first, for flow at Little Falls and total Potomac withdrawals:
 tot.withdrawal <- reactive({
   withdrawals.df %>%
-    mutate(potomac_total = wa_greatfalls + wa_littlefalls + fw_potomac_prod + wssc_potomac_prod) %>% 
     filter(date_time == todays.date()) %>%
     pull(potomac_total)
 })
 
-output$sa_notification_1 <- renderText({
-  x <- daily.df %>%
-    mutate(lfalls_mgd = round(lfalls / 1.547)) %>% 
-    select(date_time, lfalls_mgd) %>%
+cfs_to_mgd <- 1.547
+lfalls.today.mgd <- reactive({
+  daily.df %>%
+    mutate(lfalls = round(lfalls/cfs_to_mgd)) %>% 
     filter(date_time == todays.date()) %>%
-    select(lfalls_mgd)
-  
+    pull(lfalls)
+})
+
+output$sa_notification_1 <- renderText({
   paste("Today's flow at Little Falls flow is ",
-        x, 
+        lfalls.today.mgd(), 
         " MGD, and yesterday's total Potomac withdrawal was ",
         tot.withdrawal(),
         " MGD.")
@@ -131,5 +132,3 @@ output$sa_notification_4 <- renderText({
         tot.withdrawal() * 0.25,
         " MGD.")
 })
-# Notification for the LFAA Alert Stage
-# Notification for the LFAA Restriction Stage

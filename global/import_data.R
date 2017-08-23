@@ -57,7 +57,8 @@ klag.df <- data.table::fread("data/parameters/k_lag.csv", data.table = FALSE) %>
 withdrawals.df <- data.table::fread("data/current/withdrawal_daily_mgd.csv",
                                     data.table = FALSE) %>% 
   dplyr::rename(date_time = date) %>% 
-  dplyr::mutate(date_time = lubridate::ymd(date_time))
+  dplyr::mutate(date_time = lubridate::ymd(date_time)) %>%
+  dplyr::mutate(potomac_total = wa_greatfalls + wa_littlefalls + fw_potomac_prod + wssc_potomac_prod)
 #------------------------------------------------------------------------------
 lowflow.hourly.df <- data.table::fread("data/current/lfalls_sim_hourly.csv",
                                 data.table = FALSE) %>% 
