@@ -53,8 +53,8 @@ wellPanel(
                             checkboxGroupInput("gages.nbr", NULL,
                                                c("Luke" = "luke",
                                                  "Little Falls" = "lfalls",
-                                                 "Little Falls (Low Flow Prediction)" = "lfalls_pred"),
-                                               selected = c("luke", "lfalls", "lfalls_pred")),
+                                                 "Little Falls (Low Flow Forecast System)" = "lfalls_lffs"),
+                                               selected = c("luke", "lfalls", "lfalls_lffs")),
                             actionButton("reset.nbr", "Reset"),
                             actionButton("clear.nbr", "Clear")
            ), # End Conditional Panel One-Day Operations
