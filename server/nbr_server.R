@@ -18,8 +18,8 @@ nbr.df <- reactive({
   end.date <- end.date()
   #----------------------------------------------------------------------------
   sub.df <- hourly.reac() #%>% 
-#    dplyr::filter(date_time >= start.date - lubridate::days(3) &
-#                    date_time <= end.date + lubridate::days(1))
+  #    dplyr::filter(date_time >= start.date - lubridate::days(3) &
+  #                    date_time <= end.date + lubridate::days(1))
   #----------------------------------------------------------------------------
   if (nrow(sub.df) == 0 ) return(NULL)
   #----------------------------------------------------------------------------
@@ -39,7 +39,7 @@ nbr.df <- reactive({
     dplyr::mutate(lfalls_lffs = lfalls_sim - (sim - obs)) %>% 
     dplyr::select(date_time, lfalls_lffs) %>% 
     tidyr::gather(gage, flow, lfalls_lffs)
-
+  
   #----------------------------------------------------------------------------
   final.df <- dplyr::bind_rows(sub.df, lfalls.df)
   #----------------------------------------------------------------------------
@@ -69,7 +69,9 @@ output$nbr <- renderPlot({
                           "lfalls_lffs" = "#56B4E9",
                           "luke" = "#009E73"),
             x.class = "datetime",
-            y.lab = y.units())
+            y.lab = y.units(),
+            nine_day.df = NULL#lfalls.natural.mgd()
+            )
 }) # End output$nbr
 #------------------------------------------------------------------------------
 # Adding our estimate of flow at Little Falls in 9 days
@@ -81,13 +83,12 @@ lfalls.natural.mgd <- reactive({
     # First subtract off flow augmentation due to JR and Savage dams:
     mutate(lfalls_natural = round(lfalls/cfs_to_mgd),
            net_nbr_aug = (barnum - kitzmiller + bloomington - barton)/cfs_to_mgd,
-           lfalls_natural = lfalls_natural - 
-             (lag(net_nbr_aug, n = 8) + lag(net_nbr_aug, n = 9) + lag(net_nbr_aug, n = 10))/3,
-           # Then eliminate effect of WMA withdrawals:
-           lfalls_natural + withdrawals.df$potomac_total,
-           # Need more thought about values for Luke & withdrawals - ideally would use 9-day fc's:
-           lfalls_9dayfc = 288.79 * exp(0.0009 * lfalls_natural) + luke - withdrawals.df$potomac_total,
-           lfalls_9dayfc = lag(lfalls_9dayfc, -9)) %>%
+           lfalls_natural = lfalls_natural - (lag(net_nbr_aug, n = 8) + lag(net_nbr_aug, n = 9) + lag(net_nbr_aug, n = 10))/3) %>% 
+    left_join(withdrawals.df[, c("date_time", "potomac_total")], by = "date_time") %>% 
+    # Then eliminate effect of WMA withdrawals:
+    mutate(lfalls_natural = lfalls_natural + potomac_total,
+           lfalls_9dayfc = 288.79 * exp(0.0009 * lfalls_natural) + luke - potomac_total,
+           lfalls_9dayfc = dplyr::lead(lfalls_9dayfc, 9)) %>% 
     filter(date_time == todays.date() + 9) %>%
     select(date_time, lfalls_9dayfc)
 })

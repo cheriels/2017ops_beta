@@ -1,6 +1,7 @@
 # Import daily flow data.
 daily.df <- data.table::fread("data/current/flow_daily_cfs.csv", data.table = FALSE,
-                              header = TRUE) %>% 
+                              header = TRUE, 
+                              na.strings = c("", " ", "Eqp")) %>% 
   dplyr::select(date, "1646500", "1645000", '1644000', "1643000", "1638500",
                 "1598500", "1595800", "1597500", "1595500", "1596500") %>% 
   dplyr::rename(date_time = date,

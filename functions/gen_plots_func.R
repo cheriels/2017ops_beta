@@ -4,7 +4,8 @@ gen_plots <- function(data.df, start.date, end.date,
                       labels.vec = NULL, linesize.vec = NULL,
                       linetype.vec = NULL, color.vec = NULL,
                       x.class,
-                      x.lab = "Date Time", y.lab = "Flow (CFS)") {
+                      x.lab = "Date Time", y.lab = "Flow (CFS)",
+                      nine_day.df = NULL) {
   #--------------------------------------------------------------------------
   start.date <- as.Date(start.date)
   end.date <- as.Date(end.date)
@@ -97,7 +98,10 @@ gen_plots <- function(data.df, start.date, end.date,
   final.plot <- final.plot +
     coord_cartesian(xlim = c(start.date, end.date),
                     ylim = c(min.flow, max.flow))
-  
+  if (!is.null(nine_day.df)) {
+    final.plot <- final.plot +
+      geom_point(data = nine_day.df, aes(x = date_time, y = as.numeric(lfalls_9dayfc)))
+  }
   #----------------------------------------------------------------------------
   return(final.plot)
 }
