@@ -1,7 +1,7 @@
 # Import daily flow data.
 daily.df <- data.table::fread("data/current/flow_daily_cfs.csv", data.table = FALSE,
                               header = TRUE, 
-                              na.strings = c("", " ", "Eqp")) %>% 
+                              na.strings = c("", " ", "Eqp", "#N/A", "-999999")) %>% 
   dplyr::select(date, "1646500", "1645000", '1644000', "1643000", "1638500",
                 "1598500", "1595800", "1597500", "1595500", "1596500") %>% 
   dplyr::rename(date_time = date,
@@ -33,7 +33,8 @@ marfc.forecast <- marfc.df %>%
 # Import hourly flow data.
 #hourly.path <- file.path("H:/Projects/COOP Data/usgs_flow",
 #                         "flows2017_08_21_10_33_06.csv")
-hourly.df <- data.table::fread("data/current/flow_hourly_cfs.csv", data.table = FALSE) %>% 
+hourly.df <- data.table::fread("data/current/flow_hourly_cfs.csv", data.table = FALSE,
+                               na.strings = c("", " ", "Eqp", "#N/A", "-999999")) %>% 
 #hourly.df <- data.table::fread(hourly.path, data.table = FALSE) %>% 
   dplyr::select(date_time, x1598500, x1638500, x1645000,
                 x1644000, x1643000, x1646500) %>% 

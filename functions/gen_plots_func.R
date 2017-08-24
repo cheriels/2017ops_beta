@@ -104,6 +104,7 @@ gen_plots <- function(data.df, start.date, end.date,
                  as.Date() %>% 
               paste("00:00:00") %>% 
               as.POSIXct())
+    
     final.plot <- final.plot +
       geom_point(data = nine_day.df,
                  aes(x = date_time, y = lfalls_9dayfc),
