@@ -99,8 +99,19 @@ gen_plots <- function(data.df, start.date, end.date,
     coord_cartesian(xlim = c(start.date, end.date),
                     ylim = c(min.flow, max.flow))
   if (!is.null(nine_day.df)) {
+    nine_day.df <- nine_day.df %>% 
+          mutate(date_time = date_time %>% 
+                 as.Date() %>% 
+              paste("00:00:00") %>% 
+              as.POSIXct())
     final.plot <- final.plot +
-      geom_point(data = nine_day.df, aes(x = date_time, y = as.numeric(lfalls_9dayfc)))
+      geom_point(data = nine_day.df,
+                 aes(x = date_time, y = lfalls_9dayfc),
+                 inherit.aes = FALSE,
+                 color = "black", 
+                 shape = 1,
+                 stroke = 2,
+                 size = 10)
   }
   #----------------------------------------------------------------------------
   return(final.plot)

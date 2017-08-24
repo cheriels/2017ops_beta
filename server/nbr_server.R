@@ -46,9 +46,38 @@ nbr.df <- reactive({
   return(final.df)
 })
 #------------------------------------------------------------------------------
+# Adding our estimate of flow at Little Falls in 9 days
+
+
+lfalls.natural.mgd <- reactive({
+  # First need to create Little Falls "natural" flow - without effects of JRR and Savage dams and withdrawals:
+  cfs_to_mgd <- 1.547
+  withdrawal.sub <- withdrawals.df %>% 
+    select(date_time, potomac_total)
+  #----------------------------------------------------------------------------
+  final.df <- daily.df %>%
+    # First subtract off flow augmentation due to JR and Savage dams:
+    mutate(lfalls_natural = round(lfalls / cfs_to_mgd),
+           net_nbr_aug = (barnum - kitzmiller + bloomington - barton) / cfs_to_mgd,
+           lfalls_natural = lfalls_natural - (lag(net_nbr_aug, n = 8) + lag(net_nbr_aug, n = 9) + lag(net_nbr_aug, n = 10)) / 3) %>% 
+    left_join(withdrawal.sub, by = "date_time") %>% 
+    # Then eliminate effect of WMA withdrawals:
+    mutate(lfalls_natural = lfalls_natural + potomac_total,
+           lfalls_9dayfc = 288.79 * exp(0.0009 * lfalls_natural) + luke - potomac_total,
+           lfalls_9dayfc = dplyr::lead(lfalls_9dayfc, 9)) %>% 
+    filter(date_time == todays.date() + lubridate::days(9)) %>%
+    select(date_time, lfalls_9dayfc)
+  #----------------------------------------------------------------------------
+  if (!exists("final.df") || is.na(final.df$lfalls_9dayfc)) final.df <- NULL
+  #----------------------------------------------------------------------------
+  return(final.df)
+})
+# Zach: what I want to do is plot the ordered pair: (t = today + 9, flow = lfalls_9dayfc(today))
+#------------------------------------------------------------------------------
 output$nbr <- renderPlot({
   start.date <- start.date()
   end.date <- end.date()
+  nine.day <- lfalls.natural.mgd()
   #----------------------------------------------------------------------------
   gen_plots(nbr.df(),
             start.date,
@@ -70,28 +99,9 @@ output$nbr <- renderPlot({
                           "luke" = "#009E73"),
             x.class = "datetime",
             y.lab = y.units(),
-            nine_day.df = NULL#lfalls.natural.mgd()
+            nine_day.df = nine.day
             )
 }) # End output$nbr
-#------------------------------------------------------------------------------
-# Adding our estimate of flow at Little Falls in 9 days
 
-# First need to create Little Falls "natural" flow - without effects of JRR and Savage dams and withdrawals:
-cfs_to_mgd <- 1.547
-lfalls.natural.mgd <- reactive({
-  daily.df %>%
-    # First subtract off flow augmentation due to JR and Savage dams:
-    mutate(lfalls_natural = round(lfalls/cfs_to_mgd),
-           net_nbr_aug = (barnum - kitzmiller + bloomington - barton)/cfs_to_mgd,
-           lfalls_natural = lfalls_natural - (lag(net_nbr_aug, n = 8) + lag(net_nbr_aug, n = 9) + lag(net_nbr_aug, n = 10))/3) %>% 
-    left_join(withdrawals.df[, c("date_time", "potomac_total")], by = "date_time") %>% 
-    # Then eliminate effect of WMA withdrawals:
-    mutate(lfalls_natural = lfalls_natural + potomac_total,
-           lfalls_9dayfc = 288.79 * exp(0.0009 * lfalls_natural) + luke - potomac_total,
-           lfalls_9dayfc = dplyr::lead(lfalls_9dayfc, 9)) %>% 
-    filter(date_time == todays.date() + 9) %>%
-    select(date_time, lfalls_9dayfc)
-})
-# Zach: what I want to do is plot the ordered pair: (t = today + 9, flow = lfalls_9dayfc(today))
 
 
