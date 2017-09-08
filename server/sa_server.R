@@ -10,7 +10,7 @@ observeEvent(input$clear.sa, {
   updateCheckboxGroupInput(session, "gages.sa", "Variables to show:",
                            c("Point of Rocks" = "por",
                              "Little Falls" = "lfalls",
-                             "Little Falls (Predicted)" = "lfalls_from_upstr",
+                             "Little Falls (Predicted from upstream gages)" = "lfalls_from_upstr",
                              "Little Falls trigger for drought ops" = "lfalls_trigger"),
                            selected = NULL)
 })
@@ -71,7 +71,7 @@ output$sa <- renderPlot({
             max.flow = input$max.flow,
             gages.checked = input$gages.sa,
             labels.vec = c("lfalls" = "Little Falls",
-                           "lfalls_from_upstr" = "Little Falls (Predicted)",
+                           "lfalls_from_upstr" = "Little Falls (Predicted from upstream gages)",
                            "por" = "Point of Rocks",
                            "lfalls_trigger" = "Little Falls trigger for drought ops"),
             linesize.vec = c("lfalls" = 2,
@@ -129,6 +129,6 @@ output$sa_notification_3 <- renderText({
 # Next the LFAA's trigger for the Restriction Stage
 output$sa_notification_4 <- renderText({
   paste("The trigger for the LFAA Restriction Stage is ",
-        tot.withdrawal() * 0.25,
+        tot.withdrawal() * 0.25 + 125,
         " MGD.")
 })
