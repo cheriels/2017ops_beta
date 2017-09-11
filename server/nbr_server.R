@@ -64,7 +64,8 @@ lfalls.natural.mgd <- reactive({
     # Then eliminate effect of WMA withdrawals:
     mutate(lfalls_natural = lfalls_natural + potomac_total,
            lfalls_9dayfc = 288.79 * exp(0.0009 * lfalls_natural) + luke - potomac_total,
-           lfalls_9dayfc = dplyr::lead(lfalls_9dayfc, 9)) %>% 
+           lfalls_9dayfc = dplyr::lead(lfalls_9dayfc, 9),
+           lfalls_9dayfc = round(lfalls_9dayfc)) %>% 
     filter(date_time == todays.date() + lubridate::days(9)) %>%
     select(date_time, lfalls_9dayfc)
   #----------------------------------------------------------------------------
@@ -72,7 +73,7 @@ lfalls.natural.mgd <- reactive({
   #----------------------------------------------------------------------------
   return(final.df)
 })
-# Zach: what I want to do is plot the ordered pair: (t = today + 9, flow = lfalls_9dayfc(today))
+# 
 #------------------------------------------------------------------------------
 output$nbr <- renderPlot({
   start.date <- start.date()
@@ -102,6 +103,12 @@ output$nbr <- renderPlot({
             nine_day.df = nine.day
             )
 }) # End output$nbr
+#----------------------------------------------------------------------------
+# Adding text to give numerical values of 9-day fc and Luke target
+output$nbr_notification_1 <- renderText({
+  paste("Little Falls 9-day flow forecast from empirical formula is ",
+        lfalls.natural.mgd()[2], " MGD.")
+})
 
 
 
