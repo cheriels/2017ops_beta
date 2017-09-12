@@ -16,46 +16,36 @@ observeEvent(input$clear.sa, {
 })
 #------------------------------------------------------------------------------
 sa.df <- reactive({
+  if (is.null(daily.reac())) return(NULL)
   todays.date <- todays.date()
   start.date <- start.date()
   end.date <- end.date()
   #----------------------------------------------------------------------------
   sub.df <- daily.reac() %>% 
-    select(date_time, lfalls, por, monocacy) %>% 
-    dplyr::filter(date_time >= start.date - lubridate::days(3) &
-                    date_time <= end.date + lubridate::days(1))
+    #select(date_time, lfalls, por, monocacy) %>% 
+    select(date_time, site, flow) %>% 
+    dplyr::filter(date_time >= start.date - lubridate::days(3),
+                  date_time <= end.date + lubridate::days(1),
+                  site %in% c("lfalls", "por", "mon_jug"))
   if (nrow(sub.df) == 0 ) return(NULL)
+  #----------------------------------------------------------------------------
+  # recess and lag POR flows
   por.df <- sub.df %>% 
     constant_lagk(por, todays.date, lag.days = 1)
   #----------------------------------------------------------------------------
-  pot_withdrawals.sub <- #withdrawals.reac() %>% 
-    withdrawals.df %>% 
-    dplyr::select(-fw_griffith_prod, - wssc_patuxent_prod) %>% 
-    # Used "+" instead of rowSums to be more specific.
-    dplyr::mutate(pot_withdrawals = wa_greatfalls + wa_littlefalls + 
-                    fw_potomac_prod + wssc_potomac_prod) %>% 
-    dplyr::mutate(lfalls_trigger = pot_withdrawals + 100) %>%
-    dplyr::select(date_time, lfalls_trigger)
-  #    dplyr::rename(date = date_time)
-  #----------------------------------------------------------------------------
-  por.df <- por.df %>% 
-    #    tidyr::separate(date_time, into = c("date", "time"), convert = TRUE,
-    #                    sep = " ", remove = FALSE) %>% 
-    #    dplyr::mutate(date = as.Date(date)) %>% 
-    dplyr::left_join(pot_withdrawals.sub, by = "date_time")
-  #    dplyr::select(-date, -time) %>% 
-  #    dplyr::mutate(flow = if_else(gage == "predicted", flow - withdrawals, flow)) %>% 
-  #    dplyr::select(-withdrawals)
-  #----------------------------------------------------------------------------
-  #----------------------------------------------------------------------------
   # recess and lag Monocacy flows
-  final.df <- por.df %>% 
-    constant_lagk(monocacy, todays.date, lag.days = 1) %>% 
-    # Predict Little Falls from POR and Monocacy
-    mutate(lfalls_from_upstr = por_recess_lag + monocacy_recess_lag) %>% 
-    select(date_time, lfalls, por, lfalls_from_upstr, lfalls_trigger) %>% 
-    tidyr::gather(gage, flow, lfalls:lfalls_trigger) %>% 
-    na.omit()
+  mon.df <- por.df %>% 
+    constant_lagk(mon_jug, todays.date, lag.days = 1)
+  #----------------------------------------------------------------------------
+  pot_withdrawals.sub <- withdrawals.reac() %>% 
+    dplyr::filter(unique_id == "potomac_total") %>% 
+    dplyr::mutate(value = value + 100,
+                  unique_id = "lfalls_trigger") %>% 
+    dplyr::select(unique_id, date_time, value) %>% 
+    dplyr::rename(site = unique_id,
+                  flow = value)
+  #----------------------------------------------------------------------------
+  final.df <- dplyr::bind_rows(mon.df, pot_withdrawals.sub)
   
   return(final.df)
 })
@@ -93,42 +83,89 @@ output$sa <- renderPlot({
 # This is very crude, but my first try at adding notifications
 # first, for flow at Little Falls and total Potomac withdrawals:
 tot.withdrawal <- reactive({
-  withdrawals.df %>%
-    filter(date_time == todays.date()) %>%
-    pull(potomac_total)
+  if (is.null(withdrawals.df())) return(NULL)
+  with.scalar <- withdrawals.df() %>%
+    filter(date_time == todays.date(),
+           unique_id == "potomac_total") %>%
+    pull(value)
+  if (length(with.scalar) == 0) return(NULL)
+  return(with.scalar)
 })
-
+#----------------------------------------------------------------------------
 cfs_to_mgd <- 1.547
 lfalls.today.mgd <- reactive({
-  daily.df %>%
-    mutate(lfalls = round(lfalls/cfs_to_mgd)) %>% 
-    filter(date_time == todays.date()) %>%
-    pull(lfalls)
+  if (is.null(daily.df())) return(NULL)
+  lfalls.scalar <- daily.df() %>%
+    filter(date_time == todays.date(),
+           site == "lfalls") %>%
+    mutate(flow = round(flow / cfs_to_mgd)) %>% 
+    pull(flow)
+  if (length(lfalls.scalar) == 0) return(NULL)
+  return(lfalls.scalar)
 })
-
+#----------------------------------------------------------------------------
 output$sa_notification_1 <- renderText({
-  paste("Today's flow at Little Falls flow is ",
-        lfalls.today.mgd(), 
-        " MGD, and yesterday's total Potomac withdrawal was ",
-        tot.withdrawal(),
-        " MGD.")
+  if (is.null(lfalls.today.mgd()) & is.null(tot.withdrawal())) {
+    paste("Today's flow at Little Falls flow",
+          "and",
+          "yesterday's total Potomac withdrawal",
+          "cannot be calculated for the currently selected 'Todays Date'.")
+  } else if (!is.null(lfalls.today.mgd()) & is.null(tot.withdrawal())) {
+    paste("Today's flow at Little Falls flow is ",
+          lfalls.today.mgd(), 
+          "but",
+          "yesterday's total Potomac withdrawal",
+          "cannot be calculated for the currently selected 'Todays Date'.")
+  } else if (is.null(lfalls.today.mgd()) & !is.null(tot.withdrawal())) {
+    paste("Today's flow at Little Falls flow",
+          "cannot be calculated for the currently selected 'Todays Date'",
+          "but",
+          "yesterday's total Potomac withdrawal was",
+          tot.withdrawal(),
+          " MGD.")
+  } else if (!is.null(lfalls.today.mgd()) & !is.null(tot.withdrawal())) {
+    paste("Today's flow at Little Falls flow is ",
+          lfalls.today.mgd(), 
+          " MGD, and yesterday's total Potomac withdrawal was ",
+          tot.withdrawal(),
+          " MGD.")
+  }
 })
+#----------------------------------------------------------------------------
 # Next, the trigger for drought ops - as stated in the original Drought Manual
 # (but actually needs to be any time over the next 5 days)
 output$sa_notification_2 <- renderText({
-  paste("The trigger for drought operations: observed flow at Little Falls = ",
-        tot.withdrawal() + 100,
-        " MGD.")
+  if (is.null(tot.withdrawal())) {
+    paste("The trigger for drought operations: observed flow at Little Falls",
+          "cannot be calculated for the currently selected 'Todays Date'.")
+  } else {
+    paste("The trigger for drought operations: observed flow at Little Falls = ",
+          tot.withdrawal() + 100,
+          " MGD.")
+  }
 })
+#----------------------------------------------------------------------------
 # Next the LFAA's trigger for the Alert Stage
 output$sa_notification_3 <- renderText({
-  paste("The trigger for the LFAA Alert Stage: observed flow at Little Falls = ",
-        tot.withdrawal(),
-        " MGD.")
+  if (is.null(tot.withdrawal())) {
+    paste("The trigger for the LFAA Alert Stage: observed flow at Little Falls",
+          "cannot be calculated for the currently selected 'Todays Date'.")
+  } else {
+    paste("The trigger for the LFAA Alert Stage: observed flow at Little Falls = ",
+          tot.withdrawal(),
+          " MGD.")
+  }
 })
+#----------------------------------------------------------------------------
 # Next the LFAA's trigger for the Restriction Stage
 output$sa_notification_4 <- renderText({
-  paste("The trigger for the LFAA Restriction Stage is ",
-        tot.withdrawal() * 0.25 + 125,
-        " MGD.")
+  if (is.null(tot.withdrawal())) {
+    paste("The trigger for the LFAA Restriction Stage",
+          "cannot be calculated for the currently selected 'Todays Date'.")
+  } else {
+    paste("The trigger for the LFAA Restriction Stage is ",
+          tot.withdrawal() * 0.25 + 125,
+          " MGD.")
+  }
 })
+#----------------------------------------------------------------------------
