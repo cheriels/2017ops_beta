@@ -7,27 +7,21 @@ tabPanel("Situational Awareness",
            column(width = 12,
                   align = "left",
                   textOutput("sa_notification_1"),
-                  tags$head(tags$style(HTML("#sa_notification_1{
+                  tags$head(
+                    tags$style(
+                      HTML("#sa_notification_1{
                                        color: #FF0000;
                                        height:40px;
                                        font-size: 20px;
-                                       font-style: italic;
-                                                              }"
+                                       font-style: italic;}"
+                      )
+                    )
                   )
-                  )
-                  )
-           ) # End column
-         ), # End fluidRow
-         fluidRow(
-           column(width = 12, offset = 1, align = "left", textOutput("sa_notification_2")
-                  ) # End column
-                  ), # End fluidRow
-         fluidRow(
-           column(width = 12, offset = 1, align = "left", textOutput("sa_notification_3")
-                  ) # End column
-                  ), # End fluidRow
-         fluidRow(
-           column(width = 12, offset = 1, align = "left", textOutput("sa_notification_4")
-                  ) # End column
-                  ) # End fluidRow
+           ),# End column
+           column(width = 12, offset = 1, align = "left",
+                  textOutput("sa_notification_2"),
+                  textOutput("sa_notification_3"),
+                  textOutput("sa_notification_4")
+           )
+         ) # End fluidRow
 ) # End tabPanel
