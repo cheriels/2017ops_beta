@@ -24,22 +24,21 @@ nbr.df <- reactive({
   if (nrow(sub.df) == 0 ) return(NULL)
   #----------------------------------------------------------------------------
   lfalls.obs <- sub.df %>% 
-    dplyr::filter(gage == "lfalls") %>% 
+    dplyr::filter(site == "lfalls") %>% 
     rolling_min(flow, 240, "obs") %>% 
-    dplyr::filter(gage == "obs")
+    dplyr::filter(site == "obs")
   
   lfalls.pred <- lowflow.hourly.reac() %>% 
-    dplyr::filter(gage == "lfalls_sim") %>% 
+    dplyr::filter(site == "lfalls_sim") %>% 
     rolling_min(flow, 240, "sim")
   
   lfalls.df <- dplyr::bind_rows(lfalls.obs, lfalls.pred) %>% 
-    tidyr::spread(gage, flow) %>% 
+    tidyr::spread(site, flow) %>% 
     dplyr::filter(!is.na(sim)) %>% 
     tidyr::fill(obs) %>% 
     dplyr::mutate(lfalls_lffs = lfalls_sim - (sim - obs)) %>% 
     dplyr::select(date_time, lfalls_lffs) %>% 
-    tidyr::gather(gage, flow, lfalls_lffs)
-  
+    tidyr::gather(site, flow, lfalls_lffs)
   #----------------------------------------------------------------------------
   final.df <- dplyr::bind_rows(sub.df, lfalls.df)
   #----------------------------------------------------------------------------
@@ -50,16 +49,24 @@ nbr.df <- reactive({
 
 
 lfalls.natural.mgd <- reactive({
+  if (is.null(withdrawals.df()) || is.null(daily.df())) return(NULL)
   # First need to create Little Falls "natural" flow - without effects of JRR and Savage dams and withdrawals:
   cfs_to_mgd <- 1.547
-  withdrawal.sub <- withdrawals.df %>% 
-    select(date_time, potomac_total)
+  withdrawal.sub <- withdrawals.df() %>% 
+    dplyr::select(date_time, unique_id, value) %>% 
+    dplyr::filter(unique_id == "potomac_total") %>% 
+    tidyr::spread(unique_id, value)
   #----------------------------------------------------------------------------
-  final.df <- daily.df %>%
+  final.df <- daily.df() %>%
+    dplyr::select(-qual_code) %>% 
+    tidyr::spread(site, flow) %>% 
     # First subtract off flow augmentation due to JR and Savage dams:
     mutate(lfalls_natural = round(lfalls / cfs_to_mgd),
            net_nbr_aug = (barnum - kitzmiller + bloomington - barton) / cfs_to_mgd,
-           lfalls_natural = lfalls_natural - (lag(net_nbr_aug, n = 8) + lag(net_nbr_aug, n = 9) + lag(net_nbr_aug, n = 10)) / 3) %>% 
+           lfalls_lags = lag(net_nbr_aug, n = 8) +
+             lag(net_nbr_aug, n = 9) +
+             lag(net_nbr_aug, n = 10),
+           lfalls_natural = lfalls_natural - lfalls_lags / 3) %>% 
     left_join(withdrawal.sub, by = "date_time") %>% 
     # Then eliminate effect of WMA withdrawals:
     mutate(lfalls_natural = lfalls_natural + potomac_total,
@@ -69,7 +76,7 @@ lfalls.natural.mgd <- reactive({
     filter(date_time == todays.date() + lubridate::days(9)) %>%
     select(date_time, lfalls_9dayfc)
   #----------------------------------------------------------------------------
-  if (!exists("final.df") || is.na(final.df$lfalls_9dayfc)) final.df <- NULL
+  if (is.na(final.df$lfalls_9dayfc[1])) return(NULL)
   #----------------------------------------------------------------------------
   return(final.df)
 })
@@ -106,8 +113,14 @@ output$nbr <- renderPlot({
 #----------------------------------------------------------------------------
 # Adding text to give numerical values of 9-day fc and Luke target
 output$nbr_notification_1 <- renderText({
-  paste("Little Falls 9-day flow forecast from empirical formula is ",
-        lfalls.natural.mgd()[2], " MGD.")
+  if (is.null(lfalls.natural.mgd())) {
+    paste("Little Falls 9-day flow forecast from empirical formula cannot",
+          "with the currently selected 'Todays Date'.")
+  } else {
+    paste("Little Falls 9-day flow forecast from empirical formula is ",
+          lfalls.natural.mgd()$lfalls_9dayfc, " MGD.")
+  }
+ 
 })
 
 
