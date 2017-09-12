@@ -4,8 +4,8 @@ rolling_min <- function(long.df, flow.col, roll.window, gage.name = "min") {
     dplyr::mutate(min = c(rep(NA, roll.window - 1), 
                    RcppRoll::roll_min(rlang::UQ(flow.col), roll.window))) %>% 
     dplyr::select(date_time, min) %>% 
-    tidyr::gather(gage, flow, min) %>% 
-    dplyr::mutate(gage = gage.name) %>% 
+    tidyr::gather(site, flow, min) %>% 
+    dplyr::mutate(site = gage.name) %>% 
     dplyr::filter(!is.na(flow)) %>% 
     dplyr::bind_rows(long.df)
   return(final.df)
