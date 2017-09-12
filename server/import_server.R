@@ -1,10 +1,10 @@
-
-select.dir <- "current"
-working.data.dir <- file.path("data_ts", select.dir)
+working.data.dir <- reactive({
+  file.path("data_ts", input$data.dir)
+})
 na.replace <- c("", " ", "Eqp", "#N/A", "-999999")
 #------------------------------------------------------------------------------
 daily.df <- reactive({
- daily.df <- file.path(working.data.dir, "flows_obs/flow_daily_cfs.csv") %>% 
+ daily.df <- file.path(working.data.dir(), "flows_obs/flow_daily_cfs.csv") %>% 
     data.table::fread(data.table = FALSE,
                       na.strings = na.replace) %>% 
     dplyr::mutate(date_time = as.Date(date_time))
@@ -12,7 +12,7 @@ daily.df <- reactive({
 })
 #------------------------------------------------------------------------------
 marfc.forecast <- reactive({
-  marfc.df <- file.path(working.data.dir, "flow_fc/nws/MARFC_BRKM2.csv") %>% 
+  marfc.df <- file.path(working.data.dir(), "flow_fc/nws/MARFC_BRKM2.csv") %>% 
     data.table::fread(data.table = FALSE,
                       na.strings = na.replace) %>% 
     dplyr::filter(type == "forecast") %>% 
@@ -29,7 +29,7 @@ marfc.forecast <- reactive({
 hourly.df <- reactive({
   if(is.null(marfc.forecast())) NULL
   
-  hourly.df <- file.path(working.data.dir, "flows_obs/flow_hourly_cfs.csv") %>% 
+  hourly.df <- file.path(working.data.dir(), "flows_obs/flow_hourly_cfs.csv") %>% 
     data.table::fread(data.table = FALSE,
                       na.strings = na.replace) %>% 
     dplyr::mutate(date_time = lubridate::ymd_hms(date_time)) %>% 
@@ -40,7 +40,7 @@ hourly.df <- reactive({
 })
 #------------------------------------------------------------------------------
 lowflow.hourly.df <- reactive({
-  lowflow.hourly.df <- file.path(working.data.dir, "flow_fc/lffs/lfalls_sim_hourly.csv") %>% 
+  lowflow.hourly.df <- file.path(working.data.dir(), "flow_fc/lffs/lfalls_sim_hourly.csv") %>% 
     data.table::fread(data.table = FALSE,
                       na.strings = na.replace) %>% 
     dplyr::select(datetime, lfalls_sim) %>% 
@@ -53,13 +53,13 @@ lowflow.hourly.df <- reactive({
 
 #------------------------------------------------------------------------------
 lowflow.daily.df <- reactive({
-  file.path(working.data.dir, "flow_fc/lffs/lfalls_sim_daily.csv") %>% 
+  file.path(working.data.dir(), "flow_fc/lffs/lfalls_sim_daily.csv") %>% 
     data.table::fread(data.table = FALSE,
                       na.strings = na.replace)
 })
 #------------------------------------------------------------------------------
 withdrawals.df <- reactive({
-  with.df <- file.path(working.data.dir, "withdrawals/withdrawals_wma_daily_mgd.csv") %>% 
+  with.df <- file.path(working.data.dir(), "withdrawals/withdrawals_wma_daily_mgd.csv") %>% 
     data.table::fread(data.table = FALSE,
                       na.strings = na.replace) %>% 
     dplyr::rename(date_time = today) %>% 

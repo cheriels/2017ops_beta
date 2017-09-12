@@ -1,6 +1,6 @@
 wellPanel(
   fluidRow(
-    column(width = 4,
+    column(width = 2,
            #align = "center",
            tags$style(type='text/css', "#large .selectize-input { line-height: 60px; }"),
            dateInput("today.override", 
@@ -14,8 +14,15 @@ wellPanel(
                               "Date Range:", 
                               start = Sys.Date() - 30,
                               end = Sys.Date() + 30,
-                              width = "200px"))),
-    column(width = 4,
+                              width = "200px"))
+           ),
+    column(width = 2,
+           selectInput("data.dir", "Data Directory:",
+                       c("Current" = "current",
+                         "Drex2017" = "drex2017"),
+                       width = "200px")
+    ),
+    column(width = 2,
            numericInput("min.flow", "Minimum Flow:",
                         0, min = 0, max = 10 * 9,
                         width = "120px"),
