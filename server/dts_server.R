@@ -1,19 +1,27 @@
+
+with.sel <- reactive({
+  with.sel <- withdrawals.reac() %>% 
+    dplyr::filter(day == input$day.dd.dts)
+  if (nrow(with.sel) == 0) NULL
+  return(with.sel)
+})
+
+
+output$gages.dts <- renderUI({
+  checkboxGroupInput("gages.dts", NULL,
+                     unique(with.sel()$site),
+                     selected = unique(with.sel()$site),
+                     inline = FALSE)
+})
 #----------------------------------------------------------------------------
 observeEvent(input$reset.dts, {
   updateCheckboxGroupInput(session, "gages.dts", 
-                           selected = c("wa_greatfalls", "wa_littlefalls", 
-                                        "fw_potomac_prod", "fw_griffith_prod",  
-                                        "wssc_potomac_prod", "wssc_patuxent_prod"))
+                           selected = unique(with.sel()$site))
 })
 #----------------------------------------------------------------------------
 observeEvent(input$clear.dts, {
   updateCheckboxGroupInput(session, "gages.dts", "Variables to show:",
-                           c("wa_greatfalls" = "wa_greatfalls",
-                             "wa_littlefalls" = "wa_littlefalls",
-                             "fw_potomac_prod" = "fw_potomac_prod",
-                             "fw_griffith_prod" = "fw_griffith_prod",
-                             "wssc_potomac_prod" = "wssc_potomac_prod",
-                             "wssc_patuxent_prod" = "wssc_patuxent_prod"),
+                           unique(with.sel()$site),
                            selected = NULL)
 })
 #----------------------------------------------------------------------------
