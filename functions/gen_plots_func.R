@@ -31,7 +31,7 @@ gen_plots <- function(data.df, start.date, end.date,
     sub.df <- NULL
   } else {
     sub.df <- data.df %>% 
-      dplyr::filter(gage %in% gages.checked,
+      dplyr::filter(site %in% gages.checked,
                     date_time >= start.date - lubridate::days(3) &
                       date_time <= end.date + lubridate::days(1))
   }
@@ -42,14 +42,14 @@ gen_plots <- function(data.df, start.date, end.date,
     
   )
   #----------------------------------------------------------------------------
-  gage.vec <- unique(sub.df$gage)
-  if (is.null(labels.vec)) labels.vec <- gage.vec
+  site.vec <- unique(sub.df$site)
+  if (is.null(labels.vec)) labels.vec <- site.vec
   #----------------------------------------------------------------------------
   # plot flows
   final.plot <- ggplot(sub.df, aes(x = date_time, y = flow,
-                                   color = gage,
-                                   linetype = gage,
-                                   size = gage)) + 
+                                   color = site,
+                                   linetype = site,
+                                   size = site)) + 
     geom_line() +
     theme_minimal() +
     xlab(x.lab) +
@@ -58,7 +58,7 @@ gen_plots <- function(data.df, start.date, end.date,
           legend.text = element_text(size = 15),
           axis.text = element_text(size = 15),
           axis.title = element_text(size = 15))
-  if (is.null(labels.vec)) labels.vec <- unique(sub.df$gages)
+  if (is.null(labels.vec)) labels.vec <- unique(sub.df$site)
   #----------------------------------------------------------------------------
   if (!is.null(linesize.vec)) {
     final.plot <- final.plot + scale_size_manual(name = "type",
