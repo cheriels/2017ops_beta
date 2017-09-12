@@ -4,10 +4,11 @@ working.data.dir <- file.path("data_ts", select.dir)
 na.replace <- c("", " ", "Eqp", "#N/A", "-999999")
 #------------------------------------------------------------------------------
 daily.df <- reactive({
- file.path(working.data.dir, "flows_obs/flow_daily_cfs.csv") %>% 
+ daily.df <- file.path(working.data.dir, "flows_obs/flow_daily_cfs.csv") %>% 
     data.table::fread(data.table = FALSE,
                       na.strings = na.replace) %>% 
     dplyr::mutate(date_time = as.Date(date_time))
+ return(daily.df)
 })
 #------------------------------------------------------------------------------
 marfc.forecast <- reactive({
@@ -62,7 +63,9 @@ withdrawals.df <- reactive({
     data.table::fread(data.table = FALSE,
                       na.strings = na.replace) %>% 
     dplyr::rename(date_time = today) %>% 
-    dplyr::mutate(date_time = lubridate::ymd(date_time))
+    dplyr::mutate(date_time = lubridate::ymd(date_time)) %>% 
+    dplyr::filter(!rowSums(is.na(.)) == ncol(.))
+    
   
   pot.total <- with.df %>% 
     dplyr::filter(location == "Potomac River",
@@ -74,11 +77,14 @@ withdrawals.df <- reactive({
     dplyr::mutate(unique_id = "potomac_total",
                   # the values are from yesterday, so
                   # to correct date subtract 1.
-                  date_time = date_time - lubridate::days(1))
+                  date_time = date_time - lubridate::days(1)) %>% 
+    dplyr::filter(!rowSums(is.na(.)) == ncol(.))
   
-  final.df <- dplyr::bind_rows(with.df, pot.total)
+  withdrawals.df <- dplyr::bind_rows(with.df, pot.total) %>% 
+    dplyr::rename(site = unique_id,
+                  flow = value)
   
-  return(final.df)
+  return(withdrawals.df)
 })
 #------------------------------------------------------------------------------
 
