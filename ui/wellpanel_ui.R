@@ -8,19 +8,19 @@ wellPanel(
                      value = Sys.Date(),
                      #paste0("Today's Date (", "2017-07-25", "):"),
                      #value = "2017-07-25",
-                     width = "200px"),
+                     width = "250px"),
            div(id = "large",
                dateRangeInput("date.range",
                               "Date Range:", 
                               start = Sys.Date() - 30,
                               end = Sys.Date() + 30,
-                              width = "200px"))
+                              width = "250px"))
            ),
     column(width = 2,
            selectInput("data.dir", "Data Directory:",
                        c("Current" = "current",
                          "Drex2017" = "drex2017"),
-                       width = "200px")
+                       width = "250px")
     ),
     column(width = 2,
            numericInput("min.flow", "Minimum Flow:",
@@ -68,20 +68,20 @@ wellPanel(
                             actionButton("clear.nbr", "Clear")
            ), # End Conditional Panel One-Day Operations
            conditionalPanel("input.tab == 'Demand Time Series'",
-                            checkboxGroupInput("gages.dts", NULL,
-                                               c("wa_greatfalls" = "wa_greatfalls",
-                                                 "wa_littlefalls" = "wa_littlefalls",
-                                                 "fw_potomac_prod" = "fw_potomac_prod",
-                                                 "fw_griffith_prod" = "fw_griffith_prod",
-                                                 "wssc_potomac_prod" = "wssc_potomac_prod",
-                                                 "wssc_patuxent_prod" = "wssc_patuxent_prod"),
-                                               selected = c("wa_greatfalls", "wa_littlefalls", 
-                                                            "fw_potomac_prod", "fw_griffith_prod",  
-                                                            "wssc_potomac_prod", "wssc_patuxent_prod"),
-                                               inline = FALSE),
-                            actionButton("reset.dts", "Reset"),
-                            actionButton("clear.dts", "Clear")
+                            column(6,
+                                   uiOutput("gages.dts"),
+                              actionButton("reset.dts", "Reset"),
+                              actionButton("clear.dts", "Clear")
+                            ),
+                            column(6,
+                                   selectInput("day.dd.dts", "Day:",
+                                               c("Yesterday" = "yesterday",
+                                                 "Today" = "today",
+                                                 "Tomorrow" = "tomorrow"),
+                                               width = "250px")
+                                   )
+                            
            ) # End Conditional Panel One-Day Operations
     )
-  ) # End fluidRow
-) # End wellPanel
+  ), # End fluidRow
+ style = "padding: 25px;") # End wellPanel
