@@ -26,30 +26,36 @@ odo.df <- reactive({
   if (nrow(hourly.sub) == 0 ) return(NULL)
   #----------------------------------------------------------------------------
   
-  variable_confluence <- function(long1.df, gage1, lag1, long2.df,gage2, lag2, klag.df) {
+  variable_confluence <- function(long1.df, gage1, lag1, long2.df, gage2, lag2, klag.df) {
     g1.df <- variable_lagk(long1.df, gage1, lag1, klag.df)
     g2.df <- variable_lagk(long2.df, gage2, lag2, klag.df)
     final.df <- bind_rows(long2.df, g1.df, g2.df) %>% 
-      group_by(date_time, gage) %>% 
+      group_by(date_time, site) %>% 
       summarize(flow = sum(flow)) %>% 
       ungroup()
     return(final.df)
   }
   
-  conf.1 <- variable_confluence(hourly.df, "por", "por_1", 
-                                hourly.df, "monocacy", "mon_jug", klag.df)
+  conf.1 <- variable_confluence(hourly.sub, "por", "por_1", 
+                                hourly.sub, "mon_jug", "mon_jug", klag.df)
   conf.2 <- variable_confluence(conf.1, "predicted", "por_2",
-                                hourly.df, "goose", "goose", klag.df)
+                                hourly.sub, "goose", "goose", klag.df)
   conf.3 <- variable_confluence(conf.2, "predicted", "por_3",
-                                hourly.df, "seneca", "seneca", klag.df)
+                                hourly.sub, "seneca", "seneca", klag.df)
   pred.df <- variable_lagk(conf.3, "predicted", "por_4", klag.df)
-  lagk.df <- bind_rows(hourly.df, pred.df)
+  lagk.df <- bind_rows(hourly.sub, pred.df)
   #----------------------------------------------------------------------------
   withdrawals.sub <- withdrawals.reac() %>% 
-    dplyr::select(-fw_griffith_prod, - wssc_patuxent_prod) %>% 
-    # Used "+" instead of rowSums to be more specific.
-    dplyr::mutate(withdrawals = wa_greatfalls + wa_littlefalls + 
-                    fw_potomac_prod + wssc_potomac_prod) %>% 
+    # Yesterday or Today??????????????????????????????????????????????????????????????????????
+    dplyr::filter(measurement == "daily average withdrawals",
+                  day == "yesterday") %>% 
+    dplyr::select(date_time, site, flow) %>% 
+    tidyr::spread(site, flow) %>% 
+    dplyr::mutate(withdrawals = rowSums(.[, c('WA Potomac River at Great Falls',
+                                              'WA Potomac River at Little Falls',
+                                              'FW Potomac River',
+                                              'WSSC Potomac River')],
+                                        na.rm = TRUE)) %>% 
     dplyr::select(date_time, withdrawals) %>% 
     dplyr::rename(date = date_time)
   #----------------------------------------------------------------------------
@@ -59,7 +65,7 @@ odo.df <- reactive({
     dplyr::mutate(date = as.Date(date)) %>% 
     dplyr::left_join(withdrawals.sub, by = "date") %>% 
     dplyr::select(-date, -time) %>% 
-    dplyr::mutate(flow = if_else(gage == "predicted", flow - (withdrawals), flow)) %>% 
+    dplyr::mutate(flow = if_else(site == "predicted", flow - (withdrawals), flow)) %>% 
     dplyr::select(-withdrawals)
   #----------------------------------------------------------------------------
   return(final.df)
