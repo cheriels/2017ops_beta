@@ -5,8 +5,8 @@ tot.withdrawal <- reactive({
   if (is.null(withdrawals.df())) return(NULL)
   with.scalar <- withdrawals.df() %>%
     filter(date_time == todays.date(),
-           unique_id == "potomac_total") %>%
-    pull(value)
+           site == "potomac_total") %>%
+    pull(flow)
   if (length(with.scalar) == 0) return(NULL)
   return(with.scalar)
 })

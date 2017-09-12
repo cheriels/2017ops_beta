@@ -53,9 +53,9 @@ lfalls.natural.mgd <- reactive({
   # First need to create Little Falls "natural" flow - without effects of JRR and Savage dams and withdrawals:
   cfs_to_mgd <- 1.547
   withdrawal.sub <- withdrawals.df() %>% 
-    dplyr::select(date_time, unique_id, value) %>% 
-    dplyr::filter(unique_id == "potomac_total") %>% 
-    tidyr::spread(unique_id, value)
+    dplyr::select(date_time, site, flow) %>% 
+    dplyr::filter(site == "potomac_total") %>% 
+    tidyr::spread(site, flow)
   #----------------------------------------------------------------------------
   final.df <- daily.df() %>%
     dplyr::select(-qual_code) %>% 
@@ -85,7 +85,8 @@ lfalls.natural.mgd <- reactive({
 output$nbr <- renderPlot({
   start.date <- start.date()
   end.date <- end.date()
-  nine.day <- lfalls.natural.mgd()
+  nine.day <- lfalls.natural.mgd() 
+  # Should nine.day be converted to cfs when units== cfs?
   #----------------------------------------------------------------------------
   gen_plots(nbr.df(),
             start.date,
