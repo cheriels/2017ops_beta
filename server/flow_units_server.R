@@ -50,23 +50,23 @@ convert_flow <- function(data.df, org.units) {
 }
 #------------------------------------------------------------------------------
 daily.reac <- reactive({
-  convert_flow(daily.df, org.units = "cfs")
+  convert_flow_new(daily.df(), org.units = "cfs")
 })
 #------------------------------------------------------------------------------
 hourly.reac <- reactive({
-  convert_flow_new(hourly.df, org.units = "cfs")
+  convert_flow_new(hourly.df(), org.units = "cfs")
 })
 #------------------------------------------------------------------------------
 withdrawals.reac <- reactive({
-  convert_flow(withdrawals.df, org.units = "mgd")
+  convert_flow_new(withdrawals.df(), org.units = "mgd")
 })
 #------------------------------------------------------------------------------
 lowflow.daily.reac <- reactive({
-  convert_flow_new(lowflow.daily.df, org.units = "cfs")
+  convert_flow_new(lowflow.daily.df(), org.units = "cfs")
 })
 #------------------------------------------------------------------------------
 lowflow.hourly.reac <- reactive({
-  convert_flow_new(lowflow.hourly.df, org.units = "cfs")
+  convert_flow_new(lowflow.hourly.df(), org.units = "cfs")
 })
 #------------------------------------------------------------------------------
 
