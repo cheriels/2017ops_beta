@@ -1,4 +1,4 @@
-GAGE,FLOW,LAG_TO_LFALL,PCT_OF_STREAM_LENGTH,LAG
+site,flow,lag_to_lfalls,pct_of_stream_length,lag
 POR_1,0,48,0.15,4.5
 POR_1,500,30,0.15,4.5
 POR_1,2500,24,0.15,3.6
