@@ -15,24 +15,24 @@ wellPanel(
                               start = Sys.Date() - 30,
                               end = Sys.Date() + 30,
                               width = "250px"))
-           ),
+    ),
     column(width = 2,
            selectInput("data.dir", "Data Directory:",
                        c("Current" = "current",
                          "Drex2017" = "drex2017"),
                        width = "250px")
     ),
-    column(width = 2,
+    column(width = 1,
            numericInput("min.flow", "Minimum Flow:",
                         0, min = 0, max = 10 * 9,
                         width = "120px"),
            numericInput("max.flow", "Maximum Flow:",
                         NA, min = 0, max = 10 * 9,
                         width = "120px"),
-           radioButtons("flow.units", "Flow Units:",
-                        c("CFS" = "cfs",
-                          "MGD" = "mgd"),
-                        inline = TRUE)
+           selectInput("flow.units", "Flow Units:",
+                       c("CFS" = "cfs",
+                         "MGD" = "mgd"),
+                       width = "120px")
     ),
     column(width = 4,
            conditionalPanel("input.tab == 'Situational Awareness'",
@@ -69,19 +69,16 @@ wellPanel(
            ), # End Conditional Panel One-Day Operations
            conditionalPanel("input.tab == 'Demand Time Series'",
                             column(6,
-                                   uiOutput("gages.dts"),
-                              actionButton("reset.dts", "Reset"),
-                              actionButton("clear.dts", "Clear")
+                                   align = "left",
+                                   uiOutput("day.dd.dts"),
+                                   uiOutput("supplier.dd.dts")
                             ),
                             column(6,
-                                   selectInput("day.dd.dts", "Day:",
-                                               c("Yesterday" = "yesterday",
-                                                 "Today" = "today",
-                                                 "Tomorrow" = "tomorrow"),
-                                               width = "250px")
-                                   )
-                            
+                                   uiOutput("gages.dts"),
+                                   actionButton("reset.dts", "Reset"),
+                                   actionButton("clear.dts", "Clear")
+                            )
            ) # End Conditional Panel One-Day Operations
     )
   ), # End fluidRow
- style = "padding: 25px;") # End wellPanel
+  style = "padding: 25px;") # End wellPanel
