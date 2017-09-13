@@ -116,7 +116,7 @@ output$nbr <- renderPlot({
 output$nbr_notification_1 <- renderText({
   if (is.null(lfalls.natural.mgd())) {
     paste("Little Falls 9-day flow forecast from empirical formula cannot",
-          "with the currently selected 'Todays Date'.")
+          "be determined with the currently selected 'Todays Date'.")
   } else {
     paste("Little Falls 9-day flow forecast from empirical formula is ",
           lfalls.natural.mgd()$lfalls_9dayfc, " MGD.")
