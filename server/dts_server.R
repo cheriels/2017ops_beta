@@ -1,44 +1,60 @@
 
-with.sel <- reactive({
-  with.sel <- withdrawals.reac() %>% 
-    dplyr::filter(day == input$day.dd.dts)
-  if (nrow(with.sel) == 0) NULL
-  return(with.sel)
-})
-
-
 output$gages.dts <- renderUI({
   checkboxGroupInput("gages.dts", NULL,
-                     unique(with.sel()$site),
-                     selected = unique(with.sel()$site),
+                     unique(dts.df()$site),
+                     selected = unique(dts.df()$site),
                      inline = FALSE)
 })
 #----------------------------------------------------------------------------
 observeEvent(input$reset.dts, {
   updateCheckboxGroupInput(session, "gages.dts", 
-                           selected = unique(with.sel()$site))
+                           selected = unique(dts.df()$site))
 })
 #----------------------------------------------------------------------------
 observeEvent(input$clear.dts, {
   updateCheckboxGroupInput(session, "gages.dts", "Variables to show:",
-                           unique(with.sel()$site),
+                           unique(dts.df()$site),
                            selected = NULL)
 })
 #----------------------------------------------------------------------------
+output$day.dd.dts <- renderUI({
+  day.vector <- withdrawals.reac() %>% 
+    dplyr::select(day) %>% 
+    dplyr::distinct() %>% 
+    dplyr::mutate(day = stringi::stri_trans_general(day, id = "Title")) %>% 
+    dplyr::pull(day)
+  
+  selectInput("day.dd.dts", "Day:",
+              day.vector,
+              width = "250px")
+})
+
+#----------------------------------------------------------------------------
+output$supplier.dd.dts <- renderUI({
+  selectInput("supplier.dd.dts", "Supplier:",
+              c("All Suppliers", unique(withdrawals.reac()$supplier)),
+              width = "250px")
+})
+
 dts.df <- reactive({
   todays.date <- todays.date()
   start.date <- start.date()
   end.date <- end.date()
   #----------------------------------------------------------------------------
-  sub.df <- withdrawals.reac() %>% 
+  final.df <- withdrawals.reac() %>% 
     #    dplyr::select(date_time, luke, lfalls) %>% 
-    dplyr::filter(date_time >= start.date - lubridate::days(3) &
-                    date_time <= end.date + lubridate::days(1))
-  if (nrow(sub.df) == 0 ) return(NULL)
-  final.df <- sub.df %>% 
-    tidyr::gather(gage, flow, 2:ncol(.)) %>% 
+    dplyr::filter(date_time >= start.date - lubridate::days(3),
+                    date_time <= end.date + lubridate::days(1),
+                  day == tolower(input$day.dd.dts)) %>% 
     dplyr::filter(!is.na(flow))
   
+  if (input$supplier.dd.dts != "All Suppliers") {
+    final.df <- final.df %>% 
+      dplyr::filter(supplier == input$supplier.dd.dts)
+  }
+  
+  if (nrow(final.df) == 0 ) return(NULL)
+
   return(final.df)
 })
 #----------------------------------------------------------------------------
@@ -59,62 +75,5 @@ output$dts <- renderPlot({
             x.class = "date",
             y.lab = y.units())
 }) # End output$dts
-
-output$dts2 <- renderPlot({
-  #--------------------------------------------------------------------------
-  #todays.date <- as.Date(input$today.override)
-  start.date <- as.Date(input$date.range.dts[1])# %>% 
-#    paste("00:00:00") %>% 
-#    as.POSIXct()
-  end.date <- as.Date(input$date.range.dts[2])# %>% 
-#    paste("00:00:00") %>% 
-#    as.POSIXct()
-  #--------------------------------------------------------------------------
-  sub.df <- withdrawals.df %>% 
-#    dplyr::select(date_time, luke, lfalls) %>% 
-    dplyr::filter(date_time >= start.date - lubridate::days(3) &
-                    date_time <= end.date + lubridate::days(1)) %>% 
-    tidyr::gather(gage, flow, 2:ncol(.)) %>% 
-    dplyr::filter(!is.na(flow))
-  #----------------------------------------------------------------------------
-#  labels.vec <- c("Little Falls", "Luke")
-  #----------------------------------------------------------------------------
-  sub.df <- dplyr::filter(sub.df, gage %in% input$gages.dts,
-                          date_time >= start.date  &
-                            date_time <= end.date)
-  #--------------------------------------------------------------------------
-  validate(
-    need(nrow(sub.df) != 0,
-         "No data available for the selected date range. Please select a new date range.")
-  )
-  #----------------------------------------------------------------------------
-  # plot flows
-  final.plot <- ggplot(sub.df, aes(x = date_time, y = flow,
-                                   color = gage)) + 
-    geom_line(size = 2) +
-    # Has to be in alphabetical order
-#    scale_linetype_manual(name = "type",
-#                          labels = labels.vec,
-#                          values = c("lfalls" = "solid",
-#                                     "luke" = "solid")) +
-    # Has to be in alphabetical order
-#    scale_colour_manual(name = "type",
-#                        labels = labels.vec,
-#                        values = c("lfalls" = "#0072B2",
-#                                   "luke" = "#009E73")) +
-    
-    theme_minimal() +
-    xlab("Date") +
-    ylab("Flow (MGD)") +
-    theme(legend.title = element_blank(),
-          legend.text = element_text(size = 15),
-          axis.text = element_text(size = 15),
-          axis.title = element_text(size = 15)) +
-    scale_x_date(limits = c(start.date, end.date))
-  if (!is.na(input$min.flow.dts) || !is.na(input$max.flow.dts)) {
-    final.plot <- final.plot + ylim(input$min.flow.dts, input$max.flow.dts)
-  }
-  final.plot
-}) # End output$marfc
 
 
