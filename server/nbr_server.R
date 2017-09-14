@@ -40,7 +40,8 @@ nbr.df <- reactive({
     dplyr::select(date_time, lfalls_lffs) %>% 
     tidyr::gather(site, flow, lfalls_lffs)
   #----------------------------------------------------------------------------
-  final.df <- dplyr::bind_rows(sub.df, lfalls.df)
+  final.df <- dplyr::bind_rows(sub.df, lfalls.df) %>% 
+    dplyr::filter(!is.na(flow))
   #----------------------------------------------------------------------------
   return(final.df)
 })
