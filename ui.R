@@ -14,7 +14,8 @@
 library(shiny)
 
 # Define UI for application that draws a histogram
-shinyUI(navbarPage("COOP",
+shinyUI(navbarPage(title = tags$a("", href = "http://icprbcoop.org/drupal4/", target = "_blank",
+                                  tags$span(style="color:white", "CO-OP")),
                    id = "tab",
                    inverse = TRUE, 
                    theme = shinythemes::shinytheme("spacelab"),
@@ -22,5 +23,7 @@ shinyUI(navbarPage("COOP",
                    source("ui/odo_ui.R", local = TRUE)$value,
                    source("ui/nbr_ui.R", local = TRUE)$value,
                    source("ui/dts_ui.R", local = TRUE)$value,
+                   #source("ui/coop_link_ui.R", local = TRUE)$value,
                    source("ui/wellpanel_ui.R", local = TRUE)$value
+                   
 ))
