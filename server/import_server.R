@@ -32,9 +32,7 @@ hourly.df <- reactive({
   hourly.df <- file.path(working.data.dir(), "flows_obs/flow_hourly_cfs.csv") %>% 
     data.table::fread(data.table = FALSE,
                       na.strings = na.replace) %>% 
-    dplyr::mutate(date_time = dplyr::if_else(nchar(date_time) == 19,
-                                             lubridate::ymd_hms(date_time),
-                                             lubridate::ymd_hm(date_time))) %>% 
+    dplyr::mutate(date_time = as.POSIXct(date_time)) %>% 
     dplyr::bind_rows(marfc.forecast()) %>% 
     dplyr::filter(!is.na(flow))
   
