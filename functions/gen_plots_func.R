@@ -92,12 +92,31 @@ gen_plots <- function(data.df, start.date, end.date,
                                                               "#8600b3", "#b30059"))
   }
   #----------------------------------------------------------------------------
-  if (is.na(min.flow)) min.flow <- min(sub.df$flow, na.rm = TRUE)
-  if (is.na(max.flow)) max.flow <- max(sub.df$flow, na.rm = TRUE)
+  if (is.na(min.flow)) {
+    min.flow <- sub.df %>% 
+      dplyr::filter(date_time >= start.date,
+                    date_time <= end.date) %>% 
+      dplyr::mutate(min = min(flow, na.rm = TRUE)) %>% 
+      dplyr::select(min) %>% 
+      dplyr::distinct() %>% 
+      dplyr::pull(min)
+  } 
+  if (is.na(max.flow)) {
+    max.flow <- sub.df %>% 
+      dplyr::filter(date_time >= start.date,
+                    date_time <= end.date) %>% 
+      dplyr::mutate(max = max(flow, na.rm = TRUE),
+                    max = max * 0.05 + max) %>% 
+      dplyr::select(max) %>% 
+      dplyr::distinct() %>% 
+      dplyr::pull(max)
+  }
+  #----------------------------------------------------------------------------   
   
   final.plot <- final.plot +
     coord_cartesian(xlim = c(start.date, end.date),
-                    ylim = c(min.flow, max.flow))
+                    ylim = c(min.flow, max.flow),
+                    expand = FALSE)
   if (!is.null(nine_day.df)) {
     nine_day.df <- nine_day.df %>% 
           mutate(date_time = date_time %>% 
