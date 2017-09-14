@@ -12,8 +12,8 @@ wellPanel(
            div(id = "large",
                dateRangeInput("date.range",
                               "Date Range:", 
-                              start = Sys.Date() - 30,
-                              end = Sys.Date() + 30,
+                              start = Sys.Date() - lubridate::days(30),
+                              end = Sys.Date() + lubridate::days(30),
                               width = "250px"))
     ),
     column(width = 2,
