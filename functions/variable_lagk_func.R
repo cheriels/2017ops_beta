@@ -23,8 +23,8 @@ variable_lagk <- function(long.df, site.name, por.lag, klag.df) {
     dplyr::group_by(date_time, site) %>% 
     dplyr::summarise(flow = mean(flow))
   #------------------------------------------------------------------------------
-  start.date <- min(predicted.df$date_time)
-  end.date <- max(predicted.df$date_time)
+  start.date <- min(predicted.df$date_time, na.rm = TRUE)
+  end.date <- max(predicted.df$date_time, na.rm = TRUE)
   date.frame <- date_frame(start.date, end.date, "hour")
   final.df <- left_join(date.frame, predicted.df, by = "date_time") %>% 
     mutate(flow = c(rep(NA, which.min(is.na(flow)) - 1),
