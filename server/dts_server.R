@@ -1,5 +1,6 @@
 
 output$gages.dts <- renderUI({
+  if (is.null(dts.df())) return(NULL)
   checkboxGroupInput("gages.dts", NULL,
                      unique(dts.df()$site),
                      selected = unique(dts.df()$site),
@@ -31,12 +32,14 @@ output$day.dd.dts <- renderUI({
 
 #----------------------------------------------------------------------------
 output$supplier.dd.dts <- renderUI({
+  if (is.null(withdrawals.reac())) return(NULL)
   selectInput("supplier.dd.dts", "Supplier:",
               c("All Suppliers", unique(withdrawals.reac()$supplier)),
               width = "250px")
 })
 
 dts.df <- reactive({
+  if (is.null(withdrawals.reac())) return(NULL)
   todays.date <- todays.date()
   start.date <- start.date()
   end.date <- end.date()
@@ -44,13 +47,13 @@ dts.df <- reactive({
   final.df <- withdrawals.reac() %>% 
     #    dplyr::select(date_time, luke, lfalls) %>% 
     dplyr::filter(date_time >= start.date - lubridate::days(3),
-                    date_time <= end.date + lubridate::days(1),
-                  day == tolower(input$day.dd.dts)) %>% 
+                    date_time <= end.date + lubridate::days(1)) %>% 
+#                  day %in% tolower(input$day.dd.dts)) %>% 
     dplyr::filter(!is.na(flow))
   
-  if (input$supplier.dd.dts != "All Suppliers") {
+  if (!is.null(input$supplier.dd.dts) && input$supplier.dd.dts != "All Suppliers") {
     final.df <- final.df %>% 
-      dplyr::filter(supplier == input$supplier.dd.dts)
+      dplyr::filter(supplier %in% input$supplier.dd.dts)
   }
   
   if (nrow(final.df) == 0 ) return(NULL)
