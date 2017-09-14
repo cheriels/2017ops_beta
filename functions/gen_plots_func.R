@@ -31,9 +31,9 @@ gen_plots <- function(data.df, start.date, end.date,
     sub.df <- NULL
   } else {
     sub.df <- data.df %>% 
-      dplyr::filter(site %in% gages.checked,
-                    date_time >= start.date - lubridate::days(3) &
-                      date_time <= end.date + lubridate::days(1))
+      dplyr::filter(site %in% gages.checked)#,
+#                    date_time >= start.date - lubridate::days(3) &
+#                      date_time <= end.date + lubridate::days(1))
   }
   #----------------------------------------------------------------------------
   validate(
