@@ -16,12 +16,18 @@ observeEvent(input$clear.odo, {
 #----------------------------------------------------------------------------
 odo.df <- reactive({
   todays.date <- todays.date()
-  start.date <- start.date()
+  start.date <- start.date() - lubridate::days(7)
   end.date <- end.date()
+  date.temp <- date_frame(start.date,
+                          end.date,
+                          "hours")
   #----------------------------------------------------------------------------
   hourly.sub <- hourly.reac() %>% 
-    dplyr::filter(date_time >= start.date - lubridate::days(3) &
-                    date_time <= end.date + lubridate::days(1))
+    dplyr::filter(date_time >= start.date  &
+                    date_time <= todays.date) %>% 
+    tidyr::spread(site, flow) %>% 
+    dplyr::left_join(date.temp, ., by = "date_time") %>% 
+    tidyr::gather(site, flow, 5:ncol(.))
   #----------------------------------------------------------------------------
   if (nrow(hourly.sub) == 0 ) return(NULL)
   #----------------------------------------------------------------------------
@@ -65,8 +71,12 @@ odo.df <- reactive({
     dplyr::mutate(date = as.Date(date)) %>% 
     dplyr::left_join(withdrawals.sub, by = "date") %>% 
     dplyr::select(-date, -time) %>% 
-    dplyr::mutate(flow = if_else(site == "predicted", flow - (withdrawals), flow)) %>% 
-    dplyr::select(-withdrawals)
+    dplyr::mutate(flow2 = if_else(site == "predicted" & !is.na(withdrawals),
+                                  flow - withdrawals,
+                                  flow)) %>% 
+    dplyr::select(-withdrawals) %>% 
+    dplyr::filter(!is.na(flow))
+  
   #----------------------------------------------------------------------------
   return(final.df)
 })
