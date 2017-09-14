@@ -18,15 +18,23 @@ observeEvent(input$clear.sa, {
 sa.df <- reactive({
   if (is.null(daily.reac())) return(NULL)
   todays.date <- todays.date()
-  start.date <- start.date()
+  start.date <- start.date() - lubridate::days(7)
   end.date <- end.date()
+  date.temp <- date_frame(start.date,
+                          end.date,
+                          "days") %>% 
+    dplyr::mutate(date_time = as.Date(date_time))
   #----------------------------------------------------------------------------
   sub.df <- daily.reac() %>% 
     #select(date_time, lfalls, por, monocacy) %>% 
     select(date_time, site, flow) %>% 
-    dplyr::filter(date_time >= start.date - lubridate::days(3),
-                  date_time <= end.date + lubridate::days(1),
-                  site %in% c("lfalls", "por", "mon_jug"))
+    dplyr::filter(date_time >= start.date,
+                  date_time <= todays.date,
+                  site %in% c("lfalls", "por", "mon_jug")) %>% 
+    tidyr::spread(site, flow) %>% 
+    dplyr::left_join(date.temp, ., by = "date_time") %>% 
+    tidyr::gather(site, flow, 2:ncol(.))
+  
   if (nrow(sub.df) == 0 ) return(NULL)
   #----------------------------------------------------------------------------
   # recess and lag POR flows
@@ -50,7 +58,8 @@ sa.df <- reactive({
     dplyr::mutate(lfalls_from_upstr = por_recess_lag + mon_jug_recess_lag) %>% 
     dplyr::select(date_time, lfalls, por, mon_jug,
                   lfalls_from_upstr, lfalls_trigger) %>% 
-    tidyr::gather(site, flow, lfalls:lfalls_trigger)
+    tidyr::gather(site, flow, lfalls:lfalls_trigger) %>% 
+    dplyr::filter(!is.na(flow))
   
   return(final.df)
 })
