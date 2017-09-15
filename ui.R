@@ -19,11 +19,15 @@ shinyUI(navbarPage(title = tags$a("", href = "http://icprbcoop.org/drupal4/", ta
                    id = "tab",
                    inverse = TRUE, 
                    theme = shinythemes::shinytheme("spacelab"),
+                   
                    source("ui/sa_ui.R", local = TRUE)$value,
                    source("ui/odo_ui.R", local = TRUE)$value,
                    source("ui/nbr_ui.R", local = TRUE)$value,
                    source("ui/dts_ui.R", local = TRUE)$value,
                    #source("ui/coop_link_ui.R", local = TRUE)$value,
-                   source("ui/wellpanel_ui.R", local = TRUE)$value
+                   source("ui/wellpanel_ui.R", local = TRUE)$value,
+                   tags$head(tags$style(".shiny-plot-output{height:50vh !important;}"),
+                             tags$style(".well{height:40vh !important;}"),
+                             tags$style(".well{margin-bottom: 0px;}"))
                    
 ))

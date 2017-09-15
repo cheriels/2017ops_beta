@@ -25,14 +25,16 @@ wellPanel(
     column(width = 1,
            numericInput("min.flow", "Minimum Flow:",
                         0, min = 0, max = 10 * 9,
-                        width = "120px"),
+                        width = "125px"),
            numericInput("max.flow", "Maximum Flow:",
                         NA, min = 0, max = 10 * 9,
-                        width = "120px"),
+                        width = "125px")
+    ),
+    column(width = 1,
            selectInput("flow.units", "Flow Units:",
                        c("CFS" = "cfs",
                          "MGD" = "mgd"),
-                       width = "120px")
+                       width = "125px")
     ),
     column(width = 4,
            conditionalPanel("input.tab == 'Situational Awareness'",
@@ -81,4 +83,39 @@ wellPanel(
            ) # End Conditional Panel One-Day Operations
     )
   ), # End fluidRow
+  conditionalPanel("input.tab == 'Situational Awareness'",
+                   fluidRow(
+                     hr(),
+                     column(width = 12,
+                            align = "left",
+                            textOutput("sa_notification_1"),
+                            tags$head(
+                              tags$style(
+                                HTML("#sa_notification_1{
+                                     color: #FF0000;
+                                     height:40px;
+                                     font-size: 20px;
+                                     font-style: italic;}"
+                                )
+                              )
+                            )
+                     ),# End column
+                     column(width = 12, #offset = 1, align = "left",
+                            tags$ul(
+                              tags$li(textOutput("sa_notification_2")),
+                              tags$li(textOutput("sa_notification_3")),
+                              tags$li(textOutput("sa_notification_4"))
+                            )
+                     )
+                   )
+  ),
+  conditionalPanel("input.tab == 'North Branch Release'",
+                   fluidRow(
+                     hr(),
+                     column(width = 12, offset = 0, align = "left",
+                            textOutput("nbr_notification_1")
+                     )
+                   )
+  ),
+  
   style = "padding: 25px;") # End wellPanel
