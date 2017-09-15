@@ -8,6 +8,21 @@ daily.df <- reactive({
     data.table::fread(data.table = FALSE,
                       na.strings = na.replace) %>% 
     dplyr::mutate(date_time = as.Date(date_time))
+ 
+ #----------------------------------------------------------------------------
+ hourly.test <- hourly.reac() %>% 
+   dplyr::mutate(date_time = lubridate::as_date(date_time)) %>% 
+   filter(date_time > max(daily.df$date_time)) 
+ 
+ if (nrow(hourly.test) > 0) {
+   daily.df <- hourly.test %>% 
+     dplyr::group_by(agency, site, date_time) %>% 
+     dplyr::summarize(flow = mean(flow)) %>% 
+     dplyr::bind_rows(daily.df, .)
+ }
+ #----------------------------------------------------------------------------
+ 
+ 
  return(daily.df)
 })
 #------------------------------------------------------------------------------
