@@ -36,7 +36,7 @@ wellPanel(
                          "MGD" = "mgd"),
                        width = "125px")
     ),
-    column(width = 4,
+    column(width = 6,
            conditionalPanel("input.tab == 'Situational Awareness'",
                             checkboxGroupInput("gages.sa",  NULL,
                                                c("Point of Rocks" = "por",

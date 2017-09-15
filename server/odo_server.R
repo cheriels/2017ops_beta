@@ -57,10 +57,10 @@ odo.df <- reactive({
                   day == "yesterday") %>% 
     dplyr::select(date_time, site, flow) %>% 
     tidyr::spread(site, flow) %>% 
-    dplyr::mutate(withdrawals = rowSums(.[, c('WA Potomac River at Great Falls',
-                                              'WA Potomac River at Little Falls',
-                                              'FW Potomac River',
-                                              'WSSC Potomac River')],
+    dplyr::mutate(withdrawals = rowSums(.[, c('WA Potomac River at Great Falls daily average withdrawals',
+                                              'WA Potomac River at Little Falls daily average withdrawals',
+                                              'FW Potomac River daily average withdrawals',
+                                              'WSSC Potomac River daily average withdrawals')],
                                         na.rm = TRUE)) %>% 
     dplyr::select(date_time, withdrawals) %>% 
     dplyr::rename(date = date_time)

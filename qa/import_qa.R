@@ -1,6 +1,6 @@
 
 
-working.data.dir <- file.path("data_ts", "drex2017")
+working.data.dir <- file.path("data_ts", "current")
 na.replace <- c("", " ", "Eqp", "#N/A", "-999999")
 #------------------------------------------------------------------------------
 daily.df <- file.path(working.data.dir, "flows_obs/flow_daily_cfs.csv") %>% 
@@ -51,27 +51,25 @@ file.path(working.data.dir, "flow_fc/lffs/lfalls_sim_daily.csv") %>%
 with.df <- file.path(working.data.dir, "withdrawals/withdrawals_wma_daily_mgd.csv") %>% 
   data.table::fread(data.table = FALSE,
                     na.strings = na.replace) %>% 
-  dplyr::rename(date_time = today) %>% 
-  dplyr::mutate(date_time = lubridate::ymd(date_time)) %>% 
   dplyr::filter(!rowSums(is.na(.)) == ncol(.))
 
 
 pot.total <- with.df %>% 
-  dplyr::filter(location == "Potomac River",
-                day == "yesterday",
-                measurement == "daily average withdrawals") %>% 
+  dplyr::filter(location == "Potomac River"#,
+                #day == "yesterday",
+                #measurement == "daily average withdrawals"
+                ) %>% 
   dplyr::group_by(measurement, date_time, units) %>% 
   dplyr::summarize(value = sum(value)) %>% 
   dplyr::ungroup() %>% 
-  dplyr::mutate(unique_id = "potomac_total",
-                # the values are from yesterday, so
-                # to correct date subtract 1.
-                date_time = date_time - lubridate::days(1)) %>% 
+  dplyr::mutate(unique_id = "potomac_total") %>%
   dplyr::filter(!rowSums(is.na(.)) == ncol(.))
 
 withdrawals.df <- dplyr::bind_rows(with.df, pot.total) %>% 
   dplyr::rename(site = unique_id,
-                flow = value)
+                flow = value) %>% 
+  dplyr::mutate(date_time = as.Date(date_time, "%m/%d/%Y"))
+
 
 #------------------------------------------------------------------------------
 klag.df <- data.table::fread("data/parameters/k_lag.csv", data.table = FALSE) %>% 
