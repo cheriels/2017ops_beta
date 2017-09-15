@@ -24,10 +24,10 @@ odo.df <- reactive({
   #----------------------------------------------------------------------------
   hourly.sub <- hourly.reac() %>% 
     dplyr::filter(date_time >= start.date  &
-                    date_time <= todays.date) %>% 
-    tidyr::spread(site, flow) %>% 
-    dplyr::left_join(date.temp, ., by = "date_time") %>% 
-    tidyr::gather(site, flow, 5:ncol(.))
+                    date_time <= todays.date) #%>% 
+#    tidyr::spread(site, flow) %>% 
+#    dplyr::left_join(date.temp, ., by = "date_time") %>% 
+#    tidyr::gather(site, flow, 5:ncol(.))
   #----------------------------------------------------------------------------
   if (nrow(hourly.sub) == 0 ) return(NULL)
   #----------------------------------------------------------------------------
