@@ -85,13 +85,8 @@ gen_plots <- function(data.df, start.date, end.date,
                                                    labels = labels.vec,
                                                    values = color.vec)
   } else {
-    final.plot <- final.plot + scale_colour_manual(name = "type",
-                                                   labels = labels.vec,
-                                                   values = c("#A6CEE3", "#1F78B4",
-                                                              "#B2DF8A", "#33A02C",
-                                                              "#FB9A99", "#E31A1C",
-                                                              "#FDBF6F", "#FF7F00",
-                                                              "#CAB2D6", "#6A3D9A"))
+    final.plot <- final.plot + scale_colour_hue(name = "type",
+                                                   labels = labels.vec)
   }
   #----------------------------------------------------------------------------
   if (is.na(min.flow)) {
