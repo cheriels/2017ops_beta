@@ -1,4 +1,4 @@
-working.data.dir <- file.path("data_ts", "drex2017")
+working.data.dir <- file.path("data_ts", "current")
 
 
 todays.date <- as.POSIXct("2017-09-11")
@@ -44,8 +44,8 @@ withdrawals.sub <- withdrawals.df %>%
                 day == "yesterday") %>% 
   dplyr::select(date_time, site, flow) %>% 
   tidyr::spread(site, flow) %>% 
-  dplyr::mutate(withdrawals = rowSums(.[, c('WA Potomac River at Great Falls',
-                                            'WA Potomac River at Little Falls',
+  dplyr::mutate(withdrawals = rowSums(.[, c("WA Potomac River at Great Falls daily average withdrawals",
+                                            "WA Potomac River at Little Falls daily average withdrawals",
                                             'FW Potomac River',
                                             'WSSC Potomac River')],
                                       na.rm = TRUE)) %>% 
