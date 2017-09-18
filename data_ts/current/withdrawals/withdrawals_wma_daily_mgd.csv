@@ -1,124 +1,4 @@
 unique_id,supplier,location,date_time,day,time,measurement,today,value,units,comments
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/1/2017,yesterday,NA,daily average withdrawals,1/2/2017,115.736,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/2/2017,yesterday,NA,daily average withdrawals,1/3/2017,117.439,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/3/2017,yesterday,NA,daily average withdrawals,1/4/2017,112.414,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/4/2017,yesterday,NA,daily average withdrawals,1/5/2017,112.538,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/5/2017,yesterday,NA,daily average withdrawals,1/6/2017,119.479,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/6/2017,yesterday,NA,daily average withdrawals,1/7/2017,116.1,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/7/2017,yesterday,NA,daily average withdrawals,1/8/2017,108.158,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/8/2017,yesterday,NA,daily average withdrawals,1/9/2017,118.636,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/9/2017,yesterday,NA,daily average withdrawals,1/10/2017,125.198,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/10/2017,yesterday,NA,daily average withdrawals,1/11/2017,112.203,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/11/2017,yesterday,NA,daily average withdrawals,1/12/2017,110.042,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/12/2017,yesterday,NA,daily average withdrawals,1/13/2017,96.708,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/13/2017,yesterday,NA,daily average withdrawals,1/14/2017,114.356,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/14/2017,yesterday,NA,daily average withdrawals,1/15/2017,112.408,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/15/2017,yesterday,NA,daily average withdrawals,1/16/2017,107.96,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/16/2017,yesterday,NA,daily average withdrawals,1/17/2017,112.674,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/17/2017,yesterday,NA,daily average withdrawals,1/18/2017,110.008,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/18/2017,yesterday,NA,daily average withdrawals,1/19/2017,102.562,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/19/2017,yesterday,NA,daily average withdrawals,1/20/2017,111.257,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/20/2017,yesterday,NA,daily average withdrawals,1/21/2017,100.073,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/21/2017,yesterday,NA,daily average withdrawals,1/22/2017,105.838,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/22/2017,yesterday,NA,daily average withdrawals,1/23/2017,105.401,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/23/2017,yesterday,NA,daily average withdrawals,1/24/2017,108.849,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/24/2017,yesterday,NA,daily average withdrawals,1/25/2017,109.954,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/25/2017,yesterday,NA,daily average withdrawals,1/26/2017,106.18,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/26/2017,yesterday,NA,daily average withdrawals,1/27/2017,104.798,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/27/2017,yesterday,NA,daily average withdrawals,1/28/2017,101.799,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/28/2017,yesterday,NA,daily average withdrawals,1/29/2017,106.72,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/29/2017,yesterday,NA,daily average withdrawals,1/30/2017,117.866,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/30/2017,yesterday,NA,daily average withdrawals,1/31/2017,101.081,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,1/31/2017,yesterday,NA,daily average withdrawals,2/1/2017,102.877,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/1/2017,yesterday,NA,daily average withdrawals,2/2/2017,101.529,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/2/2017,yesterday,NA,daily average withdrawals,2/3/2017,98.983,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/3/2017,yesterday,NA,daily average withdrawals,2/4/2017,100.908,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/4/2017,yesterday,NA,daily average withdrawals,2/5/2017,106.592,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/5/2017,yesterday,NA,daily average withdrawals,2/6/2017,110.453,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/6/2017,yesterday,NA,daily average withdrawals,2/7/2017,111.46,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/7/2017,yesterday,NA,daily average withdrawals,2/8/2017,113.85,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/8/2017,yesterday,NA,daily average withdrawals,2/9/2017,106.002,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/9/2017,yesterday,NA,daily average withdrawals,2/10/2017,91.31,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/10/2017,yesterday,NA,daily average withdrawals,2/11/2017,100.334,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/11/2017,yesterday,NA,daily average withdrawals,2/12/2017,103.945,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/12/2017,yesterday,NA,daily average withdrawals,2/13/2017,102.089,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/13/2017,yesterday,NA,daily average withdrawals,2/14/2017,108.563,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/14/2017,yesterday,NA,daily average withdrawals,2/15/2017,102.549,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/15/2017,yesterday,NA,daily average withdrawals,2/16/2017,95.723,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/16/2017,yesterday,NA,daily average withdrawals,2/17/2017,98.192,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/17/2017,yesterday,NA,daily average withdrawals,2/18/2017,98.119,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/18/2017,yesterday,NA,daily average withdrawals,2/19/2017,96.098,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/19/2017,yesterday,NA,daily average withdrawals,2/20/2017,111.824,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/20/2017,yesterday,NA,daily average withdrawals,2/21/2017,112.938,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/21/2017,yesterday,NA,daily average withdrawals,2/22/2017,95.851,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/22/2017,yesterday,NA,daily average withdrawals,2/23/2017,104.765,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/23/2017,yesterday,NA,daily average withdrawals,2/24/2017,99.704,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/24/2017,yesterday,NA,daily average withdrawals,2/25/2017,104.989,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/25/2017,yesterday,NA,daily average withdrawals,2/26/2017,98.351,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/26/2017,yesterday,NA,daily average withdrawals,2/27/2017,115.473,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/27/2017,yesterday,NA,daily average withdrawals,2/28/2017,98.934,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,2/28/2017,yesterday,NA,daily average withdrawals,3/1/2017,101.438,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/1/2017,yesterday,NA,daily average withdrawals,3/2/2017,109.526,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/2/2017,yesterday,NA,daily average withdrawals,3/3/2017,91.21,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/3/2017,yesterday,NA,daily average withdrawals,3/4/2017,103.436,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/4/2017,yesterday,NA,daily average withdrawals,3/5/2017,109.48,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/5/2017,yesterday,NA,daily average withdrawals,3/6/2017,114.521,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/6/2017,yesterday,NA,daily average withdrawals,3/7/2017,113.17,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/7/2017,yesterday,NA,daily average withdrawals,3/8/2017,124.321,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/8/2017,yesterday,NA,daily average withdrawals,3/9/2017,101.109,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/9/2017,yesterday,NA,daily average withdrawals,3/10/2017,126.078,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/10/2017,yesterday,NA,daily average withdrawals,3/11/2017,109.096,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/11/2017,yesterday,NA,daily average withdrawals,3/12/2017,121.572,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/12/2017,yesterday,NA,daily average withdrawals,3/13/2017,121.66,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/13/2017,yesterday,NA,daily average withdrawals,3/14/2017,130.039,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/14/2017,yesterday,NA,daily average withdrawals,3/15/2017,107.839,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/15/2017,yesterday,NA,daily average withdrawals,3/16/2017,111.329,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/16/2017,yesterday,NA,daily average withdrawals,3/17/2017,127.095,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/17/2017,yesterday,NA,daily average withdrawals,3/18/2017,131.872,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/18/2017,yesterday,NA,daily average withdrawals,3/19/2017,123.269,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/19/2017,yesterday,NA,daily average withdrawals,3/20/2017,140.341,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/20/2017,yesterday,NA,daily average withdrawals,3/21/2017,149.69,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/21/2017,yesterday,NA,daily average withdrawals,3/22/2017,155.369,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/22/2017,yesterday,NA,daily average withdrawals,3/23/2017,119.028,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/23/2017,yesterday,NA,daily average withdrawals,3/24/2017,110.488,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/24/2017,yesterday,NA,daily average withdrawals,3/25/2017,105.978,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/25/2017,yesterday,NA,daily average withdrawals,3/26/2017,99.735,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/26/2017,yesterday,NA,daily average withdrawals,3/27/2017,109.395,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/27/2017,yesterday,NA,daily average withdrawals,3/28/2017,93.738,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/28/2017,yesterday,NA,daily average withdrawals,3/29/2017,120.217,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/29/2017,yesterday,NA,daily average withdrawals,3/30/2017,115.601,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/30/2017,yesterday,NA,daily average withdrawals,3/31/2017,134.519,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,3/31/2017,yesterday,NA,daily average withdrawals,4/1/2017,130.829,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/1/2017,yesterday,NA,daily average withdrawals,4/2/2017,105.444,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/2/2017,yesterday,NA,daily average withdrawals,4/3/2017,98.858,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/3/2017,yesterday,NA,daily average withdrawals,4/4/2017,118.143,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/4/2017,yesterday,NA,daily average withdrawals,4/5/2017,104.899,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/5/2017,yesterday,NA,daily average withdrawals,4/6/2017,115.574,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/6/2017,yesterday,NA,daily average withdrawals,4/7/2017,101.582,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/7/2017,yesterday,NA,daily average withdrawals,4/8/2017,92.7,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/8/2017,yesterday,NA,daily average withdrawals,4/9/2017,110.748,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/9/2017,yesterday,NA,daily average withdrawals,4/10/2017,102.342,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/10/2017,yesterday,NA,daily average withdrawals,4/11/2017,96.763,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/11/2017,yesterday,NA,daily average withdrawals,4/12/2017,116.702,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/12/2017,yesterday,NA,daily average withdrawals,4/13/2017,116.203,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/13/2017,yesterday,NA,daily average withdrawals,4/14/2017,111.106,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/14/2017,yesterday,NA,daily average withdrawals,4/15/2017,114.261,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/15/2017,yesterday,NA,daily average withdrawals,4/16/2017,112.834,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/16/2017,yesterday,NA,daily average withdrawals,4/17/2017,127.7,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/17/2017,yesterday,NA,daily average withdrawals,4/18/2017,116.703,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/18/2017,yesterday,NA,daily average withdrawals,4/19/2017,122.376,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/19/2017,yesterday,NA,daily average withdrawals,4/20/2017,117.178,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/20/2017,yesterday,NA,daily average withdrawals,4/21/2017,116.399,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/21/2017,yesterday,NA,daily average withdrawals,4/22/2017,94.086,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/22/2017,yesterday,NA,daily average withdrawals,4/23/2017,116.801,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/23/2017,yesterday,NA,daily average withdrawals,4/24/2017,116.781,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/24/2017,yesterday,NA,daily average withdrawals,4/25/2017,108.468,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/25/2017,yesterday,NA,daily average withdrawals,4/26/2017,121.538,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/26/2017,yesterday,NA,daily average withdrawals,4/27/2017,128.198,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/27/2017,yesterday,NA,daily average withdrawals,4/28/2017,129.546,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/28/2017,yesterday,NA,daily average withdrawals,4/29/2017,129.606,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/29/2017,yesterday,NA,daily average withdrawals,4/30/2017,139.675,MGD,NA
-WSSC Potomac River daily average withdrawals,WSSC,Potomac River,4/30/2017,yesterday,NA,daily average withdrawals,5/1/2017,145.741,MGD,NA
 WSSC Potomac River daily average withdrawals,WSSC,Potomac River,5/1/2017,yesterday,NA,daily average withdrawals,5/2/2017,144.87,MGD,NA
 WSSC Potomac River daily average withdrawals,WSSC,Potomac River,5/2/2017,yesterday,NA,daily average withdrawals,5/3/2017,117.262,MGD,NA
 WSSC Potomac River daily average withdrawals,WSSC,Potomac River,5/3/2017,yesterday,NA,daily average withdrawals,5/4/2017,128.592,MGD,NA
@@ -256,126 +136,9 @@ WSSC Potomac River daily average withdrawals,WSSC,Potomac River,9/11/2017,yester
 WSSC Potomac River daily average withdrawals,WSSC,Potomac River,9/12/2017,yesterday,NA,daily average withdrawals,9/13/2017,126.37,MGD,NA
 WSSC Potomac River daily average withdrawals,WSSC,Potomac River,9/13/2017,yesterday,NA,daily average withdrawals,9/14/2017,117.58,MGD,NA
 WSSC Potomac River daily average withdrawals,WSSC,Potomac River,9/14/2017,yesterday,NA,daily average withdrawals,9/15/2017,127.85,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/1/2017,yesterday,NA,daily average withdrawals,1/2/2017,44.19,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/2/2017,yesterday,NA,daily average withdrawals,1/3/2017,42.29,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/3/2017,yesterday,NA,daily average withdrawals,1/4/2017,42.14,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/4/2017,yesterday,NA,daily average withdrawals,1/5/2017,42.43,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/5/2017,yesterday,NA,daily average withdrawals,1/6/2017,42.42,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/6/2017,yesterday,NA,daily average withdrawals,1/7/2017,41.81,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/7/2017,yesterday,NA,daily average withdrawals,1/8/2017,42.68,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/8/2017,yesterday,NA,daily average withdrawals,1/9/2017,49.21,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/9/2017,yesterday,NA,daily average withdrawals,1/10/2017,49.03,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/10/2017,yesterday,NA,daily average withdrawals,1/11/2017,48.78,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/11/2017,yesterday,NA,daily average withdrawals,1/12/2017,49.93,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/12/2017,yesterday,NA,daily average withdrawals,1/13/2017,55.57,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/13/2017,yesterday,NA,daily average withdrawals,1/14/2017,48.69,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/14/2017,yesterday,NA,daily average withdrawals,1/15/2017,48.61,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/15/2017,yesterday,NA,daily average withdrawals,1/16/2017,48.55,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/16/2017,yesterday,NA,daily average withdrawals,1/17/2017,48.49,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/17/2017,yesterday,NA,daily average withdrawals,1/18/2017,48.57,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/18/2017,yesterday,NA,daily average withdrawals,1/19/2017,48.68,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/19/2017,yesterday,NA,daily average withdrawals,1/20/2017,48.69,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/20/2017,yesterday,NA,daily average withdrawals,1/21/2017,48.73,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/21/2017,yesterday,NA,daily average withdrawals,1/22/2017,48.69,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/22/2017,yesterday,NA,daily average withdrawals,1/23/2017,48.64,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/23/2017,yesterday,NA,daily average withdrawals,1/24/2017,47.95,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/24/2017,yesterday,NA,daily average withdrawals,1/25/2017,48.83,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/25/2017,yesterday,NA,daily average withdrawals,1/26/2017,48.87,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/26/2017,yesterday,NA,daily average withdrawals,1/27/2017,48.42,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/27/2017,yesterday,NA,daily average withdrawals,1/28/2017,49.63,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/28/2017,yesterday,NA,daily average withdrawals,1/29/2017,49.84,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/29/2017,yesterday,NA,daily average withdrawals,1/30/2017,49.76,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/30/2017,yesterday,NA,daily average withdrawals,1/31/2017,49.66,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,1/31/2017,yesterday,NA,daily average withdrawals,2/1/2017,49.76,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/1/2017,yesterday,NA,daily average withdrawals,2/2/2017,49.74,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/2/2017,yesterday,NA,daily average withdrawals,2/3/2017,49.93,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/3/2017,yesterday,NA,daily average withdrawals,2/4/2017,49.77,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/4/2017,yesterday,NA,daily average withdrawals,2/5/2017,49.76,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/5/2017,yesterday,NA,daily average withdrawals,2/6/2017,49.69,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/6/2017,yesterday,NA,daily average withdrawals,2/7/2017,49.52,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/7/2017,yesterday,NA,daily average withdrawals,2/8/2017,49.54,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/8/2017,yesterday,NA,daily average withdrawals,2/9/2017,49.62,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/9/2017,yesterday,NA,daily average withdrawals,2/10/2017,49.25,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/10/2017,yesterday,NA,daily average withdrawals,2/11/2017,48.97,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/11/2017,yesterday,NA,daily average withdrawals,2/12/2017,49.01,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/12/2017,yesterday,NA,daily average withdrawals,2/13/2017,48.98,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/13/2017,yesterday,NA,daily average withdrawals,2/14/2017,48.22,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/14/2017,yesterday,NA,daily average withdrawals,2/15/2017,48.23,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/15/2017,yesterday,NA,daily average withdrawals,2/16/2017,49.27,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/16/2017,yesterday,NA,daily average withdrawals,2/17/2017,48.84,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/17/2017,yesterday,NA,daily average withdrawals,2/18/2017,48.68,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/18/2017,yesterday,NA,daily average withdrawals,2/19/2017,48.58,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/19/2017,yesterday,NA,daily average withdrawals,2/20/2017,48.35,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/20/2017,yesterday,NA,daily average withdrawals,2/21/2017,48.11,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/21/2017,yesterday,NA,daily average withdrawals,2/22/2017,48.84,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/22/2017,yesterday,NA,daily average withdrawals,2/23/2017,48.84,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/23/2017,yesterday,NA,daily average withdrawals,2/24/2017,48.93,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/24/2017,yesterday,NA,daily average withdrawals,2/25/2017,48.77,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/25/2017,yesterday,NA,daily average withdrawals,2/26/2017,48.63,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/26/2017,yesterday,NA,daily average withdrawals,2/27/2017,48.23,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/27/2017,yesterday,NA,daily average withdrawals,2/28/2017,43.7,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,2/28/2017,yesterday,NA,daily average withdrawals,3/1/2017,41.11,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/1/2017,yesterday,NA,daily average withdrawals,3/2/2017,46.17,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/2/2017,yesterday,NA,daily average withdrawals,3/3/2017,50.25,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/3/2017,yesterday,NA,daily average withdrawals,3/4/2017,45.38,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/4/2017,yesterday,NA,daily average withdrawals,3/5/2017,40.85,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/5/2017,yesterday,NA,daily average withdrawals,3/6/2017,40.92,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/6/2017,yesterday,NA,daily average withdrawals,3/7/2017,37.77,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/7/2017,yesterday,NA,daily average withdrawals,3/8/2017,33.89,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/8/2017,yesterday,NA,daily average withdrawals,3/9/2017,33.8,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/9/2017,yesterday,NA,daily average withdrawals,3/10/2017,34.24,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/10/2017,yesterday,NA,daily average withdrawals,3/11/2017,34.71,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/11/2017,yesterday,NA,daily average withdrawals,3/12/2017,34.9,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/12/2017,yesterday,NA,daily average withdrawals,3/13/2017,33.46,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/13/2017,yesterday,NA,daily average withdrawals,3/14/2017,34.69,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/14/2017,yesterday,NA,daily average withdrawals,3/15/2017,32.76,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/15/2017,yesterday,NA,daily average withdrawals,3/16/2017,32.24,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/16/2017,yesterday,NA,daily average withdrawals,3/17/2017,26.35,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/17/2017,yesterday,NA,daily average withdrawals,3/18/2017,23.88,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/18/2017,yesterday,NA,daily average withdrawals,3/19/2017,24.02,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/19/2017,yesterday,NA,daily average withdrawals,3/20/2017,24.09,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/20/2017,yesterday,NA,daily average withdrawals,3/21/2017,8.58,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/21/2017,yesterday,NA,daily average withdrawals,3/22/2017,0,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/22/2017,yesterday,NA,daily average withdrawals,3/23/2017,13.8,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/23/2017,yesterday,NA,daily average withdrawals,3/24/2017,49.59,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/24/2017,yesterday,NA,daily average withdrawals,3/25/2017,51.7,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/25/2017,yesterday,NA,daily average withdrawals,3/26/2017,51.95,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/26/2017,yesterday,NA,daily average withdrawals,3/27/2017,51.78,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/27/2017,yesterday,NA,daily average withdrawals,3/28/2017,36.12,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/28/2017,yesterday,NA,daily average withdrawals,3/29/2017,30.25,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/29/2017,yesterday,NA,daily average withdrawals,3/30/2017,30.03,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/30/2017,yesterday,NA,daily average withdrawals,3/31/2017,30.33,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,3/31/2017,yesterday,NA,daily average withdrawals,4/1/2017,34.6,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/1/2017,yesterday,NA,daily average withdrawals,4/2/2017,51.82,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/2/2017,yesterday,NA,daily average withdrawals,4/3/2017,51.77,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/3/2017,yesterday,NA,daily average withdrawals,4/4/2017,44.85,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/4/2017,yesterday,NA,daily average withdrawals,4/5/2017,44.1,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/5/2017,yesterday,NA,daily average withdrawals,4/6/2017,44.75,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/6/2017,yesterday,NA,daily average withdrawals,4/7/2017,48.03,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/7/2017,yesterday,NA,daily average withdrawals,4/8/2017,52.07,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/8/2017,yesterday,NA,daily average withdrawals,4/9/2017,50.27,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/9/2017,yesterday,NA,daily average withdrawals,4/10/2017,52.09,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/10/2017,yesterday,NA,daily average withdrawals,4/11/2017,50.98,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/11/2017,yesterday,NA,daily average withdrawals,4/12/2017,44.46,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/12/2017,yesterday,NA,daily average withdrawals,4/13/2017,43.67,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/13/2017,yesterday,NA,daily average withdrawals,4/14/2017,43.65,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/14/2017,yesterday,NA,daily average withdrawals,4/15/2017,46.96,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/15/2017,yesterday,NA,daily average withdrawals,4/16/2017,42.48,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/16/2017,yesterday,NA,daily average withdrawals,4/17/2017,42.42,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/17/2017,yesterday,NA,daily average withdrawals,4/18/2017,42.42,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/18/2017,yesterday,NA,daily average withdrawals,4/19/2017,42.33,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/19/2017,yesterday,NA,daily average withdrawals,4/20/2017,40.86,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/20/2017,yesterday,NA,daily average withdrawals,4/21/2017,41.29,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/21/2017,yesterday,NA,daily average withdrawals,4/22/2017,41.76,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/22/2017,yesterday,NA,daily average withdrawals,4/23/2017,42.07,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/23/2017,yesterday,NA,daily average withdrawals,4/24/2017,42.57,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/24/2017,yesterday,NA,daily average withdrawals,4/25/2017,38.29,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/25/2017,yesterday,NA,daily average withdrawals,4/26/2017,31.51,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/26/2017,yesterday,NA,daily average withdrawals,4/27/2017,27.65,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/27/2017,yesterday,NA,daily average withdrawals,4/28/2017,29.14,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/28/2017,yesterday,NA,daily average withdrawals,4/29/2017,29.18,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/29/2017,yesterday,NA,daily average withdrawals,4/30/2017,29.05,MGD,NA
-WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,4/30/2017,yesterday,NA,daily average withdrawals,5/1/2017,28.37,MGD,NA
+WSSC Potomac River daily average withdrawals,WSSC,Potomac River,9/15/2017,yesterday,NA,daily average withdrawals,9/16/2017,125.82,MGD,NA
+WSSC Potomac River daily average withdrawals,WSSC,Potomac River,9/16/2017,yesterday,NA,daily average withdrawals,9/17/2017,128.7,MGD,NA
+WSSC Potomac River daily average withdrawals,WSSC,Potomac River,9/17/2017,yesterday,NA,daily average withdrawals,9/18/2017,125.83,MGD,NA
 WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,5/1/2017,yesterday,NA,daily average withdrawals,5/2/2017,41.67,MGD,NA
 WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,5/2/2017,yesterday,NA,daily average withdrawals,5/3/2017,32.69,MGD,NA
 WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,5/3/2017,yesterday,NA,daily average withdrawals,5/4/2017,29.95,MGD,NA
@@ -513,11 +276,17 @@ WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,9/11
 WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,9/12/2017,yesterday,NA,daily average withdrawals,9/13/2017,45.57,MGD,NA
 WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,9/13/2017,yesterday,NA,daily average withdrawals,9/14/2017,44.06,MGD,NA
 WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,9/14/2017,yesterday,NA,daily average withdrawals,9/15/2017,41.15,MGD,NA
+WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,9/15/2017,yesterday,NA,daily average withdrawals,9/16/2017,40.92,MGD,NA
+WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,9/16/2017,yesterday,NA,daily average withdrawals,9/17/2017,51.7,MGD,NA
+WSSC Patuxent Reservoirs daily average withdrawals,WSSC,Patuxent Reservoirs,9/17/2017,yesterday,NA,daily average withdrawals,9/18/2017,49.1,MGD,NA
 WSSC WSSC Demand forecasted demand,WSSC,WSSC Demand,9/13/2017,today,am,forecasted demand,9/13/2017,170,MGD,NA
 WSSC WSSC Demand forecasted demand,WSSC,WSSC Demand,9/14/2017,today,am,forecasted demand,9/14/2017,170,MGD,NA
 WSSC WSSC Demand forecasted demand,WSSC,WSSC Demand,9/15/2017,today,am,forecasted demand,9/15/2017,170,MGD,NA
+WSSC WSSC Demand forecasted demand,WSSC,WSSC Demand,9/18/2017,today,am,forecasted demand,9/18/2017,165,MGD,NA
 WSSC WSSC Demand forecasted demand,WSSC,WSSC Demand,9/14/2017,tomorrow,am,forecasted demand,9/13/2017,170,MGD,NA
 WSSC WSSC Demand forecasted demand,WSSC,WSSC Demand,9/15/2017,tomorrow,am,forecasted demand,9/14/2017,170,MGD,NA
+WSSC WSSC Demand forecasted demand,WSSC,WSSC Demand,9/16/2017,tomorrow,am,forecasted demand,9/15/2017,170,MGD,NA
+WSSC Patuxent Reservoirs current usable storage,WSSC,Patuxent Reservoirs,9/18/2017,NA,NA,current usable storage,9/18/2017,5.32,BG,NA
 WSSC Patuxent Reservoirs total usable capacity,WSSC,Patuxent Reservoirs,7/25/2017,NA,NA,total usable capacity,7/25/2017,10.2,BG,NA
 WSSC Patuxent Reservoirs total usable capacity,WSSC,Patuxent Reservoirs,7/26/2017,NA,NA,total usable capacity,7/26/2017,10.2,BG,NA
 WSSC Patuxent Reservoirs total usable capacity,WSSC,Patuxent Reservoirs,7/27/2017,NA,NA,total usable capacity,7/27/2017,10.2,BG,NA
@@ -571,6 +340,10 @@ WSSC Patuxent Reservoirs total usable capacity,WSSC,Patuxent Reservoirs,9/12/201
 WSSC Patuxent Reservoirs total usable capacity,WSSC,Patuxent Reservoirs,9/13/2017,NA,NA,total usable capacity,9/13/2017,10.2,BG,NA
 WSSC Patuxent Reservoirs total usable capacity,WSSC,Patuxent Reservoirs,9/14/2017,NA,NA,total usable capacity,9/14/2017,10.2,BG,NA
 WSSC Patuxent Reservoirs total usable capacity,WSSC,Patuxent Reservoirs,9/15/2017,NA,NA,total usable capacity,9/15/2017,10.2,BG,NA
+WSSC Patuxent Reservoirs total usable capacity,WSSC,Patuxent Reservoirs,9/16/2017,NA,NA,total usable capacity,9/16/2017,10.2,BG,NA
+WSSC Patuxent Reservoirs total usable capacity,WSSC,Patuxent Reservoirs,9/17/2017,NA,NA,total usable capacity,9/17/2017,10.2,BG,NA
+WSSC Patuxent Reservoirs total usable capacity,WSSC,Patuxent Reservoirs,9/18/2017,NA,NA,total usable capacity,9/18/2017,10.2,BG,NA
+WSSC Little Reservoir current usable storage,WSSC,Little Reservoir,9/18/2017,NA,NA,current usable storage,9/18/2017,3.82,BG,NA
 WSSC Little Seneca Reservoir total usable capacity,WSSC,Little Seneca Reservoir,7/25/2017,NA,NA,total usable capacity,7/25/2017,3.9,BG,NA
 WSSC Little Seneca Reservoir total usable capacity,WSSC,Little Seneca Reservoir,7/26/2017,NA,NA,total usable capacity,7/26/2017,3.9,BG,NA
 WSSC Little Seneca Reservoir total usable capacity,WSSC,Little Seneca Reservoir,7/27/2017,NA,NA,total usable capacity,7/27/2017,3.9,BG,NA
@@ -624,126 +397,9 @@ WSSC Little Seneca Reservoir total usable capacity,WSSC,Little Seneca Reservoir,
 WSSC Little Seneca Reservoir total usable capacity,WSSC,Little Seneca Reservoir,9/13/2017,NA,NA,total usable capacity,9/13/2017,3.9,BG,NA
 WSSC Little Seneca Reservoir total usable capacity,WSSC,Little Seneca Reservoir,9/14/2017,NA,NA,total usable capacity,9/14/2017,3.9,BG,NA
 WSSC Little Seneca Reservoir total usable capacity,WSSC,Little Seneca Reservoir,9/15/2017,NA,NA,total usable capacity,9/15/2017,3.9,BG,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/1/2017,yesterday,NA,daily average withdrawals,1/2/2017,72.04541667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/2/2017,yesterday,NA,daily average withdrawals,1/3/2017,82.86833333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/3/2017,yesterday,NA,daily average withdrawals,1/4/2017,78.13791667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/4/2017,yesterday,NA,daily average withdrawals,1/5/2017,83.3475,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/5/2017,yesterday,NA,daily average withdrawals,1/6/2017,86.71875,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/6/2017,yesterday,NA,daily average withdrawals,1/7/2017,80.19916667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/7/2017,yesterday,NA,daily average withdrawals,1/8/2017,74.61458333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/8/2017,yesterday,NA,daily average withdrawals,1/9/2017,85.09583333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/9/2017,yesterday,NA,daily average withdrawals,1/10/2017,93.73583333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/10/2017,yesterday,NA,daily average withdrawals,1/11/2017,76.07541667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/11/2017,yesterday,NA,daily average withdrawals,1/12/2017,89.78333333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/12/2017,yesterday,NA,daily average withdrawals,1/13/2017,83.86416667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/13/2017,yesterday,NA,daily average withdrawals,1/14/2017,84.43958333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/14/2017,yesterday,NA,daily average withdrawals,1/15/2017,77.20416667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/15/2017,yesterday,NA,daily average withdrawals,1/16/2017,87.08916667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/16/2017,yesterday,NA,daily average withdrawals,1/17/2017,82.66916667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/17/2017,yesterday,NA,daily average withdrawals,1/18/2017,83.15791667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/18/2017,yesterday,NA,daily average withdrawals,1/19/2017,75.715,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/19/2017,yesterday,NA,daily average withdrawals,1/20/2017,83.45583333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/20/2017,yesterday,NA,daily average withdrawals,1/21/2017,75.6175,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/21/2017,yesterday,NA,daily average withdrawals,1/22/2017,73.83541667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/22/2017,yesterday,NA,daily average withdrawals,1/23/2017,84.63208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/23/2017,yesterday,NA,daily average withdrawals,1/24/2017,76.87041667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/24/2017,yesterday,NA,daily average withdrawals,1/25/2017,72.91833333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/25/2017,yesterday,NA,daily average withdrawals,1/26/2017,72.80541667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/26/2017,yesterday,NA,daily average withdrawals,1/27/2017,82.355,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/27/2017,yesterday,NA,daily average withdrawals,1/28/2017,81.19,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/28/2017,yesterday,NA,daily average withdrawals,1/29/2017,81.37416667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/29/2017,yesterday,NA,daily average withdrawals,1/30/2017,79.10916667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/30/2017,yesterday,NA,daily average withdrawals,1/31/2017,79.24583333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,1/31/2017,yesterday,NA,daily average withdrawals,2/1/2017,75.74208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/1/2017,yesterday,NA,daily average withdrawals,2/2/2017,76.49291667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/2/2017,yesterday,NA,daily average withdrawals,2/3/2017,75.74208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/3/2017,yesterday,NA,daily average withdrawals,2/4/2017,75.74208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/4/2017,yesterday,NA,daily average withdrawals,2/5/2017,75.74208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/5/2017,yesterday,NA,daily average withdrawals,2/6/2017,75.74208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/6/2017,yesterday,NA,daily average withdrawals,2/7/2017,75.74208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/7/2017,yesterday,NA,daily average withdrawals,2/8/2017,75.74208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/8/2017,yesterday,NA,daily average withdrawals,2/9/2017,75.74208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/9/2017,yesterday,NA,daily average withdrawals,2/10/2017,75.74208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/10/2017,yesterday,NA,daily average withdrawals,2/11/2017,75.74208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/11/2017,yesterday,NA,daily average withdrawals,2/12/2017,75.74208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/12/2017,yesterday,NA,daily average withdrawals,2/13/2017,75.74208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/13/2017,yesterday,NA,daily average withdrawals,2/14/2017,75.74208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/14/2017,yesterday,NA,daily average withdrawals,2/15/2017,75.74208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/15/2017,yesterday,NA,daily average withdrawals,2/16/2017,75.74208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/16/2017,yesterday,NA,daily average withdrawals,2/17/2017,75.74208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/17/2017,yesterday,NA,daily average withdrawals,2/18/2017,75.87541667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/18/2017,yesterday,NA,daily average withdrawals,2/19/2017,80.41333333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/19/2017,yesterday,NA,daily average withdrawals,2/20/2017,77.09625,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/20/2017,yesterday,NA,daily average withdrawals,2/21/2017,79.5625,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/21/2017,yesterday,NA,daily average withdrawals,2/22/2017,76.71958333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/22/2017,yesterday,NA,daily average withdrawals,2/23/2017,69.97875,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/23/2017,yesterday,NA,daily average withdrawals,2/24/2017,71.13375,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/24/2017,yesterday,NA,daily average withdrawals,2/25/2017,78.005,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/25/2017,yesterday,NA,daily average withdrawals,2/26/2017,73.5725,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/26/2017,yesterday,NA,daily average withdrawals,2/27/2017,81.31041667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/27/2017,yesterday,NA,daily average withdrawals,2/28/2017,67.66083333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,2/28/2017,yesterday,NA,daily average withdrawals,3/1/2017,76.22916667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/1/2017,yesterday,NA,daily average withdrawals,3/2/2017,73.56708333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/2/2017,yesterday,NA,daily average withdrawals,3/3/2017,69.42875,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/3/2017,yesterday,NA,daily average withdrawals,3/4/2017,73.34,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/4/2017,yesterday,NA,daily average withdrawals,3/5/2017,77.32583333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/5/2017,yesterday,NA,daily average withdrawals,3/6/2017,77.34041667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/6/2017,yesterday,NA,daily average withdrawals,3/7/2017,77.40916667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/7/2017,yesterday,NA,daily average withdrawals,3/8/2017,76.12375,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/8/2017,yesterday,NA,daily average withdrawals,3/9/2017,72.15583333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/9/2017,yesterday,NA,daily average withdrawals,3/10/2017,73.6625,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/10/2017,yesterday,NA,daily average withdrawals,3/11/2017,73.31208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/11/2017,yesterday,NA,daily average withdrawals,3/12/2017,77.19958333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/12/2017,yesterday,NA,daily average withdrawals,3/13/2017,82.10130435,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/13/2017,yesterday,NA,daily average withdrawals,3/14/2017,73.96833333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/14/2017,yesterday,NA,daily average withdrawals,3/15/2017,68.53375,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/15/2017,yesterday,NA,daily average withdrawals,3/16/2017,77.60041667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/16/2017,yesterday,NA,daily average withdrawals,3/17/2017,75.10791667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/17/2017,yesterday,NA,daily average withdrawals,3/18/2017,70.65041667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/18/2017,yesterday,NA,daily average withdrawals,3/19/2017,75.27708333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/19/2017,yesterday,NA,daily average withdrawals,3/20/2017,79.06166667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/20/2017,yesterday,NA,daily average withdrawals,3/21/2017,77.27833333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/21/2017,yesterday,NA,daily average withdrawals,3/22/2017,74.25541667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/22/2017,yesterday,NA,daily average withdrawals,3/23/2017,91.125,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/23/2017,yesterday,NA,daily average withdrawals,3/24/2017,68.6825,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/24/2017,yesterday,NA,daily average withdrawals,3/25/2017,76.41125,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/25/2017,yesterday,NA,daily average withdrawals,3/26/2017,77.43375,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/26/2017,yesterday,NA,daily average withdrawals,3/27/2017,65.79208333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/27/2017,yesterday,NA,daily average withdrawals,3/28/2017,75.445,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/28/2017,yesterday,NA,daily average withdrawals,3/29/2017,81.43458333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/29/2017,yesterday,NA,daily average withdrawals,3/30/2017,68.79458333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/30/2017,yesterday,NA,daily average withdrawals,3/31/2017,73.81458333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,3/31/2017,yesterday,NA,daily average withdrawals,4/1/2017,65.41041667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/1/2017,yesterday,NA,daily average withdrawals,4/2/2017,73.64166667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/2/2017,yesterday,NA,daily average withdrawals,4/3/2017,74.94041667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/3/2017,yesterday,NA,daily average withdrawals,4/4/2017,81.98,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/4/2017,yesterday,NA,daily average withdrawals,4/5/2017,69.1375,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/5/2017,yesterday,NA,daily average withdrawals,4/6/2017,73.98083333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/6/2017,yesterday,NA,daily average withdrawals,4/7/2017,77.04375,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/7/2017,yesterday,NA,daily average withdrawals,4/8/2017,69.94125,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/8/2017,yesterday,NA,daily average withdrawals,4/9/2017,69.11041667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/9/2017,yesterday,NA,daily average withdrawals,4/10/2017,78.35458333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/10/2017,yesterday,NA,daily average withdrawals,4/11/2017,75.52416667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/11/2017,yesterday,NA,daily average withdrawals,4/12/2017,83.5825,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/12/2017,yesterday,NA,daily average withdrawals,4/13/2017,75.67708333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/13/2017,yesterday,NA,daily average withdrawals,4/14/2017,77.71,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/14/2017,yesterday,NA,daily average withdrawals,4/15/2017,86.51333333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/15/2017,yesterday,NA,daily average withdrawals,4/16/2017,75.95541667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/16/2017,yesterday,NA,daily average withdrawals,4/17/2017,91.7775,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/17/2017,yesterday,NA,daily average withdrawals,4/18/2017,88.58541667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/18/2017,yesterday,NA,daily average withdrawals,4/19/2017,83.59916667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/19/2017,yesterday,NA,daily average withdrawals,4/20/2017,89.12708333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/20/2017,yesterday,NA,daily average withdrawals,4/21/2017,82.91375,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/21/2017,yesterday,NA,daily average withdrawals,4/22/2017,82.27333333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/22/2017,yesterday,NA,daily average withdrawals,4/23/2017,77.66083333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/23/2017,yesterday,NA,daily average withdrawals,4/24/2017,76.1375,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/24/2017,yesterday,NA,daily average withdrawals,4/25/2017,72.41875,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/25/2017,yesterday,NA,daily average withdrawals,4/26/2017,74.44416667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/26/2017,yesterday,NA,daily average withdrawals,4/27/2017,77.51083333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/27/2017,yesterday,NA,daily average withdrawals,4/28/2017,83.02583333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/28/2017,yesterday,NA,daily average withdrawals,4/29/2017,92.13333333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/29/2017,yesterday,NA,daily average withdrawals,4/30/2017,90.48166667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,4/30/2017,yesterday,NA,daily average withdrawals,5/1/2017,91.44208333,MGD,NA
+WSSC Little Seneca Reservoir total usable capacity,WSSC,Little Seneca Reservoir,9/16/2017,NA,NA,total usable capacity,9/16/2017,3.9,BG,NA
+WSSC Little Seneca Reservoir total usable capacity,WSSC,Little Seneca Reservoir,9/17/2017,NA,NA,total usable capacity,9/17/2017,3.9,BG,NA
+WSSC Little Seneca Reservoir total usable capacity,WSSC,Little Seneca Reservoir,9/18/2017,NA,NA,total usable capacity,9/18/2017,3.9,BG,NA
 FW Potomac River daily average withdrawals,FW,Potomac River,5/1/2017,yesterday,NA,daily average withdrawals,5/2/2017,96.71541667,MGD,NA
 FW Potomac River daily average withdrawals,FW,Potomac River,5/2/2017,yesterday,NA,daily average withdrawals,5/3/2017,87.90333333,MGD,NA
 FW Potomac River daily average withdrawals,FW,Potomac River,5/3/2017,yesterday,NA,daily average withdrawals,5/4/2017,94.05583333,MGD,NA
@@ -829,139 +485,61 @@ FW Potomac River daily average withdrawals,FW,Potomac River,7/21/2017,yesterday,
 FW Potomac River daily average withdrawals,FW,Potomac River,7/22/2017,yesterday,NA,daily average withdrawals,7/23/2017,113.7870833,MGD,NA
 FW Potomac River daily average withdrawals,FW,Potomac River,7/23/2017,yesterday,NA,daily average withdrawals,7/24/2017,88.42333333,MGD,NA
 FW Potomac River daily average withdrawals,FW,Potomac River,7/24/2017,yesterday,NA,daily average withdrawals,7/25/2017,94.73625,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,7/25/2017,yesterday,NA,daily average withdrawals,7/26/2017,97.58583333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,7/26/2017,yesterday,NA,daily average withdrawals,7/27/2017,115.0170833,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,7/27/2017,yesterday,NA,daily average withdrawals,7/28/2017,102.3995833,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,7/28/2017,yesterday,NA,daily average withdrawals,7/29/2017,95.83666667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,7/29/2017,yesterday,NA,daily average withdrawals,7/30/2017,82.13666667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,7/30/2017,yesterday,NA,daily average withdrawals,7/31/2017,92.2125,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,7/31/2017,yesterday,NA,daily average withdrawals,8/1/2017,98.3075,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,8/1/2017,yesterday,NA,daily average withdrawals,8/2/2017,97.74958333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,8/2/2017,yesterday,NA,daily average withdrawals,8/3/2017,115.76125,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,8/3/2017,yesterday,NA,daily average withdrawals,8/4/2017,110.5508333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,8/4/2017,yesterday,NA,daily average withdrawals,8/5/2017,101.4541667,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,8/5/2017,yesterday,NA,daily average withdrawals,8/6/2017,98.40333333,MGD,NA
-FW Potomac River daily average withdrawals,FW,Potomac River,8/6/2017,yesterday,NA,daily average withdrawals,8/7/2017,104.0341667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/1/2017,yesterday,NA,daily average withdrawals,1/2/2017,67.0875,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/2/2017,yesterday,NA,daily average withdrawals,1/3/2017,66.9375,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/3/2017,yesterday,NA,daily average withdrawals,1/4/2017,66.8875,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/4/2017,yesterday,NA,daily average withdrawals,1/5/2017,66.65416667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/5/2017,yesterday,NA,daily average withdrawals,1/6/2017,59.60833333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/6/2017,yesterday,NA,daily average withdrawals,1/7/2017,68.34166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/7/2017,yesterday,NA,daily average withdrawals,1/8/2017,66.7,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/8/2017,yesterday,NA,daily average withdrawals,1/9/2017,68.3875,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/9/2017,yesterday,NA,daily average withdrawals,1/10/2017,67.90833333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/10/2017,yesterday,NA,daily average withdrawals,1/11/2017,63.1875,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/11/2017,yesterday,NA,daily average withdrawals,1/12/2017,62.99166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/12/2017,yesterday,NA,daily average withdrawals,1/13/2017,63.44166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/13/2017,yesterday,NA,daily average withdrawals,1/14/2017,62.98333333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/14/2017,yesterday,NA,daily average withdrawals,1/15/2017,63.48333333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/15/2017,yesterday,NA,daily average withdrawals,1/16/2017,63.8,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/16/2017,yesterday,NA,daily average withdrawals,1/17/2017,63.375,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/17/2017,yesterday,NA,daily average withdrawals,1/18/2017,63.57916667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/18/2017,yesterday,NA,daily average withdrawals,1/19/2017,63.73333333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/19/2017,yesterday,NA,daily average withdrawals,1/20/2017,63.62916667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/20/2017,yesterday,NA,daily average withdrawals,1/21/2017,63.52083333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/21/2017,yesterday,NA,daily average withdrawals,1/22/2017,63.44583333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/22/2017,yesterday,NA,daily average withdrawals,1/23/2017,63.5125,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/23/2017,yesterday,NA,daily average withdrawals,1/24/2017,63.5375,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/24/2017,yesterday,NA,daily average withdrawals,1/25/2017,63.94583333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/25/2017,yesterday,NA,daily average withdrawals,1/26/2017,67.775,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/26/2017,yesterday,NA,daily average withdrawals,1/27/2017,65.82083333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/27/2017,yesterday,NA,daily average withdrawals,1/28/2017,65.80416667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/28/2017,yesterday,NA,daily average withdrawals,1/29/2017,66.45833333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/29/2017,yesterday,NA,daily average withdrawals,1/30/2017,66.34166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/30/2017,yesterday,NA,daily average withdrawals,1/31/2017,66.21666667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,1/31/2017,yesterday,NA,daily average withdrawals,2/1/2017,66.04166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/1/2017,yesterday,NA,daily average withdrawals,2/2/2017,65.89166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/2/2017,yesterday,NA,daily average withdrawals,2/3/2017,66.04166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/3/2017,yesterday,NA,daily average withdrawals,2/4/2017,66.04166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/4/2017,yesterday,NA,daily average withdrawals,2/5/2017,66.04166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/5/2017,yesterday,NA,daily average withdrawals,2/6/2017,66.04166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/6/2017,yesterday,NA,daily average withdrawals,2/7/2017,66.04166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/7/2017,yesterday,NA,daily average withdrawals,2/8/2017,66.04166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/8/2017,yesterday,NA,daily average withdrawals,2/9/2017,66.04166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/9/2017,yesterday,NA,daily average withdrawals,2/10/2017,66.04166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/10/2017,yesterday,NA,daily average withdrawals,2/11/2017,66.04166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/11/2017,yesterday,NA,daily average withdrawals,2/12/2017,66.04166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/12/2017,yesterday,NA,daily average withdrawals,2/13/2017,66.04166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/13/2017,yesterday,NA,daily average withdrawals,2/14/2017,66.04166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/14/2017,yesterday,NA,daily average withdrawals,2/15/2017,66.04166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/15/2017,yesterday,NA,daily average withdrawals,2/16/2017,66.04166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/16/2017,yesterday,NA,daily average withdrawals,2/17/2017,66.04166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/17/2017,yesterday,NA,daily average withdrawals,2/18/2017,61.99166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/18/2017,yesterday,NA,daily average withdrawals,2/19/2017,65.51666667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/19/2017,yesterday,NA,daily average withdrawals,2/20/2017,65.47083333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/20/2017,yesterday,NA,daily average withdrawals,2/21/2017,65.53333333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/21/2017,yesterday,NA,daily average withdrawals,2/22/2017,66.1125,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/22/2017,yesterday,NA,daily average withdrawals,2/23/2017,66.56666667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/23/2017,yesterday,NA,daily average withdrawals,2/24/2017,66.1375,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/24/2017,yesterday,NA,daily average withdrawals,2/25/2017,66.38333333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/25/2017,yesterday,NA,daily average withdrawals,2/26/2017,60.85833333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/26/2017,yesterday,NA,daily average withdrawals,2/27/2017,64.22916667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/27/2017,yesterday,NA,daily average withdrawals,2/28/2017,64.27916667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,2/28/2017,yesterday,NA,daily average withdrawals,3/1/2017,63.80833333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/1/2017,yesterday,NA,daily average withdrawals,3/2/2017,62.16666667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/2/2017,yesterday,NA,daily average withdrawals,3/3/2017,67.2375,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/3/2017,yesterday,NA,daily average withdrawals,3/4/2017,63.6125,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/4/2017,yesterday,NA,daily average withdrawals,3/5/2017,63.65,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/5/2017,yesterday,NA,daily average withdrawals,3/6/2017,63.77083333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/6/2017,yesterday,NA,daily average withdrawals,3/7/2017,64.08333333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/7/2017,yesterday,NA,daily average withdrawals,3/8/2017,64.3375,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/8/2017,yesterday,NA,daily average withdrawals,3/9/2017,64.38333333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/9/2017,yesterday,NA,daily average withdrawals,3/10/2017,64.27083333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/10/2017,yesterday,NA,daily average withdrawals,3/11/2017,64.43333333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/11/2017,yesterday,NA,daily average withdrawals,3/12/2017,64.41666667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/12/2017,yesterday,NA,daily average withdrawals,3/13/2017,64.38695652,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/13/2017,yesterday,NA,daily average withdrawals,3/14/2017,64.04166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/14/2017,yesterday,NA,daily average withdrawals,3/15/2017,62.68333333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/15/2017,yesterday,NA,daily average withdrawals,3/16/2017,63.22916667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/16/2017,yesterday,NA,daily average withdrawals,3/17/2017,63.625,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/17/2017,yesterday,NA,daily average withdrawals,3/18/2017,63.38333333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/18/2017,yesterday,NA,daily average withdrawals,3/19/2017,63.65,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/19/2017,yesterday,NA,daily average withdrawals,3/20/2017,64.14166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/20/2017,yesterday,NA,daily average withdrawals,3/21/2017,66.6,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/21/2017,yesterday,NA,daily average withdrawals,3/22/2017,58,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/22/2017,yesterday,NA,daily average withdrawals,3/23/2017,65.41666667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/23/2017,yesterday,NA,daily average withdrawals,3/24/2017,61.89166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/24/2017,yesterday,NA,daily average withdrawals,3/25/2017,63.89583333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/25/2017,yesterday,NA,daily average withdrawals,3/26/2017,63.71666667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/26/2017,yesterday,NA,daily average withdrawals,3/27/2017,63.81666667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/27/2017,yesterday,NA,daily average withdrawals,3/28/2017,65.94583333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/28/2017,yesterday,NA,daily average withdrawals,3/29/2017,64.24583333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/29/2017,yesterday,NA,daily average withdrawals,3/30/2017,64.98333333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/30/2017,yesterday,NA,daily average withdrawals,3/31/2017,63.81666667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,3/31/2017,yesterday,NA,daily average withdrawals,4/1/2017,62.52916667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/1/2017,yesterday,NA,daily average withdrawals,4/2/2017,61.825,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/2/2017,yesterday,NA,daily average withdrawals,4/3/2017,63.84166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/3/2017,yesterday,NA,daily average withdrawals,4/4/2017,63.45833333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/4/2017,yesterday,NA,daily average withdrawals,4/5/2017,64.24166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/5/2017,yesterday,NA,daily average withdrawals,4/6/2017,64.1625,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/6/2017,yesterday,NA,daily average withdrawals,4/7/2017,64.38333333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/7/2017,yesterday,NA,daily average withdrawals,4/8/2017,64.025,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/8/2017,yesterday,NA,daily average withdrawals,4/9/2017,63.66666667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/9/2017,yesterday,NA,daily average withdrawals,4/10/2017,64.5125,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/10/2017,yesterday,NA,daily average withdrawals,4/11/2017,64.17916667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/11/2017,yesterday,NA,daily average withdrawals,4/12/2017,64.29166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/12/2017,yesterday,NA,daily average withdrawals,4/13/2017,61.90416667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/13/2017,yesterday,NA,daily average withdrawals,4/14/2017,66.66666667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/14/2017,yesterday,NA,daily average withdrawals,4/15/2017,68.50416667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/15/2017,yesterday,NA,daily average withdrawals,4/16/2017,64.55416667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/16/2017,yesterday,NA,daily average withdrawals,4/17/2017,65.65416667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/17/2017,yesterday,NA,daily average withdrawals,4/18/2017,64.55416667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/18/2017,yesterday,NA,daily average withdrawals,4/19/2017,59.2375,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/19/2017,yesterday,NA,daily average withdrawals,4/20/2017,62.82916667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/20/2017,yesterday,NA,daily average withdrawals,4/21/2017,61.9875,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/21/2017,yesterday,NA,daily average withdrawals,4/22/2017,62.49583333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/22/2017,yesterday,NA,daily average withdrawals,4/23/2017,62.5625,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/23/2017,yesterday,NA,daily average withdrawals,4/24/2017,62.59583333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/24/2017,yesterday,NA,daily average withdrawals,4/25/2017,62.49166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/25/2017,yesterday,NA,daily average withdrawals,4/26/2017,61.58333333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/26/2017,yesterday,NA,daily average withdrawals,4/27/2017,62.45416667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/27/2017,yesterday,NA,daily average withdrawals,4/28/2017,67.1,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/28/2017,yesterday,NA,daily average withdrawals,4/29/2017,70.7125,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/29/2017,yesterday,NA,daily average withdrawals,4/30/2017,66.3125,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,4/30/2017,yesterday,NA,daily average withdrawals,5/1/2017,67.01666667,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,7/25/2017,yesterday,NA,daily average withdrawals,7/26/2017,97.59,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,7/26/2017,yesterday,NA,daily average withdrawals,7/27/2017,115.02,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,7/27/2017,yesterday,NA,daily average withdrawals,7/28/2017,102.4,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,7/28/2017,yesterday,NA,daily average withdrawals,7/29/2017,95.84,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,7/29/2017,yesterday,NA,daily average withdrawals,7/30/2017,82.14,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,7/30/2017,yesterday,NA,daily average withdrawals,7/31/2017,92.21,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,7/31/2017,yesterday,NA,daily average withdrawals,8/1/2017,98.31,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/1/2017,yesterday,NA,daily average withdrawals,8/2/2017,97.75,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/2/2017,yesterday,NA,daily average withdrawals,8/3/2017,115.76,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/3/2017,yesterday,NA,daily average withdrawals,8/4/2017,110.55,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/4/2017,yesterday,NA,daily average withdrawals,8/5/2017,101.45,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/5/2017,yesterday,NA,daily average withdrawals,8/6/2017,98.4,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/6/2017,yesterday,NA,daily average withdrawals,8/7/2017,104.03,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/7/2017,yesterday,NA,daily average withdrawals,8/8/2017,100.7,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/8/2017,yesterday,NA,daily average withdrawals,8/9/2017,76.48,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/9/2017,yesterday,NA,daily average withdrawals,8/10/2017,95.92,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/10/2017,yesterday,NA,daily average withdrawals,8/11/2017,97.68,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/11/2017,yesterday,NA,daily average withdrawals,8/12/2017,101.94,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/12/2017,yesterday,NA,daily average withdrawals,8/13/2017,78.95,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/13/2017,yesterday,NA,daily average withdrawals,8/14/2017,74.9,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/14/2017,yesterday,NA,daily average withdrawals,8/15/2017,100.04,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/15/2017,yesterday,NA,daily average withdrawals,8/16/2017,88.79,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/16/2017,yesterday,NA,daily average withdrawals,8/17/2017,94.05,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/17/2017,yesterday,NA,daily average withdrawals,8/18/2017,89.68,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/18/2017,yesterday,NA,daily average withdrawals,8/19/2017,97.46,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/19/2017,yesterday,NA,daily average withdrawals,8/20/2017,79.47,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/20/2017,yesterday,NA,daily average withdrawals,8/21/2017,91.23,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/21/2017,yesterday,NA,daily average withdrawals,8/22/2017,109.33,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/22/2017,yesterday,NA,daily average withdrawals,8/23/2017,94.69,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/23/2017,yesterday,NA,daily average withdrawals,8/24/2017,111.75,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/24/2017,yesterday,NA,daily average withdrawals,8/25/2017,99.76,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/25/2017,yesterday,NA,daily average withdrawals,8/26/2017,99.09,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/26/2017,yesterday,NA,daily average withdrawals,8/27/2017,92.99,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/27/2017,yesterday,NA,daily average withdrawals,8/28/2017,92.99,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/28/2017,yesterday,NA,daily average withdrawals,8/29/2017,103.73,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/29/2017,yesterday,NA,daily average withdrawals,8/30/2017,86.7,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/30/2017,yesterday,NA,daily average withdrawals,8/31/2017,83.88,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,8/31/2017,yesterday,NA,daily average withdrawals,9/1/2017,86.77,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,9/1/2017,yesterday,NA,daily average withdrawals,9/2/2017,90.17,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,9/2/2017,yesterday,NA,daily average withdrawals,9/3/2017,76.73,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,9/3/2017,yesterday,NA,daily average withdrawals,9/4/2017,70.74,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,9/4/2017,yesterday,NA,daily average withdrawals,9/5/2017,96.11,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,9/5/2017,yesterday,NA,daily average withdrawals,9/6/2017,87.78,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,9/6/2017,yesterday,NA,daily average withdrawals,9/7/2017,85.97,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,9/7/2017,yesterday,NA,daily average withdrawals,9/8/2017,82.5,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,9/8/2017,yesterday,NA,daily average withdrawals,9/9/2017,100.52,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,9/9/2017,yesterday,NA,daily average withdrawals,9/10/2017,89.36,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,9/10/2017,yesterday,NA,daily average withdrawals,9/11/2017,89.63,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,9/11/2017,yesterday,NA,daily average withdrawals,9/12/2017,95.29,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,9/12/2017,yesterday,NA,daily average withdrawals,9/13/2017,85.1,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,9/13/2017,yesterday,NA,daily average withdrawals,9/14/2017,91.68,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,9/14/2017,yesterday,NA,daily average withdrawals,9/15/2017,92.29,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,9/15/2017,yesterday,NA,daily average withdrawals,9/16/2017,107.93,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,9/16/2017,yesterday,NA,daily average withdrawals,9/17/2017,87.96,MGD,NA
+FW Potomac River daily average withdrawals,FW,Potomac River,9/17/2017,yesterday,NA,daily average withdrawals,9/18/2017,93.75,MGD,NA
 FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,5/1/2017,yesterday,NA,daily average withdrawals,5/2/2017,69.49166667,MGD,NA
 FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,5/2/2017,yesterday,NA,daily average withdrawals,5/3/2017,63.325,MGD,NA
 FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,5/3/2017,yesterday,NA,daily average withdrawals,5/4/2017,67.6375,MGD,NA
@@ -1047,139 +625,61 @@ FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,7/21/2017,
 FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,7/22/2017,yesterday,NA,daily average withdrawals,7/23/2017,77.72083333,MGD,NA
 FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,7/23/2017,yesterday,NA,daily average withdrawals,7/24/2017,74.71666667,MGD,NA
 FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,7/24/2017,yesterday,NA,daily average withdrawals,7/25/2017,71.77083333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,7/25/2017,yesterday,NA,daily average withdrawals,7/26/2017,69.7375,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,7/26/2017,yesterday,NA,daily average withdrawals,7/27/2017,73.55416667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,7/27/2017,yesterday,NA,daily average withdrawals,7/28/2017,76.2125,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,7/28/2017,yesterday,NA,daily average withdrawals,7/29/2017,69.425,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,7/29/2017,yesterday,NA,daily average withdrawals,7/30/2017,69.5125,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,7/30/2017,yesterday,NA,daily average withdrawals,7/31/2017,69.55416667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,7/31/2017,yesterday,NA,daily average withdrawals,8/1/2017,73.89166667,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/1/2017,yesterday,NA,daily average withdrawals,8/2/2017,72.175,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/2/2017,yesterday,NA,daily average withdrawals,8/3/2017,72.97083333,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/3/2017,yesterday,NA,daily average withdrawals,8/4/2017,74.275,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/4/2017,yesterday,NA,daily average withdrawals,8/5/2017,74.13333333,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,7/25/2017,yesterday,NA,daily average withdrawals,7/26/2017,69.74,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,7/26/2017,yesterday,NA,daily average withdrawals,7/27/2017,73.55,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,7/27/2017,yesterday,NA,daily average withdrawals,7/28/2017,76.21,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,7/28/2017,yesterday,NA,daily average withdrawals,7/29/2017,69.43,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,7/29/2017,yesterday,NA,daily average withdrawals,7/30/2017,69.51,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,7/30/2017,yesterday,NA,daily average withdrawals,7/31/2017,69.55,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,7/31/2017,yesterday,NA,daily average withdrawals,8/1/2017,73.89,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/1/2017,yesterday,NA,daily average withdrawals,8/2/2017,72.18,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/2/2017,yesterday,NA,daily average withdrawals,8/3/2017,72.97,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/3/2017,yesterday,NA,daily average withdrawals,8/4/2017,74.28,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/4/2017,yesterday,NA,daily average withdrawals,8/5/2017,74.13,MGD,NA
 FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/5/2017,yesterday,NA,daily average withdrawals,8/6/2017,71.95,MGD,NA
-FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/6/2017,yesterday,NA,daily average withdrawals,8/7/2017,71.96666667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/1/2017,yesterday,NA,daily average withdrawals,1/2/2017,127,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/2/2017,yesterday,NA,daily average withdrawals,1/3/2017,122.5866667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/3/2017,yesterday,NA,daily average withdrawals,1/4/2017,129.1216667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/4/2017,yesterday,NA,daily average withdrawals,1/5/2017,133.7083333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/5/2017,yesterday,NA,daily average withdrawals,1/6/2017,127.2066667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/6/2017,yesterday,NA,daily average withdrawals,1/7/2017,126.4566667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/7/2017,yesterday,NA,daily average withdrawals,1/8/2017,119.9216667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/8/2017,yesterday,NA,daily average withdrawals,1/9/2017,125.2066667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/9/2017,yesterday,NA,daily average withdrawals,1/10/2017,139.335,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/10/2017,yesterday,NA,daily average withdrawals,1/11/2017,142.9983333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/11/2017,yesterday,NA,daily average withdrawals,1/12/2017,133.875,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/12/2017,yesterday,NA,daily average withdrawals,1/13/2017,146.2466667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/13/2017,yesterday,NA,daily average withdrawals,1/14/2017,137.6216667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/14/2017,yesterday,NA,daily average withdrawals,1/15/2017,136.625,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/15/2017,yesterday,NA,daily average withdrawals,1/16/2017,122.1716667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/16/2017,yesterday,NA,daily average withdrawals,1/17/2017,134.2466667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/17/2017,yesterday,NA,daily average withdrawals,1/18/2017,54.26666667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/18/2017,yesterday,NA,daily average withdrawals,1/19/2017,-38.24166667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/19/2017,yesterday,NA,daily average withdrawals,1/20/2017,-15.77,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/20/2017,yesterday,NA,daily average withdrawals,1/21/2017,-21.91166667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/21/2017,yesterday,NA,daily average withdrawals,1/22/2017,13.13166667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/22/2017,yesterday,NA,daily average withdrawals,1/23/2017,132.8766667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/23/2017,yesterday,NA,daily average withdrawals,1/24/2017,137.17,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/24/2017,yesterday,NA,daily average withdrawals,1/25/2017,138.8366667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/25/2017,yesterday,NA,daily average withdrawals,1/26/2017,131.1283333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/26/2017,yesterday,NA,daily average withdrawals,1/27/2017,141.9133333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/27/2017,yesterday,NA,daily average withdrawals,1/28/2017,130.3733333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/28/2017,yesterday,NA,daily average withdrawals,1/29/2017,128.8366667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/29/2017,yesterday,NA,daily average withdrawals,1/30/2017,126.6216667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/30/2017,yesterday,NA,daily average withdrawals,1/31/2017,127.205,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,1/31/2017,yesterday,NA,daily average withdrawals,2/1/2017,130.3766667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/1/2017,yesterday,NA,daily average withdrawals,2/2/2017,135.5466667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/2/2017,yesterday,NA,daily average withdrawals,2/3/2017,129.4566667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/3/2017,yesterday,NA,daily average withdrawals,2/4/2017,135.33,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/4/2017,yesterday,NA,daily average withdrawals,2/5/2017,135.835,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/5/2017,yesterday,NA,daily average withdrawals,2/6/2017,128.0383333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/6/2017,yesterday,NA,daily average withdrawals,2/7/2017,110.9816667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/7/2017,yesterday,NA,daily average withdrawals,2/8/2017,70.30666667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/8/2017,yesterday,NA,daily average withdrawals,2/9/2017,95.77833333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/9/2017,yesterday,NA,daily average withdrawals,2/10/2017,98.03,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/10/2017,yesterday,NA,daily average withdrawals,2/11/2017,138.3316667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/11/2017,yesterday,NA,daily average withdrawals,2/12/2017,126.83,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/12/2017,yesterday,NA,daily average withdrawals,2/13/2017,126.7466667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/13/2017,yesterday,NA,daily average withdrawals,2/14/2017,132.7466667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/14/2017,yesterday,NA,daily average withdrawals,2/15/2017,145.7066667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/15/2017,yesterday,NA,daily average withdrawals,2/16/2017,141.5416667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/16/2017,yesterday,NA,daily average withdrawals,2/17/2017,133.125,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/17/2017,yesterday,NA,daily average withdrawals,2/18/2017,130.8766667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/18/2017,yesterday,NA,daily average withdrawals,2/19/2017,145.9133333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/19/2017,yesterday,NA,daily average withdrawals,2/20/2017,130.335,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/20/2017,yesterday,NA,daily average withdrawals,2/21/2017,133.9133333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/21/2017,yesterday,NA,daily average withdrawals,2/22/2017,134.375,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/22/2017,yesterday,NA,daily average withdrawals,2/23/2017,129.3783333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/23/2017,yesterday,NA,daily average withdrawals,2/24/2017,122.9566667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/24/2017,yesterday,NA,daily average withdrawals,2/25/2017,124.58,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/25/2017,yesterday,NA,daily average withdrawals,2/26/2017,117.255,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/26/2017,yesterday,NA,daily average withdrawals,2/27/2017,119.665,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/27/2017,yesterday,NA,daily average withdrawals,2/28/2017,124.045,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,2/28/2017,yesterday,NA,daily average withdrawals,3/1/2017,129.9166667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/1/2017,yesterday,NA,daily average withdrawals,3/2/2017,127.9566667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/2/2017,yesterday,NA,daily average withdrawals,3/3/2017,125.7133333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/3/2017,yesterday,NA,daily average withdrawals,3/4/2017,137.375,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/4/2017,yesterday,NA,daily average withdrawals,3/5/2017,135.54,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/5/2017,yesterday,NA,daily average withdrawals,3/6/2017,132.415,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/6/2017,yesterday,NA,daily average withdrawals,3/7/2017,113.9166667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/7/2017,yesterday,NA,daily average withdrawals,3/8/2017,129.3333333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/8/2017,yesterday,NA,daily average withdrawals,3/9/2017,131.375,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/9/2017,yesterday,NA,daily average withdrawals,3/10/2017,138.63,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/10/2017,yesterday,NA,daily average withdrawals,3/11/2017,137.7133333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/11/2017,yesterday,NA,daily average withdrawals,3/12/2017,130.9216667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/12/2017,yesterday,NA,daily average withdrawals,3/13/2017,123.6683333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/13/2017,yesterday,NA,daily average withdrawals,3/14/2017,123.38,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/14/2017,yesterday,NA,daily average withdrawals,3/15/2017,127.38,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/15/2017,yesterday,NA,daily average withdrawals,3/16/2017,127,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/16/2017,yesterday,NA,daily average withdrawals,3/17/2017,106.32,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/17/2017,yesterday,NA,daily average withdrawals,3/18/2017,125.875,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/18/2017,yesterday,NA,daily average withdrawals,3/19/2017,125.955,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/19/2017,yesterday,NA,daily average withdrawals,3/20/2017,120.955,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/20/2017,yesterday,NA,daily average withdrawals,3/21/2017,130.295,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/21/2017,yesterday,NA,daily average withdrawals,3/22/2017,140.9983333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/22/2017,yesterday,NA,daily average withdrawals,3/23/2017,131.5466667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/23/2017,yesterday,NA,daily average withdrawals,3/24/2017,130.7066667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/24/2017,yesterday,NA,daily average withdrawals,3/25/2017,127.6266667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/25/2017,yesterday,NA,daily average withdrawals,3/26/2017,129.4183333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/26/2017,yesterday,NA,daily average withdrawals,3/27/2017,129.33,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/27/2017,yesterday,NA,daily average withdrawals,3/28/2017,141.5033333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/28/2017,yesterday,NA,daily average withdrawals,3/29/2017,136.6683333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/29/2017,yesterday,NA,daily average withdrawals,3/30/2017,131.4616667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/30/2017,yesterday,NA,daily average withdrawals,3/31/2017,134.7883333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,3/31/2017,yesterday,NA,daily average withdrawals,4/1/2017,133.4566667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/1/2017,yesterday,NA,daily average withdrawals,4/2/2017,135.6683333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/2/2017,yesterday,NA,daily average withdrawals,4/3/2017,130.4216667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/3/2017,yesterday,NA,daily average withdrawals,4/4/2017,138.1233333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/4/2017,yesterday,NA,daily average withdrawals,4/5/2017,146.08,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/5/2017,yesterday,NA,daily average withdrawals,4/6/2017,149.96,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/6/2017,yesterday,NA,daily average withdrawals,4/7/2017,137.6683333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/7/2017,yesterday,NA,daily average withdrawals,4/8/2017,134.4583333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/8/2017,yesterday,NA,daily average withdrawals,4/9/2017,130.045,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/9/2017,yesterday,NA,daily average withdrawals,4/10/2017,129.835,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/10/2017,yesterday,NA,daily average withdrawals,4/11/2017,136.255,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/11/2017,yesterday,NA,daily average withdrawals,4/12/2017,149.855,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/12/2017,yesterday,NA,daily average withdrawals,4/13/2017,137.4583333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/13/2017,yesterday,NA,daily average withdrawals,4/14/2017,147.2066667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/14/2017,yesterday,NA,daily average withdrawals,4/15/2017,144.0383333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/15/2017,yesterday,NA,daily average withdrawals,4/16/2017,141.4216667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/16/2017,yesterday,NA,daily average withdrawals,4/17/2017,139.7133333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/17/2017,yesterday,NA,daily average withdrawals,4/18/2017,139.5033333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/18/2017,yesterday,NA,daily average withdrawals,4/19/2017,142.7116667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/19/2017,yesterday,NA,daily average withdrawals,4/20/2017,142.5033333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/20/2017,yesterday,NA,daily average withdrawals,4/21/2017,144.0866667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/21/2017,yesterday,NA,daily average withdrawals,4/22/2017,144.17,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/22/2017,yesterday,NA,daily average withdrawals,4/23/2017,137.7966667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/23/2017,yesterday,NA,daily average withdrawals,4/24/2017,138.9183333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/24/2017,yesterday,NA,daily average withdrawals,4/25/2017,136.7083333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/25/2017,yesterday,NA,daily average withdrawals,4/26/2017,136.835,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/26/2017,yesterday,NA,daily average withdrawals,4/27/2017,133.38,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/27/2017,yesterday,NA,daily average withdrawals,4/28/2017,141.3333333,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/28/2017,yesterday,NA,daily average withdrawals,4/29/2017,138.6216667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/29/2017,yesterday,NA,daily average withdrawals,4/30/2017,145.4966667,MGD,NA
-WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,4/30/2017,yesterday,NA,daily average withdrawals,5/1/2017,96.11333333,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/6/2017,yesterday,NA,daily average withdrawals,8/7/2017,71.97,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/7/2017,yesterday,NA,daily average withdrawals,8/8/2017,69.88,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/8/2017,yesterday,NA,daily average withdrawals,8/9/2017,68.65,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/9/2017,yesterday,NA,daily average withdrawals,8/10/2017,65.8,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/10/2017,yesterday,NA,daily average withdrawals,8/11/2017,74.83,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/11/2017,yesterday,NA,daily average withdrawals,8/12/2017,72.02,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/12/2017,yesterday,NA,daily average withdrawals,8/13/2017,67.55,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/13/2017,yesterday,NA,daily average withdrawals,8/14/2017,70.7,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/14/2017,yesterday,NA,daily average withdrawals,8/15/2017,72.68,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/15/2017,yesterday,NA,daily average withdrawals,8/16/2017,70.59,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/16/2017,yesterday,NA,daily average withdrawals,8/17/2017,68.9,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/17/2017,yesterday,NA,daily average withdrawals,8/18/2017,67.84,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/18/2017,yesterday,NA,daily average withdrawals,8/19/2017,67.87,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/19/2017,yesterday,NA,daily average withdrawals,8/20/2017,69.26,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/20/2017,yesterday,NA,daily average withdrawals,8/21/2017,69.98,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/21/2017,yesterday,NA,daily average withdrawals,8/22/2017,74.03,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/22/2017,yesterday,NA,daily average withdrawals,8/23/2017,67.19,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/23/2017,yesterday,NA,daily average withdrawals,8/24/2017,71.82,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/24/2017,yesterday,NA,daily average withdrawals,8/25/2017,69.69,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/25/2017,yesterday,NA,daily average withdrawals,8/26/2017,70.01,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/26/2017,yesterday,NA,daily average withdrawals,8/27/2017,72.79,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/27/2017,yesterday,NA,daily average withdrawals,8/28/2017,72.75,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/28/2017,yesterday,NA,daily average withdrawals,8/29/2017,76.66,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/29/2017,yesterday,NA,daily average withdrawals,8/30/2017,62.13,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/30/2017,yesterday,NA,daily average withdrawals,8/31/2017,61.53,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,8/31/2017,yesterday,NA,daily average withdrawals,9/1/2017,72.29,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,9/1/2017,yesterday,NA,daily average withdrawals,9/2/2017,70.68,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,9/2/2017,yesterday,NA,daily average withdrawals,9/3/2017,64.05,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,9/3/2017,yesterday,NA,daily average withdrawals,9/4/2017,63.92,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,9/4/2017,yesterday,NA,daily average withdrawals,9/5/2017,65.35,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,9/5/2017,yesterday,NA,daily average withdrawals,9/6/2017,66.22,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,9/6/2017,yesterday,NA,daily average withdrawals,9/7/2017,63.62,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,9/7/2017,yesterday,NA,daily average withdrawals,9/8/2017,63.71,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,9/8/2017,yesterday,NA,daily average withdrawals,9/9/2017,64.44,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,9/9/2017,yesterday,NA,daily average withdrawals,9/10/2017,63.96,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,9/10/2017,yesterday,NA,daily average withdrawals,9/11/2017,64.93,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,9/11/2017,yesterday,NA,daily average withdrawals,9/12/2017,72.32,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,9/12/2017,yesterday,NA,daily average withdrawals,9/13/2017,69.28,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,9/13/2017,yesterday,NA,daily average withdrawals,9/14/2017,64.26,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,9/14/2017,yesterday,NA,daily average withdrawals,9/15/2017,64.45,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,9/15/2017,yesterday,NA,daily average withdrawals,9/16/2017,70.23,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,9/16/2017,yesterday,NA,daily average withdrawals,9/17/2017,67.9,MGD,NA
+FW Occoquan Reservoir daily average withdrawals,FW,Occoquan Reservoir,9/17/2017,yesterday,NA,daily average withdrawals,9/18/2017,70.18,MGD,NA
 WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,5/1/2017,yesterday,NA,daily average withdrawals,5/2/2017,60.005,MGD,NA
 WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,5/2/2017,yesterday,NA,daily average withdrawals,5/3/2017,60.61833333,MGD,NA
 WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,5/3/2017,yesterday,NA,daily average withdrawals,5/4/2017,70.64666667,MGD,NA
@@ -1307,126 +807,6 @@ WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Gr
 WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,9/2/2017,yesterday,NA,daily average withdrawals,9/3/2017,131.5,MGD,NA
 WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,9/3/2017,yesterday,NA,daily average withdrawals,9/4/2017,118.705,MGD,NA
 WA Potomac River at Great Falls daily average withdrawals,WA,Potomac River at Great Falls,9/4/2017,yesterday,NA,daily average withdrawals,9/5/2017,137.25,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/1/2017,yesterday,NA,daily average withdrawals,1/2/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/2/2017,yesterday,NA,daily average withdrawals,1/3/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/3/2017,yesterday,NA,daily average withdrawals,1/4/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/4/2017,yesterday,NA,daily average withdrawals,1/5/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/5/2017,yesterday,NA,daily average withdrawals,1/6/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/6/2017,yesterday,NA,daily average withdrawals,1/7/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/7/2017,yesterday,NA,daily average withdrawals,1/8/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/8/2017,yesterday,NA,daily average withdrawals,1/9/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/9/2017,yesterday,NA,daily average withdrawals,1/10/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/10/2017,yesterday,NA,daily average withdrawals,1/11/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/11/2017,yesterday,NA,daily average withdrawals,1/12/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/12/2017,yesterday,NA,daily average withdrawals,1/13/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/13/2017,yesterday,NA,daily average withdrawals,1/14/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/14/2017,yesterday,NA,daily average withdrawals,1/15/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/15/2017,yesterday,NA,daily average withdrawals,1/16/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/16/2017,yesterday,NA,daily average withdrawals,1/17/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/17/2017,yesterday,NA,daily average withdrawals,1/18/2017,80.44,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/18/2017,yesterday,NA,daily average withdrawals,1/19/2017,172.16,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/19/2017,yesterday,NA,daily average withdrawals,1/20/2017,150.77,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/20/2017,yesterday,NA,daily average withdrawals,1/21/2017,153,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/21/2017,yesterday,NA,daily average withdrawals,1/22/2017,114.99,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/22/2017,yesterday,NA,daily average withdrawals,1/23/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/23/2017,yesterday,NA,daily average withdrawals,1/24/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/24/2017,yesterday,NA,daily average withdrawals,1/25/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/25/2017,yesterday,NA,daily average withdrawals,1/26/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/26/2017,yesterday,NA,daily average withdrawals,1/27/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/27/2017,yesterday,NA,daily average withdrawals,1/28/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/28/2017,yesterday,NA,daily average withdrawals,1/29/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/29/2017,yesterday,NA,daily average withdrawals,1/30/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/30/2017,yesterday,NA,daily average withdrawals,1/31/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,1/31/2017,yesterday,NA,daily average withdrawals,2/1/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/1/2017,yesterday,NA,daily average withdrawals,2/2/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/2/2017,yesterday,NA,daily average withdrawals,2/3/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/3/2017,yesterday,NA,daily average withdrawals,2/4/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/4/2017,yesterday,NA,daily average withdrawals,2/5/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/5/2017,yesterday,NA,daily average withdrawals,2/6/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/6/2017,yesterday,NA,daily average withdrawals,2/7/2017,25.23,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/7/2017,yesterday,NA,daily average withdrawals,2/8/2017,68.53,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/8/2017,yesterday,NA,daily average withdrawals,2/9/2017,42.35,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/9/2017,yesterday,NA,daily average withdrawals,2/10/2017,34.35,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/10/2017,yesterday,NA,daily average withdrawals,2/11/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/11/2017,yesterday,NA,daily average withdrawals,2/12/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/12/2017,yesterday,NA,daily average withdrawals,2/13/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/13/2017,yesterday,NA,daily average withdrawals,2/14/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/14/2017,yesterday,NA,daily average withdrawals,2/15/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/15/2017,yesterday,NA,daily average withdrawals,2/16/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/16/2017,yesterday,NA,daily average withdrawals,2/17/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/17/2017,yesterday,NA,daily average withdrawals,2/18/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/18/2017,yesterday,NA,daily average withdrawals,2/19/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/19/2017,yesterday,NA,daily average withdrawals,2/20/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/20/2017,yesterday,NA,daily average withdrawals,2/21/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/21/2017,yesterday,NA,daily average withdrawals,2/22/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/22/2017,yesterday,NA,daily average withdrawals,2/23/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/23/2017,yesterday,NA,daily average withdrawals,2/24/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/24/2017,yesterday,NA,daily average withdrawals,2/25/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/25/2017,yesterday,NA,daily average withdrawals,2/26/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/26/2017,yesterday,NA,daily average withdrawals,2/27/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/27/2017,yesterday,NA,daily average withdrawals,2/28/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,2/28/2017,yesterday,NA,daily average withdrawals,3/1/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/1/2017,yesterday,NA,daily average withdrawals,3/2/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/2/2017,yesterday,NA,daily average withdrawals,3/3/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/3/2017,yesterday,NA,daily average withdrawals,3/4/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/4/2017,yesterday,NA,daily average withdrawals,3/5/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/5/2017,yesterday,NA,daily average withdrawals,3/6/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/6/2017,yesterday,NA,daily average withdrawals,3/7/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/7/2017,yesterday,NA,daily average withdrawals,3/8/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/8/2017,yesterday,NA,daily average withdrawals,3/9/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/9/2017,yesterday,NA,daily average withdrawals,3/10/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/10/2017,yesterday,NA,daily average withdrawals,3/11/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/11/2017,yesterday,NA,daily average withdrawals,3/12/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/12/2017,yesterday,NA,daily average withdrawals,3/13/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/13/2017,yesterday,NA,daily average withdrawals,3/14/2017,4.16,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/14/2017,yesterday,NA,daily average withdrawals,3/15/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/15/2017,yesterday,NA,daily average withdrawals,3/16/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/16/2017,yesterday,NA,daily average withdrawals,3/17/2017,21.68,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/17/2017,yesterday,NA,daily average withdrawals,3/18/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/18/2017,yesterday,NA,daily average withdrawals,3/19/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/19/2017,yesterday,NA,daily average withdrawals,3/20/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/20/2017,yesterday,NA,daily average withdrawals,3/21/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/21/2017,yesterday,NA,daily average withdrawals,3/22/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/22/2017,yesterday,NA,daily average withdrawals,3/23/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/23/2017,yesterday,NA,daily average withdrawals,3/24/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/24/2017,yesterday,NA,daily average withdrawals,3/25/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/25/2017,yesterday,NA,daily average withdrawals,3/26/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/26/2017,yesterday,NA,daily average withdrawals,3/27/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/27/2017,yesterday,NA,daily average withdrawals,3/28/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/28/2017,yesterday,NA,daily average withdrawals,3/29/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/29/2017,yesterday,NA,daily average withdrawals,3/30/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/30/2017,yesterday,NA,daily average withdrawals,3/31/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,3/31/2017,yesterday,NA,daily average withdrawals,4/1/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/1/2017,yesterday,NA,daily average withdrawals,4/2/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/2/2017,yesterday,NA,daily average withdrawals,4/3/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/3/2017,yesterday,NA,daily average withdrawals,4/4/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/4/2017,yesterday,NA,daily average withdrawals,4/5/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/5/2017,yesterday,NA,daily average withdrawals,4/6/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/6/2017,yesterday,NA,daily average withdrawals,4/7/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/7/2017,yesterday,NA,daily average withdrawals,4/8/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/8/2017,yesterday,NA,daily average withdrawals,4/9/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/9/2017,yesterday,NA,daily average withdrawals,4/10/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/10/2017,yesterday,NA,daily average withdrawals,4/11/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/11/2017,yesterday,NA,daily average withdrawals,4/12/2017,3.9,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/12/2017,yesterday,NA,daily average withdrawals,4/13/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/13/2017,yesterday,NA,daily average withdrawals,4/14/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/14/2017,yesterday,NA,daily average withdrawals,4/15/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/15/2017,yesterday,NA,daily average withdrawals,4/16/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/16/2017,yesterday,NA,daily average withdrawals,4/17/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/17/2017,yesterday,NA,daily average withdrawals,4/18/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/18/2017,yesterday,NA,daily average withdrawals,4/19/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/19/2017,yesterday,NA,daily average withdrawals,4/20/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/20/2017,yesterday,NA,daily average withdrawals,4/21/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/21/2017,yesterday,NA,daily average withdrawals,4/22/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/22/2017,yesterday,NA,daily average withdrawals,4/23/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/23/2017,yesterday,NA,daily average withdrawals,4/24/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/24/2017,yesterday,NA,daily average withdrawals,4/25/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/25/2017,yesterday,NA,daily average withdrawals,4/26/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/26/2017,yesterday,NA,daily average withdrawals,4/27/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/27/2017,yesterday,NA,daily average withdrawals,4/28/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/28/2017,yesterday,NA,daily average withdrawals,4/29/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/29/2017,yesterday,NA,daily average withdrawals,4/30/2017,0,MGD,NA
-WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,4/30/2017,yesterday,NA,daily average withdrawals,5/1/2017,43.8,MGD,NA
 WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,5/1/2017,yesterday,NA,daily average withdrawals,5/2/2017,90.12,MGD,NA
 WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,5/2/2017,yesterday,NA,daily average withdrawals,5/3/2017,93.38,MGD,NA
 WA Potomac River at Little Falls daily average withdrawals,WA,Potomac River at Little Falls,5/3/2017,yesterday,NA,daily average withdrawals,5/4/2017,73.52,MGD,NA
