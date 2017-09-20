@@ -14,7 +14,7 @@
 library(shiny)
 
 # Define UI for application that draws a histogram
-shinyUI(navbarPage(title = tags$a("", href = "http://icprbcoop.org/drupal4/", target = "_blank",
+shinyUI(navbarPage(title = tags$a("", href = "http://icprbcoop.org/drupal4/self-breifing-conditions", target = "_blank",
                                   tags$span(style="color:white", "CO-OP")),
                    id = "tab",
                    inverse = TRUE, 
