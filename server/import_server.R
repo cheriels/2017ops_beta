@@ -58,11 +58,15 @@ lowflow.hourly.df <- reactive({
   lowflow.hourly.df <- file.path(working.data.dir(), "flow_fc/lffs/lfalls_sim_hourly.csv") %>% 
     data.table::fread(data.table = FALSE,
                       na.strings = na.replace) %>% 
+#    plyr::mutate(date_time = lubridate::ymd_hm(datetime)) %>%
+#    dplyr::bind_rows(lffs.forecast()) %>%
+#    dplyr::filter(!is.na(flow))
     dplyr::select(datetime, lfalls_sim) %>% 
     dplyr::rename(date_time = datetime) %>% 
     dplyr::mutate(date_time = lubridate::ymd_hms(date_time)) %>% 
     tidyr::gather(site, flow, lfalls_sim)
-  
+
+      
   return(lowflow.hourly.df)
 })
 

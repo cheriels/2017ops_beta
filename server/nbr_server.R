@@ -74,6 +74,8 @@ lfalls.natural.mgd <- reactive({
            lfalls_9dayfc = 288.79 * exp(0.0009 * lfalls_natural) + luke - potomac_total,
            lfalls_9dayfc = dplyr::lead(lfalls_9dayfc, 9),
            lfalls_9dayfc = round(lfalls_9dayfc)) %>% 
+#    mutate(lfalls_9dayfc = ifelse(lfalls_9dayfc > lfalls_natural, lfalls_natural, 
+#                                  lfalls_9dayfc)) %>%
     filter(date_time == todays.date() + lubridate::days(9)) %>%
     select(date_time, lfalls_9dayfc)
   #----------------------------------------------------------------------------
@@ -114,16 +116,19 @@ output$nbr <- renderPlot({
 }) # End output$nbr
 #----------------------------------------------------------------------------
 # Adding text to give numerical values of 9-day fc and Luke target
-output$nbr_notification_1 <- renderText({
-  if (is.null(lfalls.natural.mgd())) {
-    paste("Little Falls 9-day flow forecast from empirical formula cannot",
-          "be determined with the currently selected 'Todays Date'.")
-  } else {
-    paste("Little Falls 9-day flow forecast from empirical formula is ",
-          lfalls.natural.mgd()$lfalls_9dayfc, " MGD.")
-  }
- 
-})
+#output$nbr_notification_1 <- renderText({
+#  if (is.null(lfalls.natural.mgd())) {
+#    paste("Little Falls 9-day flow forecast from empirical formula cannot",
+#          "be determined with the currently selected 'Todays Date'.")
+#  } else {
+#    paste("Little Falls 9-day flow forecast from empirical formula is ",
+#          lfalls.natural.mgd()$lfalls_9dayfc, " MGD.")
+#  }
+# 
+#})
+#------------------------------------------------------------------------------
+source("server/nbr/nbr_notifications.R", local = TRUE)
+#------------------------------------------------------------------------------
 
 
 
