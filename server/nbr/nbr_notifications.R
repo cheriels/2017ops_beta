@@ -23,7 +23,7 @@ lfalls.today.mgd <- reactive({
 })
 #----------------------------------------------------------------------------
 output$nbr_notification_1 <- renderText({
-  if (is.null(lfalls.today.mgd()) & is.null(tot.withdrawal())) {
+  if (is.null(lfalls.natural.mgd.today()) & is.null(tot.withdrawal())) {
     paste("Today's flow at Little Falls flow",
           "and",
           "yesterday's total Potomac withdrawal",
@@ -43,17 +43,17 @@ output$nbr_notification_1 <- renderText({
           " MGD.")
   } else if (!is.null(lfalls.today.mgd()) & !is.null(tot.withdrawal())) {
     paste("Little Falls is ",
-          lfalls.natural.mgd.df()$lfalls_natural0, 
+          lfalls.natural.mgd.today()$lfalls_natural0, 
           " MGD: Little Falls natural is ",
-          lfalls.natural.mgd.df()$lfalls_natural,
+          lfalls.natural.mgd.today()$lfalls_natural,
           " MGD; Potomac total withdrawal is ",
-          lfalls.natural.mgd.df()$potomac_total,
+          lfalls.natural.mgd.today()$potomac_total,
           " MGD; Luke is ",
-          lfalls.natural.mgd.df()$luke,
+          lfalls.natural.mgd.today()$luke,
           " MGD; augmentation is ",
-          lfalls.natural.mgd.df()$net_nbr_aug,
+          lfalls.natural.mgd.today()$net_nbr_aug,
           " MGD; and the lfalls nat 9-day fc is",
-          lfalls.natural.mgd.df()$lfalls_9dayfc)
+          lfalls.natural.mgd.today()$lfalls_9dayfc)
   }
 })
 #----------------------------------------------------------------------------
