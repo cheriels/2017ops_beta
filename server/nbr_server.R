@@ -17,9 +17,8 @@ nbr.df <- reactive({
   start.date <- start.date()
   end.date <- end.date()
   #----------------------------------------------------------------------------
-  sub.df <- hourly.reac() #%>% 
-  #    dplyr::filter(date_time >= start.date - lubridate::days(3) &
-  #                    date_time <= end.date + lubridate::days(1))
+  sub.df <- hourly.reac() %>% 
+      dplyr::filter(date_time <= todays.date)
   #----------------------------------------------------------------------------
   if (nrow(sub.df) == 0 ) return(NULL)
   #----------------------------------------------------------------------------
