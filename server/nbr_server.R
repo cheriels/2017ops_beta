@@ -87,7 +87,7 @@ lfalls.natural.mgd.df <- reactive({
 #------------------------------------------------------------------------------
 lfalls.natural.mgd <- reactive({
   final.df <- lfalls.natural.mgd.df() %>%
-    filter(date_time == todays.date() ) %>%
+    filter(date_time == todays.date() + lubridate::days(9)) %>%
     select(date_time, lfalls_9dayfc)
   if (is.na(final.df$lfalls_9dayfc[1])) return(NULL)
   return(final.df)
