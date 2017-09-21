@@ -1,6 +1,6 @@
 observeEvent(input$today.override, {
-  s.date <- todays.date() - lubridate::days(7)
-  e.date <- todays.date() + lubridate::days(7)
+  s.date <- todays.date() - lubridate::days(10)
+  e.date <- todays.date() + lubridate::days(10)
   date_standards(name = "date.range",
                  session,
                  start.date = s.date,
