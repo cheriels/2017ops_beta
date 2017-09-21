@@ -80,18 +80,23 @@ lfalls.natural.mgd.df <- reactive({
            lfalls_9dayfc = round(lfalls_9dayfc)) %>% 
     select(date_time, lfalls_natural0, lfalls_natural, luke, net_nbr_aug, potomac_total, lfalls_9dayfc)
   #----------------------------------------------------------------------------
-  if (is.na(final.df$lfalls_9dayfc[1])) return(NULL)
+  
   #----------------------------------------------------------------------------
   return(final.df)
 })
+#------------------------------------------------------------------------------
 lfalls.natural.mgd <- reactive({
-  lfalls.natural.mgd.df() %>%
+  final.df <- lfalls.natural.mgd.df() %>%
     filter(date_time == todays.date() ) %>%
     select(date_time, lfalls_9dayfc)
+  if (is.na(final.df$lfalls_9dayfc[1])) return(NULL)
+  return(final.df)
 })
+#------------------------------------------------------------------------------
 lfalls.natural.mgd.today <- reactive({
-  lfalls.natural.mgd.df() %>%
+  final.df <- lfalls.natural.mgd.df() %>%
     filter(date_time == todays.date()) 
+  return(final.df)
 })
 # 
 #------------------------------------------------------------------------------
