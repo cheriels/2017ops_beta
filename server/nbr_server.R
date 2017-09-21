@@ -49,7 +49,7 @@ nbr.df <- reactive({
 # Adding our estimate of flow at Little Falls in 9 days
 
 
-lfalls.natural.mgd <- reactive({
+lfalls.natural.mgd.df <- reactive({
   if (is.null(withdrawals.df()) || is.null(daily.df())) return(NULL)
   # First need to create Little Falls "natural" flow - without effects of JRR and Savage dams and withdrawals:
   cfs_to_mgd <- 1.547
@@ -62,26 +62,36 @@ lfalls.natural.mgd <- reactive({
     dplyr::select(-qual_code) %>% 
     tidyr::spread(site, flow) %>% 
     # First subtract off flow augmentation due to JR and Savage dams:
-    mutate(lfalls_natural = round(lfalls / cfs_to_mgd),
-           net_nbr_aug = (barnum - kitzmiller + bloomington - barton) / cfs_to_mgd,
-           lfalls_lags = lag(net_nbr_aug, n = 8) +
-             lag(net_nbr_aug, n = 9) +
-             lag(net_nbr_aug, n = 10),
-           lfalls_natural = lfalls_natural - lfalls_lags / 3) %>% 
+    mutate(lfalls_natural0 = round(lfalls / cfs_to_mgd),
+###           net_nbr_aug = (barnum - kitzmiller + bloomington - barton) / cfs_to_mgd,
+           net_nbr_aug = lag(luke, n = 9)  / cfs_to_mgd,
+###           lfalls_lags = lag(net_nbr_aug, n = 8) +
+###             lag(net_nbr_aug, n = 9) +
+###             lag(net_nbr_aug, n = 10),
+###           lfalls_natural = lfalls_natural - lfalls_lags / 3) %>% 
+    lfalls_natural = lfalls_natural0 - net_nbr_aug) %>%     
     left_join(withdrawal.sub, by = "date_time") %>% 
     # Then eliminate effect of WMA withdrawals:
-    mutate(lfalls_natural = lfalls_natural + potomac_total,
-           lfalls_9dayfc = 288.79 * exp(0.0009 * lfalls_natural) + luke - potomac_total,
+    mutate(lfalls_natural = lfalls_natural, ### + potomac_total,
+           lfalls_9dayfc = 288.79 * exp(0.0009 * lfalls_natural), # + net_nbr_aug, ### - potomac_total,
+           lfalls_9dayfc = ifelse(lfalls_9dayfc > lfalls_natural, 
+                                  lfalls_natural, lfalls_9dayfc),
            lfalls_9dayfc = dplyr::lead(lfalls_9dayfc, 9),
            lfalls_9dayfc = round(lfalls_9dayfc)) %>% 
-#    mutate(lfalls_9dayfc = ifelse(lfalls_9dayfc > lfalls_natural, lfalls_natural, 
-#                                  lfalls_9dayfc)) %>%
-    filter(date_time == todays.date() + lubridate::days(9)) %>%
-    select(date_time, lfalls_9dayfc)
+    select(date_time, lfalls_natural0, lfalls_natural, luke, net_nbr_aug, potomac_total, lfalls_9dayfc)
   #----------------------------------------------------------------------------
   if (is.na(final.df$lfalls_9dayfc[1])) return(NULL)
   #----------------------------------------------------------------------------
   return(final.df)
+})
+lfalls.natural.mgd <- reactive({
+  lfalls.natural.mgd.df() %>%
+    filter(date_time == todays.date() ) %>%
+    select(date_time, lfalls_9dayfc)
+})
+lfalls.natural.mgd.today <- reactive({
+  lfalls.natural.mgd.df() %>%
+    filter(date_time == todays.date()) 
 })
 # 
 #------------------------------------------------------------------------------

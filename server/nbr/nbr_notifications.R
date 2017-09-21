@@ -42,11 +42,18 @@ output$nbr_notification_1 <- renderText({
           tot.withdrawal(),
           " MGD.")
   } else if (!is.null(lfalls.today.mgd()) & !is.null(tot.withdrawal())) {
-    paste("The 9-day empirical fc of natural flow at Little Falls is ",
-          lfalls.natural.mgd(), 
-          " MGD, and the 9-day withdrawal fc is ",
-          tot.withdrawal(),
-          " MGD.")
+    paste("Little Falls is ",
+          lfalls.natural.mgd.df()$lfalls_natural0, 
+          " MGD: Little Falls natural is ",
+          lfalls.natural.mgd.df()$lfalls_natural,
+          " MGD; Potomac total withdrawal is ",
+          lfalls.natural.mgd.df()$potomac_total,
+          " MGD; Luke is ",
+          lfalls.natural.mgd.df()$luke,
+          " MGD; augmentation is ",
+          lfalls.natural.mgd.df()$net_nbr_aug,
+          " MGD; and the lfalls nat 9-day fc is",
+          lfalls.natural.mgd.df()$lfalls_9dayfc)
   }
 })
 #----------------------------------------------------------------------------
