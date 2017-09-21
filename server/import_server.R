@@ -98,7 +98,8 @@ withdrawals.df <- reactive({
   withdrawals.df <- dplyr::bind_rows(with.df, pot.total) %>% 
     dplyr::rename(site = unique_id,
                   flow = value) %>% 
-    dplyr::mutate(date_time = as.Date(date_time, "%m/%d/%Y"))
+#    dplyr::mutate(date_time = as.Date(date_time, "%m/%d/%Y"))
+    dplyr::mutate(date_time = as.Date(date_time, "%Y-%m-%d"))
   
   return(withdrawals.df)
 })
