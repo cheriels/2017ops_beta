@@ -71,11 +71,12 @@ lfalls.natural.mgd.df <- reactive({
     lfalls_natural = lfalls_natural0 - net_nbr_aug) %>%     
     left_join(withdrawal.sub, by = "date_time") %>% 
     # Then eliminate effect of WMA withdrawals:
-    mutate(lfalls_natural = lfalls_natural, ### + potomac_total,
+    mutate(lfalls_natural = lfalls_natural + potomac_total,
            lfalls_9dayfc = 288.79 * exp(0.0009 * lfalls_natural), # + net_nbr_aug, ### - potomac_total,
            lfalls_9dayfc = ifelse(lfalls_9dayfc > lfalls_natural, 
                                   lfalls_natural, lfalls_9dayfc),
-           lfalls_9dayfc = dplyr::lead(lfalls_9dayfc, 9),
+           lfalls_9dayfc = lfalls_9dayfc + net_nbr_aug - potomac_total,
+           lfalls_9dayfc = dplyr::lead(lfalls_9dayfc, 0),
            lfalls_9dayfc = round(lfalls_9dayfc)) %>% 
     select(date_time, lfalls_natural0, lfalls_natural, luke, net_nbr_aug, potomac_total, lfalls_9dayfc)
   #----------------------------------------------------------------------------
@@ -84,14 +85,17 @@ lfalls.natural.mgd.df <- reactive({
   return(final.df)
 })
 #------------------------------------------------------------------------------
+# This value of lfalls_9dayfc is used in the graph:
 lfalls.natural.mgd <- reactive({
   final.df <- lfalls.natural.mgd.df() %>%
+    mutate(date_time = lead(date_time,9)) %>%
     filter(date_time == todays.date() + lubridate::days(9)) %>%
     select(date_time, lfalls_9dayfc)
   if (is.na(final.df$lfalls_9dayfc[1])) return(NULL)
   return(final.df)
 })
 #------------------------------------------------------------------------------
+# These dataframe values can be used in text displays:
 lfalls.natural.mgd.today <- reactive({
   final.df <- lfalls.natural.mgd.df() %>%
     filter(date_time == todays.date()) 

@@ -24,36 +24,34 @@ lfalls.today.mgd <- reactive({
 #----------------------------------------------------------------------------
 output$nbr_notification_1 <- renderText({
   if (is.null(lfalls.natural.mgd.today()) & is.null(tot.withdrawal())) {
-    paste("Today's flow at Little Falls flow",
+    paste("Little Falls flow today",
           "and",
           "yesterday's total Potomac withdrawal",
           "cannot be calculated for the currently selected 'Todays Date'.")
   } else if (!is.null(lfalls.today.mgd()) & is.null(tot.withdrawal())) {
-    paste("Today's flow at Little Falls flow is ",
+    paste("Little Falls flow today  ",
           lfalls.today.mgd(), 
           "but",
           "yesterday's total Potomac withdrawal",
           "cannot be calculated for the currently selected 'Todays Date'.")
   } else if (is.null(lfalls.today.mgd()) & !is.null(tot.withdrawal())) {
-    paste("Today's flow at Little Falls flow",
+    paste("Little Falls flow today ",
           "cannot be calculated for the currently selected 'Todays Date'",
           "but",
           "yesterday's total Potomac withdrawal was",
           tot.withdrawal(),
           " MGD.")
   } else if (!is.null(lfalls.today.mgd()) & !is.null(tot.withdrawal())) {
-    paste("Little Falls is ",
-          lfalls.natural.mgd.today()$lfalls_natural0, 
-          " MGD: Little Falls natural is ",
+    paste("Little Falls flow today is ",
+#          lfalls.natural.mgd.today()$lfalls_natural0,
+          lfalls.today.mgd(),
+          " MGD and natural flow at Little Falls is estimated to be ",
           lfalls.natural.mgd.today()$lfalls_natural,
-          " MGD; Potomac total withdrawal is ",
+          " MGD. The total of Potomac withdrawals today, and estimated in 9 days, is ",
           lfalls.natural.mgd.today()$potomac_total,
-          " MGD; Luke is ",
-          lfalls.natural.mgd.today()$luke,
-          " MGD; augmentation is ",
-          lfalls.natural.mgd.today()$net_nbr_aug,
-          " MGD; and the lfalls nat 9-day fc is",
-          lfalls.natural.mgd.today()$lfalls_9dayfc)
+          " MGD; and the forecast for observed flow at Little Falls in 9 days is",
+          lfalls.natural.mgd.today()$lfalls_9dayfc,
+          " MGD")
   }
 })
 #----------------------------------------------------------------------------
