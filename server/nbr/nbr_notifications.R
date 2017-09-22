@@ -23,36 +23,24 @@ lfalls.today.mgd <- reactive({
 })
 #----------------------------------------------------------------------------
 output$nbr_notification_1 <- renderText({
-  if (is.null(lfalls.natural.mgd.today()) & is.null(tot.withdrawal())) {
-    paste("Little Falls flow today",
-          "and",
-          "yesterday's total Potomac withdrawal",
-          "cannot be calculated for the currently selected 'Todays Date'.")
-  } else if (!is.null(lfalls.today.mgd()) & is.null(tot.withdrawal())) {
-    paste("Little Falls flow today  ",
-          lfalls.today.mgd(), 
-          "but",
-          "yesterday's total Potomac withdrawal",
-          "cannot be calculated for the currently selected 'Todays Date'.")
-  } else if (is.null(lfalls.today.mgd()) & !is.null(tot.withdrawal())) {
-    paste("Little Falls flow today ",
-          "cannot be calculated for the currently selected 'Todays Date'",
-          "but",
-          "yesterday's total Potomac withdrawal was",
-          tot.withdrawal(),
-          " MGD.")
-  } else if (!is.null(lfalls.today.mgd()) & !is.null(tot.withdrawal())) {
+  if (!is.null(lfalls.natural.mgd.today()$lfalls_natural) &
+      !is.null(lfalls.natural.mgd.today()$potomac_total) &
+      !is.null(lfalls.natural.mgd.today()$net_nbr_aug)) {
     paste("Little Falls flow today is ",
-#          lfalls.natural.mgd.today()$lfalls_natural0,
+          #          lfalls.natural.mgd.today()$lfalls_natural0,
           lfalls.today.mgd(),
-          " MGD and natural flow at Little Falls is estimated to be ",
-          lfalls.natural.mgd.today()$lfalls_natural,
-          " MGD. The total of Potomac withdrawals today, and estimated in 9 days, is ",
+          " MGD, net augmentation is estimated to be ",
+          lfalls.natural.mgd.today()$net_nbr_aug,
+          " MGD, and the total of Potomac withdrawals today is ",
           lfalls.natural.mgd.today()$potomac_total,
-          " MGD; and the forecast for observed flow at Little Falls in 9 days is",
+          " MGD. The 9-day forecast for observed flow at Little Falls, 
+          based on ICPRB's empirical formula, is",
           lfalls.natural.mgd.today()$lfalls_9dayfc,
           " MGD")
-  }
+  } else  {
+    paste("The Little Falls 9-day flow forecast cannot be calculated 
+          for the currently selected 'Todays Date'")
+  } 
 })
 #----------------------------------------------------------------------------
 # Next, the trigger for drought ops - as stated in the original Drought Manual
