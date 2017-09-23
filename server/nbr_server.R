@@ -63,7 +63,7 @@ lfalls.natural.mgd.df <- reactive({
     # First subtract off flow augmentation due to JR and Savage dams:
     mutate(lfalls_natural0 = round(lfalls / cfs_to_mgd),
 ###           net_nbr_aug = (barnum - kitzmiller + bloomington - barton) / cfs_to_mgd,
-           net_nbr_aug = lag(luke, n = 9)  / cfs_to_mgd,
+           net_nbr_aug = round(lag(luke, n = 9)  / cfs_to_mgd),
 ###           lfalls_lags = lag(net_nbr_aug, n = 8) +
 ###             lag(net_nbr_aug, n = 9) +
 ###             lag(net_nbr_aug, n = 10),
