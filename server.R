@@ -38,4 +38,6 @@ shinyServer(function(input, output, session) {
   #----------------------------------------------------------------------------
   source("server/dts_server.R", local = TRUE)
   #----------------------------------------------------------------------------
+#  lapply(c("sa", "odo", "nbr", "dts"),
+#         function(x) outputOptions(output, x, suspendWhenHidden = FALSE))
 })
