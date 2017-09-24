@@ -4,27 +4,29 @@ working.data.dir <- reactive({
 na.replace <- c("", " ", "Eqp", "#N/A", "-999999")
 #------------------------------------------------------------------------------
 daily.df <- reactive({
- daily.df <- file.path(working.data.dir(), "flows_obs/flow_daily_cfs.csv") %>% 
+  daily.df <- file.path(working.data.dir(), "flows_obs/flow_daily_cfs.csv") %>% 
     data.table::fread(data.table = FALSE,
                       na.strings = na.replace) %>% 
-#   dplyr::mutate(date_time = as.Date(date_time, format = "%m/%d/%Y"))
-   dplyr::mutate(date_time = as.Date(date_time, format = "%Y-%m-%d"))
- 
- #----------------------------------------------------------------------------
- hourly.test <- hourly.reac() %>% 
-   dplyr::mutate(date_time = lubridate::as_date(date_time)) %>% 
-   filter(date_time > max(daily.df$date_time)) 
- 
- if (nrow(hourly.test) > 0) {
-   daily.df <- hourly.test %>% 
-     dplyr::group_by(agency, site, date_time) %>% 
-     dplyr::summarize(flow = mean(flow)) %>% 
-     dplyr::bind_rows(daily.df, .)
- }
- #----------------------------------------------------------------------------
- 
- 
- return(daily.df)
+    #   dplyr::mutate(date_time = as.Date(date_time, format = "%m/%d/%Y"))
+    #   dplyr::mutate(date_time = as.Date(date_time, format = "%Y-%m-%d"))
+    dplyr::mutate(date_time = as.POSIXct(date_time),
+                  date_time = lubridate::ymd(date_time))
+  
+  #----------------------------------------------------------------------------
+  hourly.test <- hourly.reac() %>% 
+    dplyr::mutate(date_time = lubridate::as_date(date_time)) %>% 
+    filter(date_time > max(daily.df$date_time)) 
+  
+  if (nrow(hourly.test) > 0) {
+    daily.df <- hourly.test %>% 
+      dplyr::group_by(agency, site, date_time) %>% 
+      dplyr::summarize(flow = mean(flow)) %>% 
+      dplyr::bind_rows(daily.df, .)
+  }
+  #----------------------------------------------------------------------------
+  
+  
+  return(daily.df)
 })
 #------------------------------------------------------------------------------
 marfc.forecast <- reactive({
@@ -48,8 +50,8 @@ hourly.df <- reactive({
   hourly.df <- file.path(working.data.dir(), "flows_obs/flow_hourly_cfs.csv") %>% 
     data.table::fread(data.table = FALSE,
                       na.strings = na.replace) %>% 
-    plyr::mutate(date_time = lubridate::mdy_hm(date_time)) %>% 
-#    plyr::mutate(date_time = lubridate::ymd_hm(date_time)) %>% 
+    #    dplyr::mutate(date_time = lubridate::mdy_hm(date_time)) %>% 
+    dplyr::mutate(date_time = lubridate::ymd_hms(date_time)) %>% 
     dplyr::bind_rows(marfc.forecast()) %>% 
     dplyr::filter(!is.na(flow))
   
@@ -60,15 +62,15 @@ lowflow.hourly.df <- reactive({
   lowflow.hourly.df <- file.path(working.data.dir(), "flow_fc/lffs/lfalls_sim_hourly.csv") %>% 
     data.table::fread(data.table = FALSE,
                       na.strings = na.replace) %>% 
-#    plyr::mutate(date_time = lubridate::ymd_hm(datetime)) %>%
-#    dplyr::bind_rows(lffs.forecast()) %>%
-#    dplyr::filter(!is.na(flow))
+    #    plyr::mutate(date_time = lubridate::ymd_hm(datetime)) %>%
+    #    dplyr::bind_rows(lffs.forecast()) %>%
+    #    dplyr::filter(!is.na(flow))
     dplyr::select(datetime, lfalls_sim) %>% 
     dplyr::rename(date_time = datetime) %>% 
     dplyr::mutate(date_time = lubridate::ymd_hms(date_time)) %>% 
     tidyr::gather(site, flow, lfalls_sim)
-
-      
+  
+  
   return(lowflow.hourly.df)
 })
 
@@ -100,7 +102,7 @@ withdrawals.df <- reactive({
   withdrawals.df <- dplyr::bind_rows(with.df, pot.total) %>% 
     dplyr::rename(site = unique_id,
                   flow = value) %>% 
-#    dplyr::mutate(date_time = as.Date(date_time, "%m/%d/%Y"))
+    #    dplyr::mutate(date_time = as.Date(date_time, "%m/%d/%Y"))
     dplyr::mutate(date_time = as.Date(date_time, "%Y-%m-%d"))
   
   return(withdrawals.df)
