@@ -1,4 +1,4 @@
-
+library(tidyverse)
 
 working.data.dir <- file.path("data_ts", "current")
 na.replace <- c("", " ", "Eqp", "#N/A", "-999999")
@@ -6,7 +6,8 @@ na.replace <- c("", " ", "Eqp", "#N/A", "-999999")
 daily.df <- file.path(working.data.dir, "flows_obs/flow_daily_cfs.csv") %>% 
   data.table::fread(data.table = FALSE,
                     na.strings = na.replace) %>% 
-  dplyr::mutate(date_time = as.Date(date_time, format = "%m/%d/%Y"))
+  dplyr::mutate(date_time = as.POSIXct(date_time),
+                date_time = lubridate::ymd(date_time))
 
 #------------------------------------------------------------------------------
 
@@ -26,7 +27,7 @@ marfc.forecast <- file.path(working.data.dir, "flow_fc/nws/MARFC_BRKM2.csv") %>%
 hourly.df <- file.path(working.data.dir, "flows_obs/flow_hourly_cfs.csv") %>% 
   data.table::fread(data.table = FALSE,
                     na.strings = na.replace) %>% 
-  dplyr::mutate(date_time = lubridate::mdy_hm(date_time)) %>% 
+  dplyr::mutate(date_time = lubridate::ymd_hms(date_time)) %>% 
   dplyr::bind_rows(marfc.forecast) %>% 
   dplyr::filter(!is.na(flow))
 
