@@ -7,6 +7,7 @@ daily.df <- reactive({
   daily.df <- file.path(working.data.dir(), "flows_obs/flow_daily_cfs.csv") %>% 
     data.table::fread(data.table = FALSE,
                       na.strings = na.replace) %>% 
+    dplyr::filter(!is.na(site)) %>% 
     #   dplyr::mutate(date_time = as.Date(date_time, format = "%m/%d/%Y"))
     #   dplyr::mutate(date_time = as.Date(date_time, format = "%Y-%m-%d"))
     dplyr::mutate(date_time = as.POSIXct(date_time),
@@ -50,6 +51,7 @@ hourly.df <- reactive({
   hourly.df <- file.path(working.data.dir(), "flows_obs/flow_hourly_cfs.csv") %>% 
     data.table::fread(data.table = FALSE,
                       na.strings = na.replace) %>% 
+    dplyr::filter(!is.na(site)) %>% 
     #    dplyr::mutate(date_time = lubridate::mdy_hm(date_time)) %>% 
     dplyr::mutate(date_time = lubridate::ymd_hms(date_time)) %>% 
     dplyr::bind_rows(marfc.forecast()) %>% 
