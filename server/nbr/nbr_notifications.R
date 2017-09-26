@@ -23,9 +23,7 @@ lfalls.today.mgd <- reactive({
 })
 #----------------------------------------------------------------------------
 output$nbr_notification_1 <- renderText({
-  if (!is.null(lfalls.natural.mgd.today()$lfalls_natural) &
-      !is.null(lfalls.natural.mgd.today()$potomac_total) &
-      !is.null(lfalls.natural.mgd.today()$net_nbr_aug)) {
+  if (!is.null(lfalls.natural.mgd.today())) {
     paste("Little Falls flow today is ",
           #          lfalls.natural.mgd.today()$lfalls_natural0,
           lfalls.today.mgd(),
