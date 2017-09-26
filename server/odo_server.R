@@ -29,7 +29,7 @@ odo.df <- reactive({
 #    dplyr::left_join(date.temp, ., by = "date_time") %>% 
 #    tidyr::gather(site, flow, 5:ncol(.))
   #----------------------------------------------------------------------------
-  if (nrow(hourly.sub) == 0 ) return(NULL)
+  if (nrow(hourly.sub) == 0) return(NULL)
   #----------------------------------------------------------------------------
   
   variable_confluence <- function(long1.df, gage1, lag1, long2.df, gage2, lag2, klag.df) {

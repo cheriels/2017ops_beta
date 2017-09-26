@@ -54,8 +54,9 @@ lfalls.natural.mgd.df <- reactive({
   cfs_to_mgd <- 1.547
   withdrawal.sub <- withdrawals.df() %>% 
     dplyr::select(date_time, site, flow) %>% 
-    dplyr::filter(site == "potomac_total") %>% 
-    tidyr::spread(site, flow)
+    dplyr::filter(site == "potomac_total")
+  if (nrow(withdrawal.sub) == 0) return(NULL)
+  withdrawal.sub <- tidyr::spread(withdrawal.sub, site, flow)
   #----------------------------------------------------------------------------
   final.df <- daily.df() %>%
     dplyr::select(-qual_code) %>% 
@@ -87,6 +88,7 @@ lfalls.natural.mgd.df <- reactive({
 #------------------------------------------------------------------------------
 # This value of lfalls_9dayfc is used in the graph:
 lfalls.natural.mgd <- reactive({
+  if (is.null(lfalls.natural.mgd.df())) return(NULL)
   final.df <- lfalls.natural.mgd.df() %>%
     mutate(date_time = lead(date_time,9)) %>%
     filter(date_time == todays.date() + lubridate::days(9)) %>%
@@ -97,6 +99,7 @@ lfalls.natural.mgd <- reactive({
 #------------------------------------------------------------------------------
 # These dataframe values can be used in text displays:
 lfalls.natural.mgd.today <- reactive({
+  if (is.null(lfalls.natural.mgd.df())) return(NULL)
   final.df <- lfalls.natural.mgd.df() %>%
     filter(date_time == todays.date()) 
   return(final.df)
@@ -106,7 +109,7 @@ lfalls.natural.mgd.today <- reactive({
 output$nbr <- renderPlot({
   start.date <- start.date()
   end.date <- end.date()
-  nine.day <- lfalls.natural.mgd() 
+  nine.day <- lfalls.natural.mgd.today() 
   # Should nine.day be converted to cfs when units== cfs?
   #----------------------------------------------------------------------------
   gen_plots(nbr.df(),

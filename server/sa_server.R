@@ -30,12 +30,14 @@ sa.df <- reactive({
     select(date_time, site, flow) %>% 
     dplyr::filter(date_time >= start.date,
                   date_time <= todays.date,
-                  site %in% c("lfalls", "por", "mon_jug")) %>% 
+                  site %in% c("lfalls", "por", "mon_jug"))
+  #----------------------------------------------------------------------------
+  if (nrow(sub.df) == 0) return(NULL)
+  #----------------------------------------------------------------------------
+  sub.df <- sub.df %>% 
     tidyr::spread(site, flow) %>% 
     dplyr::left_join(date.temp, ., by = "date_time") %>% 
     tidyr::gather(site, flow, 2:ncol(.))
-  
-  if (nrow(sub.df) == 0 ) return(NULL)
   #----------------------------------------------------------------------------
   # recess and lag POR flows
   por.df <- sub.df %>% 
