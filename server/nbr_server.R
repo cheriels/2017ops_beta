@@ -59,7 +59,7 @@ lfalls.natural.mgd.df <- reactive({
   withdrawal.sub <- tidyr::spread(withdrawal.sub, site, flow)
   #----------------------------------------------------------------------------
   final.df <- daily.df() %>%
-    dplyr::select(-qual_code) %>% 
+    #dplyr::select(-qual_code) %>% 
     tidyr::spread(site, flow) %>% 
     # First subtract off flow augmentation due to JR and Savage dams:
     mutate(lfalls_natural0 = round(lfalls / cfs_to_mgd),
