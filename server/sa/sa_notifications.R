@@ -24,25 +24,25 @@ lfalls.today.mgd <- reactive({
 })
 #----------------------------------------------------------------------------
 output$sa_notification_1 <- renderText({
-  if (is.null(lfalls.today.mgd()) & is.null(tot.withdrawal())) {
+  if (is.null(lfalls.today.mgd()) && is.null(tot.withdrawal())) {
     paste("Today's flow at Little Falls flow",
           "and",
           "yesterday's total Potomac withdrawal",
           "cannot be calculated for the currently selected 'Todays Date'.")
-  } else if (!is.null(lfalls.today.mgd()) & is.null(tot.withdrawal())) {
+  } else if (!is.null(lfalls.today.mgd()) && is.null(tot.withdrawal())) {
     paste("Today's flow at Little Falls flow is ",
           lfalls.today.mgd(), 
           "but",
           "yesterday's total Potomac withdrawal",
           "cannot be calculated for the currently selected 'Todays Date'.")
-  } else if (is.null(lfalls.today.mgd()) & !is.null(tot.withdrawal())) {
+  } else if (is.null(lfalls.today.mgd()) && !is.null(tot.withdrawal())) {
     paste("Today's flow at Little Falls flow",
           "cannot be calculated for the currently selected 'Todays Date'",
           "but",
           "yesterday's total Potomac withdrawal was",
           tot.withdrawal(),
           " MGD.")
-  } else if (!is.null(lfalls.today.mgd()) & !is.null(tot.withdrawal())) {
+  } else if (!is.null(lfalls.today.mgd()) && !is.null(tot.withdrawal())) {
     paste("Today's flow at Little Falls flow is ",
           lfalls.today.mgd(), 
           " MGD, and yesterday's total Potomac withdrawal was ",
