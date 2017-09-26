@@ -37,7 +37,7 @@ gen_plots <- function(data.df, start.date, end.date,
   }
   #----------------------------------------------------------------------------
   validate(
-    need(nrow(sub.df) != 0,
+    need(nrow(sub.df) != 0 & !is.null(sub.df),
          "No data available for the selected date range. Please select a new date range.")
     
   )
@@ -117,8 +117,8 @@ gen_plots <- function(data.df, start.date, end.date,
   if (!is.null(nine_day.df)) {
     nine_day.df <- nine_day.df %>% 
           mutate(date_time = date_time %>% 
-                 as.Date() %>% 
-              paste("00:00:00") %>% 
+                 #as.Date() %>% 
+              #paste("00:00:00") %>% 
               as.POSIXct())
     
     final.plot <- final.plot +
