@@ -16,15 +16,14 @@ observeEvent(input$clear.sa, {
 })
 #------------------------------------------------------------------------------
 sa.df <- reactive({
-  req(!is.null(todays.date()),
+  req(!is.null(daily.reac()),
+      !is.null(todays.date()),
       !is.null(start.date()),
       !is.null(end.date()))
-  if (is.null(daily.reac())) return(NULL)
-  todays.date <- todays.date()
+
   start.date <- start.date() - lubridate::days(7)
-  end.date <- end.date()
   date.temp <- date_frame(start.date,
-                          end.date,
+                          end.date(),
                           "days") %>% 
     dplyr::mutate(date_time = as.Date(date_time))
   #----------------------------------------------------------------------------
@@ -32,7 +31,7 @@ sa.df <- reactive({
     #select(date_time, lfalls, por, monocacy) %>% 
     select(date_time, site, flow) %>% 
     dplyr::filter(date_time >= start.date,
-                  date_time <= todays.date,
+                  date_time <= todays.date(),
                   site %in% c("lfalls", "por", "mon_jug"))
   #----------------------------------------------------------------------------
   if (nrow(sub.df) == 0) return(NULL)
@@ -44,11 +43,11 @@ sa.df <- reactive({
   #----------------------------------------------------------------------------
   # recess and lag POR flows
   por.df <- sub.df %>% 
-    constant_lagk(por, todays.date, lag.days = 1)
+    constant_lagk(por, todays.date(), lag.days = 1)
   #----------------------------------------------------------------------------
   # recess and lag Monocacy flows
   mon.df <- por.df %>% 
-    constant_lagk(mon_jug, todays.date, lag.days = 1)
+    constant_lagk(mon_jug, todays.date(), lag.days = 1)
   #----------------------------------------------------------------------------
   pot_withdrawals.sub <- withdrawals.reac() %>% 
     dplyr::filter(site == "potomac_total") %>% 

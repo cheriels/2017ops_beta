@@ -1,5 +1,13 @@
+todays.date <- reactive({
+  req(as.Date(input$today.override) >= lubridate::ymd("1800-01-01"))
+  todays.date <- as.Date(input$today.override) %>% 
+    paste("00:00:00") %>% 
+    as.POSIXct()
+})
+#------------------------------------------------------------------------------
 observeEvent(input$today.override, {
- if(input$today.override < lubridate::ymd("1800-01-01")) return(NULL)
+  req(todays.date() >= lubridate::ymd("1800-01-01"))
+
   s.date <- todays.date() - lubridate::days(10)
   e.date <- todays.date() + lubridate::days(10)
   date_standards(name = "date.range",
@@ -15,14 +23,6 @@ observeEvent(input$date.range, {
                  start.date = input$date.range[1],
                  end.date = input$date.range[2],
                  min.range = 1)
-})
-#------------------------------------------------------------------------------
-todays.date <- reactive({
-  
-if(as.Date(input$today.override) < lubridate::ymd("1800-01-01")) return(NULL)
-  todays.date <- as.Date(input$today.override) %>% 
-    paste("00:00:00") %>% 
-    as.POSIXct()
 })
 #------------------------------------------------------------------------------
 start.date <- reactive({

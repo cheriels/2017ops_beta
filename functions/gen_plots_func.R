@@ -39,7 +39,6 @@ gen_plots <- function(data.df, start.date, end.date,
   validate(
     need(nrow(sub.df) != 0 & !is.null(sub.df),
          "No data available for the selected date range. Please select a new date range.")
-    
   )
   #----------------------------------------------------------------------------
   site.vec <- unique(sub.df$site)
