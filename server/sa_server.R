@@ -20,7 +20,7 @@ sa.df <- reactive({
       !is.null(todays.date()),
       !is.null(start.date()),
       !is.null(end.date()))
-
+  
   start.date <- start.date() - lubridate::days(7)
   date.temp <- date_frame(start.date,
                           end.date(),
@@ -72,14 +72,11 @@ output$sa <- renderPlot({
   validate(
     need(!is.null(sa.df()),
          "No data available for the selected date range. Please select a new date range.")
-    
   )
-  start.date <- start.date()
-  end.date <- end.date()
   #----------------------------------------------------------------------------
   gen_plots(sa.df(),
-            start.date,
-            end.date, 
+            start.date(),
+            end.date(), 
             min.flow = input$min.flow,
             max.flow = input$max.flow,
             gages.checked = input$gages.sa,

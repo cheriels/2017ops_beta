@@ -15,25 +15,26 @@ observeEvent(input$clear.odo, {
 })
 #----------------------------------------------------------------------------
 odo.df <- reactive({
-  req(!is.null(hourly.reac()))
-  todays.date <- todays.date()
+  req(!is.null(withdrawals.reac()),
+      !is.null(hourly.reac()),
+      !is.null(todays.date()),
+      !is.null(start.date()),
+      !is.null(end.date()))
+
   start.date <- start.date() - lubridate::days(7)
-  end.date <- end.date()
   date.temp <- date_frame(start.date,
-                          end.date,
+                          end.date(),
                           "hours")
   #----------------------------------------------------------------------------
   hourly.sub <- hourly.reac() %>% 
     dplyr::filter(date_time >= start.date  &
-                    date_time <= todays.date) #%>% 
-#    tidyr::spread(site, flow) %>% 
-#    dplyr::left_join(date.temp, ., by = "date_time") %>% 
-#    tidyr::gather(site, flow, 5:ncol(.))
+                    date_time <= todays.date())
   #----------------------------------------------------------------------------
-  if (nrow(hourly.sub) == 0) return(NULL)
+  req(nrow(hourly.sub) > 0)
   #----------------------------------------------------------------------------
   
-  variable_confluence <- function(long1.df, gage1, lag1, long2.df, gage2, lag2, klag.df) {
+  variable_confluence <- function(long1.df, gage1, lag1,
+                                  long2.df, gage2, lag2, klag.df) {
     g1.df <- variable_lagk(long1.df, gage1, lag1, klag.df)
     g2.df <- variable_lagk(long2.df, gage2, lag2, klag.df)
     final.df <- bind_rows(long2.df, g1.df, g2.df) %>% 
@@ -83,12 +84,11 @@ odo.df <- reactive({
 })
 #----------------------------------------------------------------------------
 output$odo <- renderPlot({
-  start.date <- start.date()
-  end.date <- end.date()
+
   #----------------------------------------------------------------------------
   gen_plots(odo.df(),
-            start.date,
-            end.date, 
+            start.date(),
+            end.date(), 
             min.flow = input$min.flow,
             max.flow = input$max.flow,
             gages.checked = input$gages.odo,
