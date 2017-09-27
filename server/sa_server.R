@@ -16,11 +16,19 @@ observeEvent(input$clear.sa, {
 })
 #------------------------------------------------------------------------------
 sa.df <- reactive({
+<<<<<<< HEAD
   req(!is.null(daily.reac()),
       !is.null(todays.date()),
       !is.null(start.date()),
       !is.null(end.date()))
 
+=======
+  req(!is.null(todays.date()),
+      !is.null(start.date()),
+      !is.null(end.date()))
+  if (is.null(daily.reac())) return(NULL)
+  todays.date <- todays.date()
+>>>>>>> e0495043909f8176c4399408af905c317dc88904
   start.date <- start.date() - lubridate::days(7)
   date.temp <- date_frame(start.date,
                           end.date(),
