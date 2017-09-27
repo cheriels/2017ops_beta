@@ -20,7 +20,7 @@ sa.df <- reactive({
       !is.null(todays.date()),
       !is.null(start.date()),
       !is.null(end.date()))
-  
+
   start.date <- start.date() - lubridate::days(7)
   date.temp <- date_frame(start.date,
                           end.date(),
