@@ -1,4 +1,5 @@
 observeEvent(input$today.override, {
+ if(input$today.override < lubridate::ymd("1800-01-01")) return(NULL)
   s.date <- todays.date() - lubridate::days(10)
   e.date <- todays.date() + lubridate::days(10)
   date_standards(name = "date.range",
@@ -17,6 +18,8 @@ observeEvent(input$date.range, {
 })
 #------------------------------------------------------------------------------
 todays.date <- reactive({
+  
+if(as.Date(input$today.override) < lubridate::ymd("1800-01-01")) return(NULL)
   todays.date <- as.Date(input$today.override) %>% 
     paste("00:00:00") %>% 
     as.POSIXct()

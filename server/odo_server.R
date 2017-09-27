@@ -15,6 +15,7 @@ observeEvent(input$clear.odo, {
 })
 #----------------------------------------------------------------------------
 odo.df <- reactive({
+  req(!is.null(hourly.reac()))
   todays.date <- todays.date()
   start.date <- start.date() - lubridate::days(7)
   end.date <- end.date()
