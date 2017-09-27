@@ -72,7 +72,7 @@ wellPanel(
            conditionalPanel("input.tab == 'Demand Time Series'",
                             column(6,
                                    align = "left",
-                                   uiOutput("day.dd.dts"),
+                                   #uiOutput("day.dd.dts"),
                                    uiOutput("supplier.dd.dts")
                             ),
                             column(6,
@@ -116,6 +116,6 @@ wellPanel(
                             textOutput("nbr_notification_1")
                      )
                    )
-  ),
-  
-  style = "padding: 25px;") # End wellPanel
+  )#,
+  #style = "padding: 25px;"
+  ) # End wellPanel
