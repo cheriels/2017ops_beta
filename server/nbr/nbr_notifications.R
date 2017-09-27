@@ -1,26 +1,4 @@
-#----------------------------------------------------------------------------
-# Notifications related to the 9-day forecast and North Branch release:
-tot.withdrawal <- reactive({
-  if (is.null(withdrawals.df())) return(NULL)
-  with.scalar <- withdrawals.df() %>%
-    filter(date_time == todays.date(),
-           site == "potomac_total") %>%
-    pull(flow)
-  if (length(with.scalar) == 0) return(NULL)
-  return(with.scalar)
-})
-#----------------------------------------------------------------------------
-cfs_to_mgd <- 1.547
-lfalls.today.mgd <- reactive({
-  if (is.null(daily.df())) return(NULL)
-  lfalls.scalar <- daily.df() %>%
-    filter(date_time == todays.date(),
-           site == "lfalls") %>%
-    mutate(flow = round(flow / cfs_to_mgd)) %>% 
-    pull(flow)
-  if (length(lfalls.scalar) == 0) return(NULL)
-  return(lfalls.scalar)
-})
+
 #----------------------------------------------------------------------------
 output$nbr_notification_1 <- renderText({
   if (!is.null(lfalls.natural.mgd.today())) {
