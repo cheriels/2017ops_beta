@@ -16,6 +16,9 @@ observeEvent(input$clear.sa, {
 })
 #------------------------------------------------------------------------------
 sa.df <- reactive({
+  req(!is.null(todays.date()),
+      !is.null(start.date()),
+      !is.null(end.date()))
   if (is.null(daily.reac())) return(NULL)
   todays.date <- todays.date()
   start.date <- start.date() - lubridate::days(7)
@@ -67,6 +70,11 @@ sa.df <- reactive({
 })
 #----------------------------------------------------------------------------
 output$sa <- renderPlot({
+  validate(
+    need(!is.null(sa.df()),
+         "No data available for the selected date range. Please select a new date range.")
+    
+  )
   start.date <- start.date()
   end.date <- end.date()
   #----------------------------------------------------------------------------

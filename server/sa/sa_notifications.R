@@ -2,6 +2,7 @@
 # This is very crude, but my first try at adding notifications
 # first, for flow at Little Falls and total Potomac withdrawals:
 tot.withdrawal <- reactive({
+  req(!is.null(todays.date()))
   if (is.null(withdrawals.df())) return(NULL)
   with.scalar <- withdrawals.df() %>%
     filter(date_time == todays.date(),
@@ -13,6 +14,7 @@ tot.withdrawal <- reactive({
 #----------------------------------------------------------------------------
 cfs_to_mgd <- 1.547
 lfalls.today.mgd <- reactive({
+  req(!is.null(todays.date()))
   if (is.null(daily.df())) return(NULL)
   lfalls.scalar <- daily.df() %>%
     filter(date_time == todays.date(),
