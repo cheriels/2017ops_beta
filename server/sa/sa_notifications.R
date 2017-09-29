@@ -1,11 +1,11 @@
 #----------------------------------------------------------------------------
-# This is very crude, but my first try at adding notifications
-# first, for flow at Little Falls and total Potomac withdrawals:
+# Adding notifications based on today's flow at Little Falls 
+# and yesterday's total Potomac withdrawals:
 tot.withdrawal <- reactive({
   req(!is.null(todays.date()))
   if (is.null(withdrawals.df())) return(NULL)
   with.scalar <- withdrawals.df() %>%
-    filter(date_time == todays.date(),
+    filter(date_time == todays.date() - lubridate::days(1),
            site == "potomac_total") %>%
     pull(flow)
   if (length(with.scalar) == 0) return(NULL)
@@ -66,7 +66,9 @@ output$sa_notification_2 <- renderText({
   }
 })
 #----------------------------------------------------------------------------
-# Next the LFAA's trigger for the Alert Stage
+# Next the LFAA's threshold for the Alert Stage: LFAA pp. 11-12 give the threshold 
+# in terms of "adjusted flow" = Qobs + Potomac withdrawals. Converting to observed flow:
+# threshold = Potomac withdrawal (yesterday's)
 output$sa_notification_3 <- renderText({
   if (is.null(tot.withdrawal())) {
     paste("The trigger for the LFAA Alert Stage: observed flow at Little Falls",
