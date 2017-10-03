@@ -32,7 +32,9 @@ output$sa_notification_2 <- renderText({
   }
 })
 #----------------------------------------------------------------------------
-# Next the LFAA's trigger for the Alert Stage
+# Next the LFAA's threshold for the Alert Stage, from LFAA, pp. 11-12,
+# originally expressed in terms of "adjusted flow", ie, observed flow + Pot withdrawals.
+# Here we express it in terms of observed flow:
 output$sa_notification_3 <- renderText({
   if (is.null(tot.withdrawal())) {
     paste("The trigger for the LFAA Alert Stage: observed flow at Little Falls",

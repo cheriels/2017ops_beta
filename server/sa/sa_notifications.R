@@ -1,6 +1,5 @@
 #----------------------------------------------------------------------------
-# Adding notifications based on today's flow at Little Falls 
-# and yesterday's total Potomac withdrawals:
+# Adding notifications based on yesterday's total Potomac withdrawals:
 tot.withdrawal <- reactive({
   req(!is.null(todays.date()))
   if (is.null(withdrawals.df())) return(NULL)
@@ -19,7 +18,8 @@ lfalls.today.mgd <- reactive({
   lfalls.scalar <- daily.df() %>%
     filter(date_time == todays.date(),
            site == "lfalls") %>%
-    mutate(flow = round(flow / cfs_to_mgd)) %>% 
+#    mutate(flow = round(flow / cfs_to_mgd)) %>% 
+    mutate(flow = round(flow)) %>% 
     pull(flow)
   if (length(lfalls.scalar) == 0) return(NULL)
   return(lfalls.scalar)
@@ -33,8 +33,9 @@ output$sa_notification_1 <- renderText({
           "cannot be calculated for the currently selected 'Todays Date'.")
   } else if (!is.null(lfalls.today.mgd()) && is.null(tot.withdrawal())) {
     paste("Today's flow at Little Falls flow is ",
-          lfalls.today.mgd(), 
-          "but",
+          lfalls.today.mgd(),
+          input$flow.units,
+          " but",
           "yesterday's total Potomac withdrawal",
           "cannot be calculated for the currently selected 'Todays Date'.")
   } else if (is.null(lfalls.today.mgd()) && !is.null(tot.withdrawal())) {
@@ -47,7 +48,8 @@ output$sa_notification_1 <- renderText({
   } else if (!is.null(lfalls.today.mgd()) && !is.null(tot.withdrawal())) {
     paste("Today's flow at Little Falls flow is ",
           lfalls.today.mgd(), 
-          " MGD, and yesterday's total Potomac withdrawal was ",
+          input$flow.units,
+          " , and yesterday's total Potomac withdrawal was ",
           tot.withdrawal(),
           " MGD.")
   }
@@ -66,27 +68,31 @@ output$sa_notification_2 <- renderText({
   }
 })
 #----------------------------------------------------------------------------
-# Next the LFAA's threshold for the Alert Stage: LFAA pp. 11-12 give the threshold 
-# in terms of "adjusted flow" = Qobs + Potomac withdrawals. Converting to observed flow:
-# threshold = Potomac withdrawal (yesterday's)
+# Next the LFAA's threshold for the Alert Stage: LFAA pp. 11-12 gives the threshold 
+# in terms of "adjusted flow": W > 0.5*Qadj (where Qadj = Qobs + W, 
+# and W is total WMA Potomac withdrawals). Converting to observed flow, the threshold is:
+# Qobs = W (both values from yesterday, calculated from midnight to midnight)
 output$sa_notification_3 <- renderText({
   if (is.null(tot.withdrawal())) {
-    paste("The trigger for the LFAA Alert Stage: observed flow at Little Falls",
+    paste("The threshold for the LFAA Alert Stage: observed flow at Little Falls",
           "cannot be calculated for the currently selected 'Todays Date'.")
   } else {
-    paste("The trigger for the LFAA Alert Stage: observed flow at Little Falls = ",
+    paste("The threshold for the LFAA Alert Stage: observed flow at Little Falls = ",
           tot.withdrawal(),
           " MGD.")
   }
 })
 #----------------------------------------------------------------------------
-# Next the LFAA's trigger for the Restriction Stage
+# Next the LFAA's threshold for the Restriction Stage, 
+# given in the Memorandum of Intent, p. 2, 3., is W + 100 > 0.8*Qadj (in mgd)
+# or Qobs < W/4 + 125 mgd:
+
 output$sa_notification_4 <- renderText({
   if (is.null(tot.withdrawal())) {
-    paste("The trigger for the LFAA Restriction Stage",
+    paste("The threshold for the LFAA Restriction Stage",
           "cannot be calculated for the currently selected 'Todays Date'.")
   } else {
-    paste("The trigger for the LFAA Restriction Stage is ",
+    paste("The threshold for the LFAA Restriction Stage is ",
           tot.withdrawal() * 0.25 + 125,
           " MGD.")
   }
