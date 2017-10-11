@@ -1,3 +1,4 @@
+
 rolling_min <- function(long.df, flow.col, roll.window, gage.name = "min") {
   flow.col <- rlang::enquo(flow.col)
   final.df <- long.df %>% 
@@ -10,3 +11,5 @@ rolling_min <- function(long.df, flow.col, roll.window, gage.name = "min") {
     dplyr::bind_rows(long.df)
   return(final.df)
 }
+
+
