@@ -1,6 +1,6 @@
 library(tidyverse)
 
-working.data.dir <- file.path("data_ts", "drex2017")
+working.data.dir <- file.path("data_ts", "current")
 na.replace <- c("", " ", "Eqp", "#N/A", "-999999")
 #------------------------------------------------------------------------------
 daily.df <- file.path(working.data.dir, "flows_obs/flow_daily_cfs.csv") %>% 
@@ -71,7 +71,8 @@ pot.total <- with.df %>%
 withdrawals.df <- dplyr::bind_rows(with.df, pot.total) %>% 
   dplyr::rename(site = unique_id,
                 flow = value) %>% 
-  dplyr::mutate(date_time = as.Date(date_time, "%m/%d/%Y"))
+  #dplyr::mutate(date_time = as.Date(date_time, "%m/%d/%Y")) %>% 
+  dplyr::filter(!stringr::str_detect(site, "usable storage|usable capacity"))
 
 
 #------------------------------------------------------------------------------
