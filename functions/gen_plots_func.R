@@ -7,17 +7,6 @@ gen_plots <- function(data.df, start.date, end.date,
                       x.lab = "Date Time", y.lab = "Flow (CFS)",
                       nine_day.df = NULL) {
   #--------------------------------------------------------------------------
-  start.date <- as.Date(start.date)
-  end.date <- as.Date(end.date)
-  if (x.class == "datetime") {
-    start.date <- start.date  %>% 
-      paste("00:00:00") %>% 
-      as.POSIXct()
-    end.date <- end.date  %>% 
-      paste("00:00:00") %>% 
-      as.POSIXct()
-  }
-  #----------------------------------------------------------------------------
   #  if (start.date > end.date) return(NULL)
   #  if (max(hourly.df$date_time) < start.date - lubridate::days(3)) {
   #    start.date <- max(hourly.df$date_time) - lubridate::days(3)
@@ -27,19 +16,27 @@ gen_plots <- function(data.df, start.date, end.date,
          "No variables selected. Please check at least one checkbox.")
   )
   #----------------------------------------------------------------------------
-  if (is.null(data.df)) {
-    sub.df <- NULL
-  } else {
-    sub.df <- data.df %>% 
-      dplyr::filter(site %in% gages.checked)#,
-#                    date_time >= start.date - lubridate::days(3) &
-#                      date_time <= end.date + lubridate::days(1))
-  }
-  #----------------------------------------------------------------------------
   validate(
-    need(nrow(sub.df) != 0 & !is.null(sub.df),
+    need(nrow(data.df) != 0 & !is.null(data.df),
          "No data available for the selected date range. Please select a new date range.")
   )
+  #----------------------------------------------------------------------------
+  start.date <- as.Date(start.date)%>% 
+    paste("00:00:00") %>% 
+    as.POSIXct()
+  end.date <- as.Date(end.date)%>% 
+    paste("00:00:00") %>% 
+    as.POSIXct()
+  period <- ifelse(x.class == "datetime", "hours", "days")
+  
+  #----------------------------------------------------------------------------
+  sub.df <- data.df %>% 
+    dplyr::filter(site %in% gages.checked) %>% 
+    dplyr::mutate(date_time = as.POSIXct(date_time)) %>% 
+    add_date_gaps(start.date, end.date, period)
+  #,
+  #                    date_time >= start.date - lubridate::days(3) &
+  #                      date_time <= end.date + lubridate::days(1))
   #----------------------------------------------------------------------------
   site.vec <- unique(sub.df$site)
   if (is.null(labels.vec)) labels.vec <- site.vec
@@ -49,7 +46,7 @@ gen_plots <- function(data.df, start.date, end.date,
                                    color = site,
                                    linetype = site,
                                    size = site)) + 
-    geom_line() +
+    geom_line(na.rm = TRUE) +
     theme_minimal() +
     xlab(x.lab) +
     ylab(y.lab) +
@@ -85,7 +82,7 @@ gen_plots <- function(data.df, start.date, end.date,
                                                    values = color.vec)
   } else {
     final.plot <- final.plot + scale_colour_hue(name = "type",
-                                                   labels = labels.vec)
+                                                labels = labels.vec)
   }
   #----------------------------------------------------------------------------
   if (is.na(min.flow)) {
@@ -115,10 +112,10 @@ gen_plots <- function(data.df, start.date, end.date,
                     expand = FALSE)
   if (!is.null(nine_day.df)) {
     nine_day.df <- nine_day.df %>% 
-          mutate(date_time = date_time %>% 
-                 #as.Date() %>% 
-              #paste("00:00:00") %>% 
-              as.POSIXct())
+      mutate(date_time = date_time %>% 
+               #as.Date() %>% 
+               #paste("00:00:00") %>% 
+               as.POSIXct())
     
     final.plot <- final.plot +
       geom_point(data = nine_day.df,
