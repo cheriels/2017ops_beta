@@ -24,6 +24,7 @@ lfalls.pred <- lowflow.hourly.df %>%
   rolling_min(flow, 240, "sim")
 
 lfalls.df <- dplyr::bind_rows(lfalls.obs, lfalls.pred) %>% 
+  distinct() %>% 
   tidyr::spread(site, flow) %>% 
   dplyr::filter(!is.na(sim)) %>% 
   tidyr::fill(obs) %>% 
