@@ -11,6 +11,7 @@ need <- c("shiny",
           #"plotly",
           "Cairo",
           "RcppRoll",
+          "tidyr",
           "zoo") 
 # find out which packages are installed
 ins <- installed.packages()[, 1] 
